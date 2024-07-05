@@ -15,6 +15,11 @@ export default {
             fontFamily: {
                 sans: ["Roboto", ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                color1: "#FFFFDD",
+                color2: "#016A70",
+                color3: "#265073",
+            },
         },
     },
 

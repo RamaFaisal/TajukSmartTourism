@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "@inertiajs/react";
 
 export default function Navbar() {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -51,7 +52,7 @@ export default function Navbar() {
             )}
             <div
                 className={`navbar-main fixed top-0 w-full z-50 shadow-outline transition-colors duration-1 ${
-                    isScrolled ? "bg-green-500 shadow-lg" : "bg-transparent"
+                    isScrolled ? "bg-color2 shadow-lg" : "bg-transparent"
                 }`}
             >
                 <div className="navbar">
@@ -86,12 +87,9 @@ export default function Navbar() {
                                 style={{ left: "0", top: "4rem" }}
                             >
                                 <li>
-                                    <a
-                                        className="whitespace-normal break-words font-bold"
-                                        href="#"
-                                    >
+                                    <Link className="font-bold" href="/Homepage">
                                         Home
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <details>
@@ -103,20 +101,12 @@ export default function Navbar() {
                                                 Destinasi
                                             </p>
                                             <li>
-                                                <a
-                                                    className="whitespace-normal break-words"
-                                                    href="#"
-                                                >
-                                                    Dung Kluruk
-                                                </a>
+                                                <Link href="/DungKluruk">
+                                                    DungKluruk
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
-                                                    className="whitespace-normal break-words"
-                                                    href="#"
-                                                >
-                                                    Tiamo
-                                                </a>
+                                                <Link href="/Tiamo">Tiamo</Link>
                                             </li>
                                             <p className="font-bold">Event</p>
                                             <li>
@@ -233,7 +223,7 @@ export default function Navbar() {
                                 onMouseEnter={() => setHoveredMenu("home")}
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
-                                <a href="#">Home</a>
+                                <Link href="/Homepage">Home</Link>
                             </li>
 
                             <li
@@ -255,20 +245,14 @@ export default function Navbar() {
                                         </p>
                                         <ul className="text-black">
                                             <li>
-                                                <a
-                                                    className="whitespace-normal break-words"
-                                                    href="#"
-                                                >
-                                                    - Dung Kluruk
-                                                </a>
+                                                <Link href="/DungKluruk">
+                                                    - DungKluruk
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
-                                                    className="whitespace-normal break-words"
-                                                    href="#"
-                                                >
+                                                <Link href="/Tiamo">
                                                     - Tiamo
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                         <p className="font-bold py-2 px-4 text-black">
@@ -340,8 +324,11 @@ export default function Navbar() {
                                 </details>
                             </li>
 
-                            <li className={` ${
-                                    hoveredMenu === "tentangKami" ? "text-white" : ""
+                            <li
+                                className={` ${
+                                    hoveredMenu === "tentangKami"
+                                        ? "text-white"
+                                        : ""
                                 }`}
                                 onMouseEnter={() =>
                                     setHoveredMenu("tentangKami")

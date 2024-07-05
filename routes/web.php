@@ -16,17 +16,24 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function() {
+Route::get('/Homepage', function() {
     return Inertia::render('Homepage', [
         'title' => 'Tajuk Smart Tourism',
         'description' => 'Selamat Datang di TST'
     ]);
 });
 
-Route::get('/coba', function() {
-    return Inertia::render('coba', [
-        'title' => 'Tajuk Smart Tourism',
-        'description' => 'Selamat Datang di TST'
+Route::get('/DungKluruk', function() {
+    return Inertia::render('DungKluruk', [
+        'title' => 'Wisata DungKluruk',
+        'description' => 'Selamat Datang di Wisata DungKluruk, Tajuk, Getasan'
+    ]);
+});
+
+Route::get('/Tiamo', function() {
+    return Inertia::render('Tiamo', [
+        'title' => 'Wisata Tiamo',
+        'description' => 'Selamat Datang di Wisata Tiamo, Tajuk, Getasan'
     ]);
 });
 

@@ -1,21 +1,19 @@
+import { Link } from "@inertiajs/react";
 import React from "react";
 
 // Komponen Card
 const Card = ({ imageUrl, title, link }) => {
     return (
-        <a
-            href={link}
-            className="card overflow-hidden rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105"
-        >
+        <div className="relative overflow-hidden rounded-lg shadow-lg bg-gradient-to-b from-black to-black transition-transform transform hover:scale-105 w-48 h-64 sm:w-52 sm:h-72">
             <img
                 src={imageUrl}
                 alt={title}
-                className="w-full h-56 object-cover"
+                className="w-full h-full object-cover opacity-50"
             />
-            <div className="p-4">
-                <h2 className="text-center font-bold text-xl">{title}</h2>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+                <h2 className="text-lg sm:text-xl font-bold">{title}</h2>
             </div>
-        </a>
+        </div>
     );
 };
 
@@ -25,101 +23,82 @@ const Dusun = () => {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page1",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page2",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page3",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page4",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page5",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page6",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page7",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page8",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page9",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page10",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Kaya",
-            link: "https://example.com/page11",
         },
     ];
 
     return (
-        <div className="bg-white p-4">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
-                {cards.slice(0, 4).map((card, index) => (
-                    <Card
-                        key={index}
-                        imageUrl={card.imageUrl}
-                        title={card.title}
-                        link={card.link}
-                    />
-                ))}
+        <div className="bg-color1 sm:px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-4">
+                <Card imageUrl={cards[0].imageUrl} title={cards[0].title} />
+                <Card imageUrl={cards[1].imageUrl} title={cards[1].title} />
+                <Card imageUrl={cards[2].imageUrl} title={cards[2].title} />
+                <Card imageUrl={cards[3].imageUrl} title={cards[3].title} />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
-                {cards.slice(7, 11).map((card, index) => (
-                    <Card
-                        key={index}
-                        imageUrl={card.imageUrl}
-                        title={card.title}
-                        link={card.link}
-                    />
-                ))}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-4">
+                <Card imageUrl={cards[4].imageUrl} title={cards[4].title} />
+                <Card imageUrl={cards[5].imageUrl} title={cards[5].title} />
+                <Card imageUrl={cards[6].imageUrl} title={cards[6].title} />
+                <Card imageUrl={cards[7].imageUrl} title={cards[7].title} />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 lg:px-32 py-5 gap-8 mt-4">
-                {cards.slice(4, 7).map((card, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 lg:px-32 gap-4 sm:gap-8 mt-4">
+                <Card imageUrl={cards[8].imageUrl} title={cards[8].title} />
+                <Card imageUrl={cards[9].imageUrl} title={cards[9].title} />
+                <div className="col-span-2 sm:col-span-2 lg:col-span-1 flex justify-center">
                     <Card
-                        key={index}
-                        imageUrl={card.imageUrl}
-                        title={card.title}
-                        link={card.link}
+                        imageUrl={cards[10].imageUrl}
+                        title={cards[10].title}
                     />
-                ))}
+                </div>
             </div>
         </div>
     );
