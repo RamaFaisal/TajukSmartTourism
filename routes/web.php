@@ -37,6 +37,13 @@ Route::get('/Tiamo', function() {
     ]);
 });
 
+Route::get('/', function() {
+    return Inertia::render('coba', [
+        'title' => 'Wisata DungKluruk',
+        'description' => 'Selamat Datang di Wisata DungKluruk, Tajuk, Getasan'
+    ]);
+});
+
 Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
