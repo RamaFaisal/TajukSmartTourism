@@ -1,10 +1,9 @@
-import VideoCarousel from "@/Components/VideoCarousel";
-import { Link, Head } from "@inertiajs/react";
+import Destinasi from "@/Components/Destinasi";
 
 export default function coba(props) {
-  return (
-    <div>
-      <VideoCarousel />
-    </div>
-  );
+    return (
+        <div>
+            <Destinasi />
+        </div>
+    );
 }

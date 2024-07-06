@@ -6,8 +6,10 @@ import Footer from "@/Components/Footer";
 import Dusun from "@/Components/Dusun";
 import Article from "@/Components/Article";
 import VideoCarousel from "@/Components/VideoCarousel";
+import Destinasi from "@/Components/Destinasi";
 
 export default function Homepage(props) {
+
     return (
         <div className="w-full h-full bg-color1 flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
             <Head title={props.title} />
@@ -36,71 +38,8 @@ export default function Homepage(props) {
                 </div>
             </div>
 
-            <div className="bg-color2 w-11/12 p-2 lg:p-5 rounded-xl border-4 border-black">
-                <div className="container mx-auto">
-                    <div className="flex flex-col md:flex-row gap-4">
-                        <div className="w-full md:w-1/2">
-                            <img
-                                src="https://i.pinimg.com/564x/87/66/00/87660081be9c389e8d309c881f1204aa.jpg"
-                                alt="Hot Air Balloon"
-                                className="rounded-lg w-full h-auto"
-                            />
-                        </div>
-                        <div className="w-full md:w-1/2 flex flex-col justify-between">
-                            <div className="bg-white shadow-md rounded-lg mb-4">
-                                <div className="rounded-t-lg pt-4 px-4">
-                                    <h2 className="text-2xl font-bold">
-                                        Tiamo
-                                    </h2>
-                                </div>
-                                <div className="p-4">
-                                    <p>
-                                        Hutan Pinus Tiamo, menyuguhkan nuansa
-                                        alam teduh dan pemandangan hijau yang
-                                        akan membuat kamu menjadi tenang dan
-                                        tentram. Untuk ketempat ini kamu cuma
-                                        harus membayar biaya parkir saja sebesar
-                                        Rp. 2000 per motor dan Rp. 5000 per
-                                        mobil saja.
-                                    </p>
-                                    <Link
-                                        href="/Tiamo"
-                                        className="mt-2 inline-block w-full text-center bg-white text-black font-semibold py-2 px-4 rounded border border-black hover:bg-black hover:text-white transition duration-300"
-                                    >
-                                        Lihat Detail
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="bg-white shadow-md rounded-lg">
-                                <div className="rounded-t-lg pt-4 px-4">
-                                    <h2 className="text-2xl font-bold">
-                                        Dung Kluruk
-                                    </h2>
-                                </div>
-                                <div className="p-4">
-                                    <p>
-                                        Dung-Kluruk merupakan taman wisata yang
-                                        desain untuk wisata keluarga. Terdapat
-                                        taman, embung dan aneka bermain untuk
-                                        anak. Disamping taman dung-kluruk
-                                        terdapat lapangan, yang sering digunakan
-                                        untuk berbagai macam acara. Saat kita
-                                        berada di taman wisata ini, kita dapat
-                                        melihat dengan jelas view gunung
-                                        merbabu.
-                                    </p>
-                                    <Link
-                                        href="/DungKluruk"
-                                        className="mt-2 inline-block w-full text-center bg-white text-black font-semibold py-2 px-4 rounded border border-black hover:bg-black hover:text-white transition duration-300"
-                                    >
-                                        Lihat Detail
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div className="w-full h-full ">
+                <Destinasi />
             </div>
 
             <div className="w-full relative overflow-hidden">
