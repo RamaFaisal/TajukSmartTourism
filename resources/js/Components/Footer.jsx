@@ -10,8 +10,8 @@ import {
 
 const Footer = () => {
     return (
-        <div className="w-full bg-gray-100">
-            <footer className="flex text-white flex-wrap justify-between bg-color3">
+        <div className="w-full bg-color2">
+            <footer className="flex text-white flex-wrap justify-between bg-color2">
                 <div className="flex flex-col items-start w-full md:w-1/3 p-5 lg:pl-20">
                     <div className="flex flex-col justify-center items-center lg:items-start lg:justify-start w-full mb-10 lg:mb-2">
                         <img

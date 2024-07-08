@@ -22,10 +22,10 @@ export default function Homepage(props) {
                     <span className="md:hidden">
                         <br />
                     </span>
-                    <span className="text-color2">Desa Wisata Tajuk</span>
+                    <span className="text-color4">Desa Wisata Tajuk</span>
                 </span>
                 <br />
-                <span className="text-black text-sm sm:text-sm md:text-base lg:text-lg font-roboto font-normal mt-4 block">
+                <span className="text-black text-sm sm:text-sm md:text-base lg:text-2xl mt-4 block">
                     <b>Desa Wisata Tajuk</b> adalah surga tersembunyi yang
                     menawarkan keindahan alam, kekayaan budaya, dan keramahan
                     penduduk lokal. Terletak di jantung Jawa Tengah, desa kami
@@ -43,23 +43,26 @@ export default function Homepage(props) {
             </div>
 
             <div className="w-full relative overflow-hidden">
-                <img
-                    className="w-full h-32 sm:h-40 md:h-56 lg:h-72 xl:h-80 object-cover transform transition-transform duration-500 hover:scale-110"
-                    src="https://i.pinimg.com/564x/0a/65/7b/0a657b4d8f3ef4fe41977f115b067ae4.jpg"
-                    alt="Beautiful Landscape"
-                />
-                <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
-                    <span className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold mb-4">
-                        Langit yang biru, gunung yang megah, dan hutan yang
-                        mempesona menanti Anda untuk dijelajahi. Nikmati
-                        keindahan alam yang menakjubkan.
-                    </span>
-                    <a
-                        href="#"
-                        className="btn bg-white text-black font-bold py-2 px-4 rounded hover:scale-105 transition-transform"
-                    >
-                        Lihat Paket
-                    </a>
+                <div className="">
+                    <img
+                        className="w-full h-32 sm:h-20 md:h-28 lg:h-40 xl:h-56 object-cover transform transition-transform duration-500 hover:scale-110"
+                        src="https://i.pinimg.com/564x/0a/65/7b/0a657b4d8f3ef4fe41977f115b067ae4.jpg"
+                        alt="Beautiful Landscape"
+                    />
+
+                    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
+                        <span className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold mb-4">
+                            Langit yang biru, gunung yang megah, dan hutan yang
+                            mempesona menanti Anda untuk dijelajahi. Nikmati
+                            keindahan alam yang menakjubkan.
+                        </span>
+                        <a
+                            href="#"
+                            className="btn bg-white text-black font-bold py-2 px-4 rounded hover:scale-100"
+                        >
+                            Lihat Paket
+                        </a>
+                    </div>
                 </div>
             </div>
 

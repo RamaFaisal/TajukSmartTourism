@@ -5,7 +5,7 @@ import { Head } from "@inertiajs/react";
 
 export default function DungKluruk(props) {
     return (
-        <div className="w-full h-full bg-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
+        <div className="w-full h-full bg-color1 flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
             <Head title={props.title} />
             <Navbar />
 
@@ -15,7 +15,7 @@ export default function DungKluruk(props) {
                     src="https://i.pinimg.com/736x/9c/95/75/9c95751f1620f261ccc81d9373c94a0b.jpg"
                     alt="Beautiful Landscape"
                 />
-                <div className="w-full h-auto bg-blue-500 text-white p-4">
+                <div className="w-full h-auto bg-color4 text-white p-4">
                     <div className="px-[68px]">
                         <nav className="text-sm">
                             <span className="text-red-300"> Home</span> /
@@ -31,7 +31,7 @@ export default function DungKluruk(props) {
                 <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
                     <h1 className="text-black text-4xl md:text-6xl lg:text-7xl font-bold font-['Roboto']">
                         Selamat Datang di{" "}
-                        <span className="text-green-500">Dung Kluruk</span>
+                        <span className="text-color4">Dung Kluruk</span>
                     </h1>
                     <p className="text-black text-lg md:text-xl lg:text-2xl font-normal font-['Roboto'] mt-8 lg:indent-16">
                         Dung-Kluruk merupakan taman wisata yang desain untuk

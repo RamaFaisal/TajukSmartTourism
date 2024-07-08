@@ -55,7 +55,7 @@ export default function Navbar() {
                     isScrolled ? "bg-color2 shadow-lg" : "bg-transparent"
                 }`}
             >
-                <div className="navbar">
+                <div className="navbar lg:px-20">
                     <div className="navbar-start">
                         <div className="dropdown" ref={dropdownRef}>
                             <div
@@ -214,6 +214,7 @@ export default function Navbar() {
                         </div>
                         <a className="btn btn-ghost text-xl">LOGO TAJUK</a>
                     </div>
+
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             <li
