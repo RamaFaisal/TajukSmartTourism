@@ -1,23 +1,27 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const VideoCarousel = () => {
     const videos = [
         {
-            url: "https://www.youtube.com/embed/Q63MY4_Mjps?enablejsapi=1",
+            url: "https://www.youtube.com/embed/DN3IuwHTcoc?si=5oe0kOJ9tlrMxNme",
             title: "Video 1",
         },
         {
-            url: "https://www.youtube.com/embed/yiF5Y3Eszgg?enablejsapi=1",
+            url: "https://www.youtube.com/embed/gWzAhfV-k6o?si=lbOkwG7WQQG_plep",
             title: "Video 2",
         },
         {
-            url: "https://www.youtube.com/embed/6rz5LNbQFAQ?enablejsapi=1",
+            url: "https://www.youtube.com/embed/pnSJKx2nLv4?si=pr_eXeyNU9QrUCaz",
             title: "Video 3",
         },
     ];
 
     const [currentVideo, setCurrentVideo] = useState(0);
-    const videoRefs = useRef(videos.map(() => React.createRef()));
+    const videoRefs = useRef([]);
+
+    useEffect(() => {
+        videoRefs.current = videoRefs.current.slice(0, videos.length);
+    }, [videos]);
 
     const handleNextVideo = () => {
         setCurrentVideo((prevVideo) => (prevVideo + 1) % videos.length);
@@ -30,11 +34,11 @@ const VideoCarousel = () => {
     };
 
     return (
-        <div className="relative w-full mt-10 sm:mt-14 md:mt-20 flex justify-center items-center">
-            <div className="w-full p-0 flex justify-center items-center">
-                <div className="w-full flex justify-center overflow-hidden">
+        <div className="relative w-full h-full flex justify-center items-center">
+            <div className="w-full h-full flex justify-center items-center">
+                <div className="w-full h-full flex justify-center overflow-hidden">
                     <div
-                        className="w-full flex justify-center transition-transform duration-500"
+                        className="w-full h-full flex transition-transform duration-500"
                         style={{
                             transform: `translateX(-${currentVideo * 100}%)`,
                         }}
@@ -42,30 +46,30 @@ const VideoCarousel = () => {
                         {videos.map((video, index) => (
                             <div
                                 key={index}
-                                className="w-full flex-shrink-0 flex flex-col items-center"
+                                className="w-full h-[210px] lg:h-[650px] flex-shrink-0 flex flex-col items-center"
                             >
                                 <iframe
-                                    ref={videoRefs.current[index]}
-                                    className="w-full max-w-[1000px] h-full aspect-video rounded-lg"
+                                    ref={(el) =>
+                                        (videoRefs.current[index] = el)
+                                    }
+                                    className="w-full lg:w-[1100px] h-full lg:h-[620px] rounded-lg"
                                     src={video.url}
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
+                                    title={video.title}
                                 ></iframe>
-                                <h1 className="text-center mt-4">
-                                    {video.title}
-                                </h1>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
             <button
-                className="absolute left-4 lg:left-40 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded-full"
+                className="absolute left-1 lg:left-12 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded-full"
                 onClick={handlePrevVideo}
             >
                 <svg
-                    className="w-6 h-6"
+                    className="w-3 h-4 lg:w-6 lg:h-10"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -80,11 +84,11 @@ const VideoCarousel = () => {
                 </svg>
             </button>
             <button
-                className="absolute right-4 lg:right-40 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded-full"
+                className="absolute right-1 lg:right-12 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded-full"
                 onClick={handleNextVideo}
             >
                 <svg
-                    className="w-6 h-6"
+                    className="w-3 h-4 lg:w-6 lg:h-10"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

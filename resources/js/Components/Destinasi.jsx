@@ -1,31 +1,44 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
-import React, { useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 const destinations = [
     {
         title: "DungKluruk",
-        image: "https://i.pinimg.com/564x/14/fd/c0/14fdc0b3ae2d83444c585324609070b8.jpg",
+        lat: -7.396035596890162,
+        lng: 110.45180818000935,
+        image: "/imgDungKluruk/Tulisan.jpg",
         description:
-            "Di tengah gemerlapnya Indonesia, Pulau Jawa berdiri kokoh sebagai pusat kekayaan budaya dan keindahan alam yang memikat.bbbbbbbbbbbbbbbbbbbbbbbbbbb",
-        link: "/DungKluruk"
-    },
-    {
-        title: "Tiamo",
-        image: "https://i.pinimg.com/564x/67/6e/39/676e398b18fc63c87cdb44ffcfde20c3.jpg",
-        description:
-            "Pulau Bali yang eksotis dengan pantainya yang indah dan budayanya yang kaya. bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-    },
-    {
-        title: "G-Pass",
-        image: "https://i.pinimg.com/564x/96/ee/0c/96ee0c7260a3a6b9d0965c25d1ed82a6.jpg",
-        description:
-            "Kepulauan Raja Ampat yang menakjubkan dengan keindahan bawah lautnya. bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "Di tengah gemerlapnya Indonesia, Pulau Jawa berdiri kokoh sebagai pusat kekayaan budaya dan keindahan alam yang memikat.",
+        link: "/Destinasi/DungKluruk",
     },
     {
         title: "Sokowolu",
+        lat: -7.405295566315285,
+        lng: 110.45791989350344,
+        image: "https://i.pinimg.com/564x/96/ee/0c/96ee0c7260a3a6b9d0965c25d1ed82a6.jpg",
+        description:
+            "Kepulauan Raja Ampat yang menakjubkan dengan keindahan bawah lautnya.",
+        link: "/Destinasi/Sokowolu",
+    },
+    {
+        title: "Ngaduman",
+        lat: -7.417724367829767,
+        lng: 110.44035079535077,
         image: "https://i.pinimg.com/564x/60/a8/4d/60a84dfeb33be58cf208d52ea990e580.jpg",
         description:
-            "Gunung Bromo yang megah dengan pemandangan matahari terbit yang spektakuler. bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "Gunung Bromo yang megah dengan pemandangan matahari terbit yang spektakuler.",
+        link: "/Destinasi/Ngaduman",
+    },
+    {
+        title: "G-Pass",
+        lat: -7.415801910724171,
+        lng: 110.44408678000971,
+        image: "https://i.pinimg.com/564x/60/a8/4d/60a84dfeb33be58cf208d52ea990e580.jpg",
+        description:
+            "Gunung Bromo yang megah dengan pemandangan matahari terbit yang spektakuler.",
+        link: "/Destinasi/GPass",
     },
 ];
 
@@ -35,70 +48,159 @@ const truncateDescription = (description, maxLength) => {
 };
 
 const Destinasi = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const maxDescriptionLength = 150; // Set your desired max length
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+    const maxDescriptionLength = 100; // Panjang maksimal deskripsi yang diinginkan
+    const intervalTime = 5000; // Interval untuk otomatis berpindah slide (dalam milidetik)
 
-    const handleButtonClick = (index) => {
-        setCurrentIndex(index);
+    const updateScreenSize = () => {
+        setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    useEffect(() => {
+        updateScreenSize();
+        window.addEventListener("resize", updateScreenSize);
+        return () => window.removeEventListener("resize", updateScreenSize);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(nextSlide, intervalTime);
+        return () => clearInterval(interval); // Membersihkan interval saat komponen dibongkar
+    }, [currentSlide]);
+
+    const resetInterval = () => {
+        clearInterval(interval);
+        setInterval(nextSlide, intervalTime);
+    };
+
+    // Membagi destinasi menjadi grup 1 atau 2 tergantung ukuran layar
+    const itemsPerGroup = isDesktop ? 2 : 1;
+    const groupedDestinations = [];
+    for (let i = 0; i < destinations.length; i += itemsPerGroup) {
+        groupedDestinations.push(destinations.slice(i, i + itemsPerGroup));
+    }
+
+    const nextSlide = () => {
+        setCurrentSlide(
+            (prevSlide) => (prevSlide + 1) % groupedDestinations.length
+        );
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide(
+            (prevSlide) =>
+                (prevSlide - 1 + groupedDestinations.length) %
+                groupedDestinations.length
+        );
     };
 
     return (
-        <div className="bg-color2 w-11/12 lg:max-h-screen max-h-full p-5 rounded-xl border-4 border-black mx-auto my-5">
-            <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2 pb-5 lg:pb-0">
-                    <img
-                        src="https://i.pinimg.com/564x/87/66/00/87660081be9c389e8d309c881f1204aa.jpg"
-                        alt="Hot Air Balloon"
-                        className="rounded-lg w-full h-full"
+        <div className="w-full lg:w-full lg:h-auto rounded-xl mx-auto">
+            {/* Peta Utama */}
+            <div className="relative w-full h-96 mb-10 overflow-hidden z-0 px-3 lg:px-2">
+                <MapContainer
+                    center={[-7.405443964245397, 110.44818385903196]}
+                    zoom={14}
+                    style={{ height: "100%", width: "100%" }}
+                    className="rounded-lg relative overflow-hidden"
+                >
+                    <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     />
-                </div>
-                <div className="md:w-1/2 p-4 flex flex-col bg-gray-800 text-white rounded-lg md:ml-4 gap-7">
-                    <div>
-                        <h4 className="text-5xl font-bold text-center">
-                            {destinations[currentIndex].title}
-                        </h4>
-                        <img
-                            src={destinations[currentIndex].image}
-                            alt={destinations[currentIndex].title}
-                            className="rounded-lg w-full max-h-96 mt-4"
-                        />
-                        <p
-                            className="my-4 text-justify"
-                            style={{ maxHeight: "4.5rem", overflow: "hidden" }}
+                    {destinations.map((destination, index) => (
+                        <Marker
+                            key={index}
+                            position={[destination.lat, destination.lng]}
                         >
-                            {truncateDescription(
-                                destinations[currentIndex].description,
-                                maxDescriptionLength
-                            )}
-                        </p>
-                        <Link
-                            href={destinations[currentIndex].link}
-                            className="mt-2 inline-block w-full text-center bg-white text-black font-semibold py-2 px-4 rounded border border-black hover:bg-black hover:text-white transition duration-300"
+                            <Popup>
+                                <div>
+                                    <h3>{destination.title}</h3>
+                                    <p>
+                                        {truncateDescription(
+                                            destination.description,
+                                            maxDescriptionLength
+                                        )}
+                                    </p>
+                                    <Link
+                                        href={destination.link}
+                                        className="text-blue-500 hover:text-blue-700"
+                                    >
+                                        Lihat Detail
+                                    </Link>
+                                </div>
+                            </Popup>
+                        </Marker>
+                    ))}
+                </MapContainer>
+            </div>
+            {/* Slide */}
+            <div className="relative overflow-hidden w-full">
+                <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                    {groupedDestinations.map((group, groupIndex) => (
+                        <div
+                            key={groupIndex}
+                            className="flex w-full"
+                            style={{ minWidth: "100%" }}
                         >
-                            Lihat Detail
-                        </Link>
-                    </div>
-                    <div className="flex justify-center mt-auto gap-4">
-                        {destinations.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`btn btn-md flex items-center justify-center ${
-                                    currentIndex === index
-                                        ? "bg-black text-white"
-                                        : "bg-white text-black"
-                                }`}
-                                style={{
-                                    height: "10px",
-                                    borderRadius: "10%",
-                                    outline: "none",
-                                }}
-                                onClick={() => handleButtonClick(index)}
-                            >
-                                {index + 1}
-                            </button>
-                        ))}
-                    </div>
+                            {group.map((destination, i) => (
+                                <div
+                                    key={i}
+                                    className={`w-full p-2 ${
+                                        isDesktop ? "lg:w-1/2" : ""
+                                    }`}
+                                >
+                                    <div className="bg-white w-auto justify-center items-center rounded-lg shadow-lg overflow-hidden">
+                                        <img
+                                            src={destination.image}
+                                            alt={destination.title}
+                                            className="w-full h-48 object-cover"
+                                        />
+                                        <div className="p-4 text-center">
+                                            <h3 className="text-lg font-semibold mb-2 font-serif">
+                                                {destination.title}
+                                            </h3>
+                                            <p className="text-gray-700 text-sm font-sans">
+                                                {truncateDescription(
+                                                    destination.description,
+                                                    maxDescriptionLength
+                                                )}
+                                            </p>
+                                            <Link
+                                                href={destination.link}
+                                                className="text-blue-500 hover:text-blue-700 mt-2 block"
+                                            >
+                                                Lihat Detail
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 </div>
+                {/* Tombol Navigasi */}
+                <button
+                    onClick={() => {
+                        prevSlide();
+                        resetInterval();
+                    }}
+                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 left-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+                >
+                    &lt;
+                </button>
+                <button
+                    onClick={() => {
+                        nextSlide();
+                        resetInterval();
+                    }}
+                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 right-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+                >
+                    &gt;
+                </button>
             </div>
         </div>
     );

@@ -23,17 +23,93 @@ Route::get('/Homepage', function() {
     ]);
 });
 
-Route::get('/DungKluruk', function() {
-    return Inertia::render('DungKluruk', [
+// Destinasi
+Route::get('/Destinasi/DungKluruk', function() {
+    return Inertia::render('Destinasi/DungKluruk', [
         'title' => 'Wisata DungKluruk',
         'description' => 'Selamat Datang di Wisata DungKluruk, Tajuk, Getasan'
     ]);
 });
 
-Route::get('/Tiamo', function() {
-    return Inertia::render('Tiamo', [
-        'title' => 'Wisata Tiamo',
-        'description' => 'Selamat Datang di Wisata Tiamo, Tajuk, Getasan'
+Route::get('/Destinasi/Sokowolu', function() {
+    return Inertia::render('Destinasi/Sokowolu', [
+        'title' => 'Wisata Sokowolu',
+        'description' => 'Selamat Datang di Wisata Sokowolu, Tajuk, Getasan'
+    ]);
+});
+
+Route::get('/Destinasi/Ngaduman', function() {
+    return Inertia::render('Destinasi/Ngaduman', [
+        'title' => 'Wisata Edukasi Ngaduman',
+        'description' => 'Selamat Datang di Wisata Edukasi Ngaduman, Tajuk, Getasan'
+    ]);
+});
+
+Route::get('/Destinasi/GPass', function() {
+    return Inertia::render('Destinasi/GPass', [
+        'title' => 'Wisata Gedong Pass',
+        'description' => 'Selamat Datang di Wisata Gedong Pass, Tajuk, Getasan'
+    ]);
+});
+
+// Paket
+Route::get('/Paket', function() {
+    return Inertia::render('Paket', [
+        'title' => 'Paket Wisata',
+        'description' => 'Selamat Datang di Paket Wisata Desa Tajuk'
+    ]);
+});
+
+// Informasi
+Route::get('/Informasi/Berita', function() {
+    return Inertia::render('Informasi/Berita', [
+        'title' => 'Berita Desa',
+        'description' => 'Berita Desa Tajuk'
+    ]);
+});
+
+Route::get('/Informasi/Gallery', function() {
+    return Inertia::render('Informasi/Gallery', [
+        'title' => 'Galeri Desa',
+        'description' => 'Galeri Desa Tajuk'
+    ]);
+});
+
+Route::get('/Informasi/Produk', function() {
+    return Inertia::render('Informasi/Produk', [
+        'title' => 'Produk Desa',
+        'description' => 'Produk Desa'
+    ]);
+});
+
+// Dusun
+Route::get('/Dusun/DsnPulihan', function() {
+    return Inertia::render('Dusun/DsnPulihan', [
+        'title' => 'Profile Dusun Pulihan',
+        'description' => 'Profile Dusun Pulihan Desa Tajuk'
+    ]);
+});
+
+// Tentang Kami
+Route::get('/TentangKami/ProfileDesa', function() {
+    return Inertia::render('TentangKami/ProfileDesa', [
+        'title' => 'Profile Desa Tajuk',
+        'description' => 'Profile Desa Wisata Tajuk'
+    ]);
+});
+
+Route::get('/TentangKami/Geografi', function() {
+    return Inertia::render('TentangKami/Geografi', [
+        'title' => 'Profile Desa Tajuk',
+        'description' => 'Profile Desa Wisata Tajuk'
+    ]);
+});
+
+// Kontak
+Route::get('/Contacts', function() {
+    return Inertia::render('Contacts', [
+        'title' => 'Kontak Kami',
+        'description' => 'Hubungi Kami'
     ]);
 });
 

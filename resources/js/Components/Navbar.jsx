@@ -46,16 +46,16 @@ export default function Navbar() {
         <>
             {isDropdownOpen && (
                 <div
-                    className="fixed inset-0 bg-black opacity-50 z-40"
+                    className="fixed inset-0 bg-white opacity-50 z-40"
                     onClick={() => setDropdownOpen(false)}
                 ></div>
             )}
             <div
                 className={`navbar-main fixed top-0 w-full z-50 shadow-outline transition-colors duration-1 ${
-                    isScrolled ? "bg-color2 shadow-lg" : "bg-transparent"
+                    isScrolled ? "bg-tajuk shadow-lg" : "bg-transparent"
                 }`}
             >
-                <div className="navbar lg:px-20">
+                <div className="navbar lg:px-20 text-black fontFamily-sans">
                     <div className="navbar-start">
                         <div className="dropdown" ref={dropdownRef}>
                             <div
@@ -81,52 +81,55 @@ export default function Navbar() {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className={`menu menu-2xl dropdown-content z-50 shadow w-52 h-screen bg-white ${
+                                className={`menu menu-2xl dropdown-content z-50 shadow w-52 h-screen bg-colorBg ${
                                     isDropdownOpen ? "block" : "hidden"
                                 }`}
-                                style={{ left: "0", top: "4rem" }}
+                                style={{ left: "-1rem", top: "3.5rem" }}
                             >
                                 <li>
-                                    <Link className="font-bold" href="/Homepage">
+                                    <Link
+                                        className="font-bold text-black"
+                                        href="/Homepage"
+                                    >
                                         Home
                                     </Link>
                                 </li>
                                 <li>
                                     <details>
-                                        <summary className="whitespace-normal break-words font-bold">
-                                            Destinasi & Event
+                                        <summary className="whitespace-normal break-words font-bold text-black">
+                                            Destinasi
                                         </summary>
                                         <ul className="p-2">
-                                            <p className="whitespace-normal break-words font-bold">
-                                                Destinasi
-                                            </p>
                                             <li>
-                                                <Link href="/DungKluruk">
+                                                <Link href="/Destinasi/DungKluruk">
                                                     DungKluruk
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="/Tiamo">Tiamo</Link>
+                                                <Link href="/Destinasi/Sokowolu">
+                                                    Sokowolu
+                                                </Link>
                                             </li>
-                                            <p className="font-bold">Event</p>
                                             <li>
-                                                <a
-                                                    className="whitespace-normal break-words"
-                                                    href="#"
-                                                >
-                                                    Pasar Jawi
-                                                </a>
+                                                <Link href="/Destinasi/Ngaduman">
+                                                    Ngaduman
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/Destinasi/GPass">
+                                                    G-Pass
+                                                </Link>
                                             </li>
                                         </ul>
                                     </details>
                                 </li>
                                 <li>
-                                    <a
+                                    <Link
                                         className="whitespace-normal break-words font-bold"
-                                        href="#"
+                                        href="/Paket"
                                     >
                                         Paket
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <details>
@@ -137,26 +140,26 @@ export default function Navbar() {
                                             <li>
                                                 <a
                                                     className="whitespace-normal break-words"
-                                                    href="#"
+                                                    href="/Informasi/Berita"
                                                 >
                                                     Berita
                                                 </a>
                                             </li>
                                             <li>
-                                                <a
+                                                <Link
                                                     className="whitespace-normal break-words"
-                                                    href="#"
+                                                    href="/Informasi/Gallery"
                                                 >
                                                     Galeri
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a
+                                                <Link
                                                     className="whitespace-normal break-words"
-                                                    href="#"
+                                                    href="/Informasi/Produk"
                                                 >
                                                     Produk
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </details>
@@ -168,63 +171,58 @@ export default function Navbar() {
                                         </summary>
                                         <ul className="p-2">
                                             <li>
-                                                <a
+                                                <Link
                                                     className="whitespace-normal break-words px-4"
-                                                    href="#"
+                                                    href="/TentangKami/ProfileDesa"
                                                 >
                                                     <span>Profil Desa</span>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
                                                 <a
                                                     className="whitespace-normal break words"
-                                                    href="#"
-                                                >
-                                                    Potensi Desa
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    className="whitespace-normal break words"
-                                                    href="#"
+                                                    href="/TentangKami/Geografi"
                                                 >
                                                     Geografi
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    className="whitespace-normal break words"
-                                                    href="#"
-                                                >
-                                                    Peta Tajuk
                                                 </a>
                                             </li>
                                         </ul>
                                     </details>
                                 </li>
                                 <li>
-                                    <a
+                                    <Link
                                         className="whitespace-normal break-words font-bold"
-                                        href="#"
+                                        href="/Contacts"
                                     >
                                         Kontak Kami
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-xl">LOGO TAJUK</a>
+                        <Link className="text-xl" href="/Homepage">
+                            <img
+                                src="/Logo.png"
+                                alt="Logo Tajuk"
+                                className="h-8 md:h-10 lg:h-12"
+                            />
+                        </Link>
                     </div>
 
-                    <div className="navbar-center hidden lg:flex">
+                    <div className="navbar-center hidden text-white lg:flex font-serif">
                         <ul className="menu menu-horizontal px-1">
                             <li
-                                className={`hover:text-white font-bold ${
-                                    hoveredMenu === "home" ? "text-white" : ""
+                                className={`font-bold ${
+                                    hoveredMenu === "home" ? "" : ""
                                 }`}
                                 onMouseEnter={() => setHoveredMenu("home")}
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
-                                <Link href="/Homepage">Home</Link>
+                                <Link
+                                    className="hover:bg-putih hover:text-black"
+                                    href="/Homepage"
+                                >
+                                    Home
+                                </Link>
                             </li>
 
                             <li
@@ -237,51 +235,58 @@ export default function Navbar() {
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
                                 <details open={hoveredMenu === "destinasi"}>
-                                    <summary className="hover:text-white font-bold">
-                                        Destinasi & Event
+                                    <summary className="hover:text-black hover:bg-putih font-bold">
+                                        Destinasi
                                     </summary>
-                                    <ul className="w-40 top-5 left-5 bg-green-100 rounded-none">
-                                        <p className="font-bold py-2 px-4 text-black">
-                                            Destinasi
-                                        </p>
-                                        <ul className="text-black">
-                                            <li>
-                                                <Link href="/DungKluruk">
-                                                    - DungKluruk
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/Tiamo">
-                                                    - Tiamo
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                        <p className="font-bold py-2 px-4 text-black">
-                                            Event
-                                        </p>
-                                        <ul className="text-black">
-                                            <li>
-                                                <a
-                                                    className="whitespace-normal break-words"
-                                                    href="#"
-                                                >
-                                                    - Pasar Jawi
-                                                </a>
-                                            </li>
-                                        </ul>
+                                    <ul className="w-auto top-5 left-5 bg-green-100 rounded-none text-black">
+                                        <li>
+                                            <Link
+                                                className="hover:bg-putih"
+                                                href="/Destinasi/DungKluruk"
+                                            >
+                                                DungKluruk
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="hover:bg-putih"
+                                                href="/Destinasi/Sokowolu"
+                                            >
+                                                Sokowolu
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="hover:bg-putih"
+                                                href="/Destinasi/Ngaduman"
+                                            >
+                                                Ngaduman
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="hover:bg-putih"
+                                                href="/Destinasi/GPass"
+                                            >
+                                                G-Pass
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </details>
                             </li>
                             <li
+                                className={`font-bold ${
+                                    hoveredMenu === "paket" ? "text-white" : ""
+                                }`}
                                 onMouseEnter={() => setHoveredMenu("paket")}
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
-                                <a
-                                    href="#"
-                                    className="font-bold hover:text-white"
+                                <Link
+                                    className="hover:bg-putih hover:text-black"
+                                    href="/Paket"
                                 >
                                     Paket
-                                </a>
+                                </Link>
                             </li>
                             <li
                                 className={` ${
@@ -293,33 +298,33 @@ export default function Navbar() {
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
                                 <details open={hoveredMenu === "informasi"}>
-                                    <summary className="whitespace-normal break-words font-bold">
+                                    <summary className="whitespace-normal break-words font-bold hover:bg-putih hover:text-black">
                                         Informasi
                                     </summary>
                                     <ul className="w-auto bg-green-100 top-5 left-5 rounded-none text-black">
                                         <li>
                                             <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
+                                                className="hover:bg-putih whitespace-normal break-words"
+                                                href="/Informasi/Berita"
                                             >
                                                 Berita
                                             </a>
                                         </li>
                                         <li>
-                                            <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
+                                            <Link
+                                                className="hover:bg-putih whitespace-normal break-words"
+                                                href="/Informasi/Gallery"
                                             >
                                                 Galeri
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
+                                            <Link
+                                                className="hover:bg-putih whitespace-normal break-words"
+                                                href="/Informasi/Produk"
                                             >
                                                 Produk
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </details>
@@ -337,40 +342,24 @@ export default function Navbar() {
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
                                 <details open={hoveredMenu === "tentangKami"}>
-                                    <summary className="font-bold hover:text-white">
+                                    <summary className="hover:bg-putih hover:text-black font-bold">
                                         Tentang Kami
                                     </summary>
-                                    <ul className="w-40 top-5 left-5 bg-green-100 rounded-none text-black">
+                                    <ul className="w-auto top-5 left-5 bg-green-100 rounded-none text-black">
                                         <li>
-                                            <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
+                                            <Link
+                                                className="hover:bg-putih whitespace-normal break-words"
+                                                href="/TentangKami/ProfileDesa"
                                             >
                                                 Profil Desa
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
                                             <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
-                                            >
-                                                Potensi Desa
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
+                                                className="hover:bg-putih whitespace-normal break-words"
+                                                href="/TentangKami/Geografi"
                                             >
                                                 Geografi
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                className="whitespace-normal break-words"
-                                                href="#"
-                                            >
-                                                Peta Tajuk
                                             </a>
                                         </li>
                                     </ul>
@@ -382,12 +371,12 @@ export default function Navbar() {
                                 }
                                 onMouseLeave={() => setHoveredMenu(null)}
                             >
-                                <a
-                                    className="font-bold hover:text-white"
-                                    href="#"
+                                <Link
+                                    className="hover:bg-putih font-bold hover:text-black"
+                                    href="/Contacts"
                                 >
                                     Kontak Kami
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

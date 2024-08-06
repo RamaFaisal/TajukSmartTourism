@@ -5,10 +5,20 @@ export default function Article() {
 
     const articles = [
         {
+            image: "/imgDungKluruk/Tulisan.jpg",
             title: "Artikel Tajuk",
             text: "Dari pesisir pantai yang memikat hingga pegunungan yang megah, Pulau Jawa menawarkan pesona alam yang tak terlupakan. Air terjun yang menawan, danau yang tenang, dan kebun-kebun hijau yang subur menjadi saksi bisu keajaiban alamnya.",
         },
-        // Tambahkan lebih banyak artikel jika diperlukan
+        {
+            image: "/mnt/data/image.png",
+            title: "Artikel Smart",
+            text: "Dari pesisir pantai yang memikat hingga pegunungan yang megah, Pulau Jawa menawarkan pesona alam yang tak terlupakan. Air terjun yang menawan, danau yang tenang, dan kebun-kebun hijau yang subur menjadi saksi bisu keajaiban alamnya.",
+        },
+        {
+            image: "/mnt/data/image.png",
+            title: "Artikel Tourism",
+            text: "Dari pesisir pantai yang memikat hingga pegunungan yang megah, Pulau Jawa menawarkan pesona alam yang tak terlupakan. Air terjun yang menawan, danau yang tenang, dan kebun-kebun hijau yang subur menjadi saksi bisu keajaiban alamnya.",
+        },
     ];
 
     const nextArticle = () => {
@@ -22,8 +32,8 @@ export default function Article() {
     };
 
     return (
-        <div className="w-full h-full bg-color1 flex items-center justify-center py-8">
-            <div className="relative bg-color2 p-6 border border-gray-300 rounded-md shadow-md max-w-4xl w-full">
+        <div className="w-full h-full bg-transparent flex items-center justify-center p-4 lg:p-0 py-8">
+            <div className="relative bg-white p-6 border border-gray-300 rounded-md shadow-md max-w-6xl w-full lg:w-[1090px] lg:h-[335px]">
                 <div className="absolute top-4 right-4 flex space-x-2">
                     <button
                         onClick={prevArticle}
@@ -41,16 +51,16 @@ export default function Article() {
                 <div className="flex flex-col lg:flex-row">
                     <div className="lg:w-1/2 lg:pr-4 mb-4 lg:mb-0">
                         <div className="text-red-600 text-lg font-bold underline cursor-pointer mb-4">
-                            Lihat semua
+                            Lihat Semua
                         </div>
-                        <p className="text-black text-base">
+                        <p className="text-black lg:text-xl text-base">
                             {articles[currentArticle].text}
                         </p>
-                        <div className="mt-4 text-white text-sm">
+                        <div className="mt-4 text-black text-sm">
                             {articles[currentArticle].title}
                         </div>
                         <div className="mt-4 border-t border-gray-400 pt-2">
-                            <div className="text-white text-lg font-bold cursor-pointer flex items-center">
+                            <div className="text-black text-lg font-bold cursor-pointer flex items-center">
                                 Baca Selengkapnya
                                 <span className="ml-2">&#8594;</span>
                             </div>
@@ -59,7 +69,7 @@ export default function Article() {
                     <div className="lg:w-1/2">
                         <img
                             className="w-full h-auto rounded-md"
-                            src="https://via.placeholder.com/384x422"
+                            src={articles[currentArticle].image}
                             alt="Article"
                         />
                     </div>
