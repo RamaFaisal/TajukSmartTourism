@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\ArticleController;
+use App\Models\Article;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +69,32 @@ Route::get('/Informasi/Berita', function() {
     ]);
 });
 
+// Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+
+// public function show($id)
+// {
+//     $article = Article::findOrFail($id);
+//     return Inertia::render('BeritaDetail', [
+//         'article' => $article
+//     ]);
+// }
+
+Route::get('/Informasi/Berita/{id}' ,function($id){
+    $article = Article::findOrFail($id);
+    return Inertia::render('Informasi/BeritaDetail', [
+        'article' => [
+            'id' => $article->id,
+            'title' => $article->title,
+            'content' => $article->content,
+            'category' => $article->category,
+            'image' => $article->image ? url('storage/' . $article->image) : null,
+            'is_published' => $article->is_published,
+            'created_at' => $article->created_at,
+            'updated_at' => $article->updated_at,
+        ]
+    ]);
+});
+
 Route::get('/Informasi/Gallery', function() {
     return Inertia::render('Informasi/Gallery', [
         'title' => 'Galeri Desa',
@@ -114,10 +141,7 @@ Route::get('/Contacts', function() {
 });
 
 Route::get('/', function() {
-    return Inertia::render('coba', [
-        'title' => 'Wisata DungKluruk',
-        'description' => 'Selamat Datang di Wisata DungKluruk, Tajuk, Getasan'
-    ]);
+    return redirect('/Homepage');
 });
 
 Route::get('/welcome', function () {
@@ -130,13 +154,16 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('articles', ArticleController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
