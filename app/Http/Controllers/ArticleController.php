@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Article;
@@ -7,9 +6,17 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::all();
+        // Menangani pencarian berdasarkan judul
+        $search = $request->input('search');
+
+        $articles = Article::query()
+                ->when($search, function ($query, $search) {
+                    return $query->where('title', 'like', '%' . $search . '%');
+                })
+                ->get();
+
         return view('articles.index', compact('articles'));
     }
 

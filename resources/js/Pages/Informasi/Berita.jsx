@@ -47,7 +47,10 @@ export default function Gallery(props) {
                                 <div className="p-4">
                                     <h2 className="text-xl font-bold mb-2">{article.title}</h2>
                                     <p className="text-gray-600 mb-2">{new Date(article.created_at).toLocaleDateString()}</p>
-                                    <p className="text-gray-600 mb-4">{article.content.substring(0, 100)}...</p>
+                                    <div
+                                        className="text-gray-600 mb-4"
+                                        dangerouslySetInnerHTML={{ __html: article.content.substring(0, 100) + '...' }}
+                                    />
                                     <Link href={`/Informasi/Berita/${article.id}`} className="text-blue-500 hover:underline">Read more</Link>
                                 </div>
                             </div>
