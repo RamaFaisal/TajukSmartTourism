@@ -29,7 +29,7 @@ export default function Homepage(props) {
                 <Carousel />
             </div>
 
-            <div className="relative w-full bg-bgTajuk text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
+            <div className="relative w-full bg-putih text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
                 <div className="relative flex flex-col items-center md:items-start md:flex-row pt-10 lg:pt-32 lg:px-32 z-10">
                     <div className="text-4xl lg:text-5xl font-bold font-serif text-center md:text-right mb-8 md:mb-0">
                         <div>DIMENSI BARU</div>

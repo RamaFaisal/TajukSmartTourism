@@ -28,7 +28,7 @@ export default {
                 bgTajuk: "#e8ffcc",
                 tajuk: "#7fb53d",
                 hijau: "#4CAF50", //Hijau
-                putih: "#FFFFFF", //Putih
+                putih: "#f2fde4", //Putih
                 biruMuda: "#81D4FA", //Biru Muda
                 coklat: "#8D6E63", //Coklat
                 hijauGelap: "#388E3C", //Hijau Gelap
