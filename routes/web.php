@@ -158,9 +158,8 @@ Route::get('/Contacts', function() {
 // Route::get('/', function() {
 //     return redirect('/Homepage');
 // });
+ // >>>>>>> main
 
-// =======
-// >>>>>>> main
 Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

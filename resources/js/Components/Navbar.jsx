@@ -89,7 +89,7 @@ export default function Navbar() {
                                 <li>
                                     <Link
                                         className="font-bold text-black"
-                                        href="/Homepage"
+                                        href="/"
                                     >
                                         Home
                                     </Link>
@@ -199,7 +199,7 @@ export default function Navbar() {
                                 </li>
                             </ul>
                         </div>
-                        <Link className="text-xl" href="/Homepage">
+                        <Link className="text-xl" href="/">
                             <img
                                 src="/Logo.png"
                                 alt="Logo Tajuk"
@@ -219,7 +219,7 @@ export default function Navbar() {
                             >
                                 <Link
                                     className="hover:bg-putih hover:text-black"
-                                    href="/Homepage"
+                                    href="/"
                                 >
                                     Home
                                 </Link>

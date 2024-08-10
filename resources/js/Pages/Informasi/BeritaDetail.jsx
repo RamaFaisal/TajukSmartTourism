@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Head, usePage } from "@inertiajs/react";
-import Navbar from "@/Components/NavbarBerita";
+import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 
 const BeritaDetail = ({ article }) => {
