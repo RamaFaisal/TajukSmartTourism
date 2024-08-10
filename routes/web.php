@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\ArticleController;
+use App\Models\Article;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/Homepage', function() {
+Route::get('/', function() {
     return Inertia::render('Homepage', [
         'title' => 'Tajuk Smart Tourism',
         'description' => 'Selamat Datang di TST'
@@ -65,6 +66,32 @@ Route::get('/Informasi/Berita', function() {
     return Inertia::render('Informasi/Berita', [
         'title' => 'Berita Desa',
         'description' => 'Berita Desa Tajuk'
+    ]);
+});
+
+// Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+
+// public function show($id)
+// {
+//     $article = Article::findOrFail($id);
+//     return Inertia::render('BeritaDetail', [
+//         'article' => $article
+//     ]);
+// }
+
+Route::get('/Informasi/Berita/{id}' ,function($id){
+    $article = Article::findOrFail($id);
+    return Inertia::render('Informasi/BeritaDetail', [
+        'article' => [
+            'id' => $article->id,
+            'title' => $article->title,
+            'content' => $article->content,
+            'category' => $article->category,
+            'image' => $article->image ? url('storage/' . $article->image) : null,
+            'is_published' => $article->is_published,
+            'created_at' => $article->created_at,
+            'updated_at' => $article->updated_at,
+        ]
     ]);
 });
 
@@ -127,6 +154,13 @@ Route::get('/Contacts', function() {
     ]);
 });
 
+// <<<<<<< feature/article
+// Route::get('/', function() {
+//     return redirect('/Homepage');
+// });
+
+// =======
+// >>>>>>> main
 Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -137,13 +171,16 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('articles', ArticleController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

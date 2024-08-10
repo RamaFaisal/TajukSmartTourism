@@ -108,6 +108,15 @@ const Footer = () => {
                         >
                             Paket
                         </a>
+                        <a
+                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
+                            href="/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Login
+                        </a>
+
                     </div>
                 </div>
 
