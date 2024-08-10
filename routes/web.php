@@ -17,7 +17,7 @@ use App\Models\Article;
 |
 */
 
-Route::get('/Homepage', function() {
+Route::get('/', function() {
     return Inertia::render('Homepage', [
         'title' => 'Tajuk Smart Tourism',
         'description' => 'Selamat Datang di TST'
@@ -110,10 +110,24 @@ Route::get('/Informasi/Produk', function() {
 });
 
 // Dusun
-Route::get('/Dusun/DsnPulihan', function() {
-    return Inertia::render('Dusun/DsnPulihan', [
+Route::get('/Dusun/DusunPulihan', function() {
+    return Inertia::render('Dusun/DusunPulihan', [
         'title' => 'Profile Dusun Pulihan',
         'description' => 'Profile Dusun Pulihan Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunTajuk', function() {
+    return Inertia::render('Dusun/DusunTajuk', [
+        'title' => 'Profile Dusun Tajuk',
+        'description' => 'Profile Dusun Tajuk Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunCingklok', function() {
+    return Inertia::render('Dusun/DusunCingklok', [
+        'title' => 'Profile Dusun Cingklok',
+        'description' => 'Profile Dusun Cingklok Desa Tajuk'
     ]);
 });
 
@@ -140,10 +154,13 @@ Route::get('/Contacts', function() {
     ]);
 });
 
-Route::get('/', function() {
-    return redirect('/Homepage');
-});
+// <<<<<<< feature/article
+// Route::get('/', function() {
+//     return redirect('/Homepage');
+// });
 
+// =======
+// >>>>>>> main
 Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

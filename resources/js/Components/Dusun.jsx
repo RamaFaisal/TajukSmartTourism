@@ -44,25 +44,25 @@ const Dusun = () => {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Pulihan",
-            link: "/Dusun/DsnPulihan",
+            link: "/Dusun/DusunPulihan",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Tajuk",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunTajuk",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Puyang",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunPuyang",
         },
         {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Cingklok",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunCingklok",
         },
         {
             imageUrl:
