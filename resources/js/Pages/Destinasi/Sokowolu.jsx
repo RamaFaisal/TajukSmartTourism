@@ -17,7 +17,7 @@ export default function Sokowolu(props) {
                 />
             </div>
 
-            <div className="w-full h-full bg-bgTajuk text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
+            <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
                         <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">

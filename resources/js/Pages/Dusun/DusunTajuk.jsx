@@ -6,7 +6,7 @@ import Dusun from "@/Components/Dusun";
 
 export default function DusunTajuk(props) {
     return (
-        <div className="w-full h-full bg-color1 text-xs lg:text-base flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
+        <div className="w-full h-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
             <Head title={props.title} />
             <Navbar />
 
@@ -23,7 +23,7 @@ export default function DusunTajuk(props) {
                 </div>
             </div>
 
-            <div className="w-full px-8 md:px-40 text-justify space-y-6 leading-relaxed">
+            <div className="w-full px-8 md:px-48 text-justify space-y-6 leading-relaxed">
                 <p>
                     Bayangkan betapa seru dan menyenangkannya hidup di{" "}
                     <strong>Dusun Tajuk</strong> yang terkenal dengan

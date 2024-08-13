@@ -12,7 +12,7 @@ import {
 const Footer = () => {
     return (
         <div className="w-full font-sans">
-            <footer className="flex text-white flex-wrap justify-between bg-tajuk">
+            <footer className="flex text-white flex-wrap justify-between bg-hijauNew">
                 <div className="flex flex-col items-start w-full md:w-1/3 p-5 lg:pl-20">
                     <div className="flex flex-col justify-center items-center lg:items-start lg:justify-start w-full mb-10 lg:mb-2">
                         <img

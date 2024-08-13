@@ -15,7 +15,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Lato", ...defaultTheme.fontFamily.sans],
+                sans: ["Poppins", ...defaultTheme.fontFamily.sans],
                 serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
             },
             colors: {
@@ -33,6 +33,8 @@ export default {
                 coklat: "#8D6E63", //Coklat
                 hijauGelap: "#388E3C", //Hijau Gelap
                 biruTua: "#64B5F6",
+                // Warna Terbaru
+                hijauNew: "#115311",
             },
             backgroundImage: {
                 imgBg: "url('/imgBg1.jpg')",

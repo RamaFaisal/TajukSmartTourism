@@ -5,7 +5,7 @@ import Dusun from "@/Components/Dusun";
 
 export default function DusunNgaduman(prop) {
     return (
-        <div className="w-full h-full bg-color1 text-xs lg:text-base flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
+        <div className="w-full h-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
             <Navbar />
 
             <div className="w-full relative">
@@ -94,14 +94,27 @@ export default function DusunNgaduman(prop) {
                     kunjungi Dusun Pulihan dan rasakan pengalaman untuk memetik
                     sayur sendiri.
                 </p>
-                <a>
+            </div>
+
+            <div className="w-[370px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
+                <img
+                    className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
+                    src="/Paket.jpg"
+                    alt="Beautiful Landscape"
+                />
+
+                <div className="absolute top-0 left-0 w-full h-auto lg:h-44 flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
+                    <span className="text-white text-center text-xs lg:text-2xl mb-4 font-serif">
+                        Langit yang biru, gunung yang megah, dan hutan yang
+                        mempesona menanti Anda untuk dijelajahi
+                    </span>
                     <Link
                         href="/Paket"
-                        className="mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300"
+                        className="btn bg-white text-black text-xs py-1 px-2 sm:text-sm sm:py-2 sm:px-4 rounded hover:scale-105 transition duration-200 font-sans"
                     >
-                        Reservasi Sekarang
+                        Lihat Paket
                     </Link>
-                </a>
+                </div>
             </div>
 
             <div className="w-full h-full">

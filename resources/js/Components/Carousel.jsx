@@ -55,8 +55,12 @@ const Carousel = () => {
             {...handlers}
             className="fixed w-full h-full flex flex-col overflow-hidden"
         >
+            {/* Background hitam yang menutupi carousel */}
+            <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+            {/* Carousel */}
             <div
-                className="flex transition-transform duration-1000 ease-in-out"
+                className="flex transition-transform duration-1000 ease-in-out z-0"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
                 {images.map((image, index) => (

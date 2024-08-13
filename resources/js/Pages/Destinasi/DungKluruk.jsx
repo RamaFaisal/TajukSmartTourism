@@ -24,7 +24,7 @@ export default function DungKluruk(props) {
                             Selamat Datang di{" "}
                             <span className="text-tajuk">Dung Kluruk</span>
                         </h1>
-                        <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16">
+                        <p className="text-black text-lg md:text-xl font-normal mt-4 md:indent-16">
                             Dung-Kluruk merupakan taman wisata yang desain untuk
                             wisata keluarga. Terdapat taman, embung dan aneka
                             bermain untuk anak. Disamping taman dung-kluruk
@@ -88,7 +88,7 @@ export default function DungKluruk(props) {
                     </div>
                 </div>
 
-                <div className="w-full px-8 lg:px-40 bg-transparent font-sans text-black">
+                <div className="w-full px-8 lg:px-40 bg-transparent font-sans text-black text-xl">
                     <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20 font-serif text-tajuk">
                         Dungkluruk
                     </h1>

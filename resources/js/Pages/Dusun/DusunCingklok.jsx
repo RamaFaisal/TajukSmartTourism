@@ -6,7 +6,7 @@ import Dusun from "@/Components/Dusun";
 
 export default function DusunCingklok(props) {
     return (
-        <div className="w-full h-full bg-color1 text-xs lg:text-base flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
+        <div className="w-full h-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25">
             <Head title={props.title} />
             <Navbar />
 

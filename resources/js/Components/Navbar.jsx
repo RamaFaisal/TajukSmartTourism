@@ -52,7 +52,7 @@ export default function Navbar() {
             )}
             <div
                 className={`navbar-main fixed top-0 w-full z-50 shadow-outline transition-colors duration-1 ${
-                    isScrolled ? "bg-tajuk shadow-lg" : "bg-transparent"
+                    isScrolled ? "bg-hijauNew shadow-lg" : "bg-hijauNew opacity-85 shadow-lg"
                 }`}
             >
                 <div className="navbar lg:px-20 text-black fontFamily-sans">
@@ -69,7 +69,7 @@ export default function Navbar() {
                                     className="h-5 w-5"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    stroke="currentColor"
+                                    stroke="white"
                                 >
                                     <path
                                         strokeLinecap="round"

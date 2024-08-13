@@ -131,6 +131,13 @@ Route::get('/Dusun/DusunCingklok', function() {
     ]);
 });
 
+Route::get('/Dusun/DusunNgaduman', function() {
+    return Inertia::render('Dusun/DusunNgaduman', [
+        'title' => 'Profile Dusun Ngaduman',
+        'description' => 'Profile Dusun Ngaduman Desa Tajuk'
+    ]);
+});
+
 // Tentang Kami
 Route::get('/TentangKami/ProfileDesa', function() {
     return Inertia::render('TentangKami/ProfileDesa', [

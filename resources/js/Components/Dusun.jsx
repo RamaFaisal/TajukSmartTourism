@@ -92,7 +92,7 @@ const Dusun = () => {
             imageUrl:
                 "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
             title: "Dusun Ngaduman",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunNgaduman",
         },
         {
             imageUrl:
