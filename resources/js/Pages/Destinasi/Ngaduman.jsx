@@ -22,7 +22,7 @@ export default function Ngaduman(props) {
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
                         <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
                             Selamat Datang di{" "}
-                            <span className="text-tajuk">Ngaduman</span>
+                            <span className="text-hijauNew">Ngaduman</span>
                         </h1>
                         <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16">
                             Dung-Kluruk merupakan taman wisata yang desain untuk
@@ -88,8 +88,8 @@ export default function Ngaduman(props) {
                     </div>
                 </div>
 
-                <div className="w-full px-8 lg:px-40 bg-transparent font-sans text-black">
-                    <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20 font-serif text-tajuk">
+                <div className="w-full px-8 lg:px-40 bg-transparent font-sans text-black text-xl">
+                    <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20 font-serif text-hijauNew">
                         Ngaduman
                     </h1>
                     <img
@@ -105,6 +105,8 @@ export default function Ngaduman(props) {
                         <br />
                         Lokasi: -
                     </p>
+                    <br />
+
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Harga Tiket Masuk:
                     </h2>
@@ -113,6 +115,7 @@ export default function Ngaduman(props) {
                         <li>Anak-anak (3-12 tahun): Rp 50.000</li>
                         <li>Balita (di bawah 3 tahun): Gratis</li>
                     </ul>
+                    <br />
 
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Tentang Destinasi:
@@ -129,6 +132,8 @@ export default function Ngaduman(props) {
                         pengunjung yang ingin menikmati keindahan alam yang
                         murni.
                     </p>
+                    <br />
+
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Daya Tarik Utama:
                     </h2>
@@ -164,6 +169,8 @@ export default function Ngaduman(props) {
                             setempat.
                         </li>
                     </ul>
+                    <br />
+                    
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Fasilitas:
                     </h2>
