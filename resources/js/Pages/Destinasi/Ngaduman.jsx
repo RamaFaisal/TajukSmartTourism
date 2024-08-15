@@ -22,7 +22,7 @@ export default function Ngaduman(props) {
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
                         <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
                             Selamat Datang di{" "}
-                            <span className="text-hijauNew">Ngaduman</span>
+                            <span className="text-hijauNew underline">Ngaduman</span>
                         </h1>
                         <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16">
                             Dung-Kluruk merupakan taman wisata yang desain untuk

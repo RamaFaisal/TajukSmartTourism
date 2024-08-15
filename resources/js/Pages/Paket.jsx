@@ -11,10 +11,21 @@ export default function Paket(props) {
             <Head title={props.title} />
             <Navbar />
             <div className="relative w-full h-[490px] sm:h-[500px] md:h-[600px] lg:h-[710px] overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                    <div className="text-center text-white font-serif">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 px-10">
+                            Pengalaman Berkesan Telah Menunggu Anda
+                        </h1>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            Nikmati keindahan alam dan budaya lokal yang
+                            mempesona
+                        </p>
+                    </div>
+                </div>
                 <Carousel />
             </div>
 
-            <div className="relative w-full bg-bgTajuk text-black text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 rounded-t-[20px] lg:rounded-t-[50px]">
+            <div className="relative w-full bg-white text-black text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 rounded-t-[20px] lg:rounded-t-[150px]">
                 <div className="w-full max-w-[1440px] flex flex-col items-center px-4 md:px-8 lg:px-16">
                     <div className="w-full max-w-[1127px] text-center">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold pt-10 lg:pt-32 font-serif">
@@ -113,7 +124,6 @@ export default function Paket(props) {
                     <div className="w-full md:w-[900px] lg:w-[1000px] h-full lg:mt-10">
                         <Destinasi />
                     </div>
-
                 </div>
                 <Footer />
             </div>

@@ -94,11 +94,11 @@ export default function Gallery(props) {
             <Head title={props.title} />
             <Navbar />
 
-            <div className="relative w-full h-[490px] sm:h-[500px] md:h-[600px] lg:h-[710px] overflow-hidden">
+            <div className="relative w-full h-[300px] sm:h-[300px] md:h-[500px] overflow-hidden">
                 <Carousel />
             </div>
 
-            <div className="relative w-full bg-bgTajuk text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
+            <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[150px]">
                 <div className="w-full max-w-[1127px] text-center px-4 md:px-8">
                     <h1 className="text-black font-serif text-3xl md:text-4xl lg:text-[55px] font-bold pt-10 lg:pt-32">
                         Berbagai Galeri Desa Tajuk

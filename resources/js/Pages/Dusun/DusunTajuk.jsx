@@ -17,7 +17,7 @@ export default function DusunTajuk(props) {
                     alt="Pemandangan Dusun Pulihan"
                 />
                 <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 w-full text-center">
-                    <h1 className="lg:text-4xl text-3xl font-serif font-bold">
+                    <h1 className="lg:text-4xl text-xl font-serif font-bold">
                         Harmoni Keindahan dan Keseruan di Dusun Tajuk
                     </h1>
                 </div>

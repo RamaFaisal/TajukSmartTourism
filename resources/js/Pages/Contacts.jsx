@@ -5,9 +5,9 @@ import { Head, Link } from "@inertiajs/react";
 
 export default function Contacts(props) {
     return (
-        <div className="w-full h-full bg-bgTajuk flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-0">
+        <div className="w-full h-full bg-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-0">
             <Head title={props.title} />
-            <div className="bg-tajuk w-full h-[70px]">
+            <div className="bg-white w-full h-[70px]">
                 <Navbar />
             </div>
 
@@ -15,7 +15,7 @@ export default function Contacts(props) {
                 <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:mr-8 font-serif">
                     <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold">
                         Butuh Bantuan? Jangan ragu untuk{" "}
-                        <span className="text-color4">Menghubungi kami!</span>
+                        <span className="text-hijauNew">Menghubungi kami!</span>
                     </h1>
                 </div>
             </div>
@@ -77,7 +77,7 @@ export default function Contacts(props) {
                         </div>
                         <button
                             type="submit"
-                            className="bg-tajuk rounded-[10px] p-3 text-center cursor-pointer text-white text-xl w-full"
+                            className="bg-hijauNew rounded-[10px] p-3 text-center cursor-pointer text-white text-xl w-full"
                         >
                             Kirim
                         </button>
