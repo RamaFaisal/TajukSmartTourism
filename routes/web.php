@@ -61,6 +61,13 @@ Route::get('/Paket', function() {
     ]);
 });
 
+Route::get('/Paket/Family', function() {
+    return Inertia::render('Paket/Family', [
+        'title' => 'Paket Wisata',
+        'description' => 'Paket Family'
+    ]);
+});
+
 // Informasi
 Route::get('/Informasi/Berita', function() {
     return Inertia::render('Informasi/Berita', [

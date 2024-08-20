@@ -47,66 +47,44 @@ export default function Paket(props) {
                         </h2>
                         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <h3 className="text-xl font-bold">Silver</h3>
-                                <p className="text-lg font-bold">
-                                    Rp 30.000/orang
-                                </p>
-                                <button className="w-full h-12 mt-4 bg-zinc-300 rounded-[50px] text-black text-lg font-bold">
-                                    Pilih paket
-                                </button>
-                                <ul className="text-base font-semibold mt-2 space-y-2">
-                                    <li>Transportasi lokal</li>
-                                    <li>
-                                        Tiket masuk ke Dung Klorok dan Tiamo
-                                    </li>
-                                    <li>Pemandu wisata</li>
-                                    <li>Makan siang lokal</li>
-                                    <li>Air mineral</li>
-                                </ul>
+                                <a href="/Paket/Family">
+                                    <img
+                                        src="imgPaket/halfDay.jpg"
+                                        alt="Paket Pelajar - Fild Trip One Day"
+                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <h3 className="text-xl font-bold font-sans mt-2">
+                                        Paket Pelajar - Fild Trip One Day
+                                    </h3>
+                                </a>
                             </div>
+
                             <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <h3 className="text-xl font-bold">Gold</h3>
+                                <h3 className="text-xl font-bold">
+                                    Paket 2 hari
+                                </h3>
                                 <p className="text-lg font-bold">
-                                    Rp 50.000/orang
+                                    Rp 250.000/orang
                                 </p>
-                                <button className="w-full h-12 mt-4 bg-yellow-400 rounded-[50px] text-black text-lg font-bold">
-                                    Pilih paket
-                                </button>
-                                <ul className="text-base font-semibold mt-2 space-y-2">
-                                    <li>Transportasi lokal</li>
-                                    <li>
-                                        Tiket masuk ke Dung Klorok dan Tiamo
-                                    </li>
-                                    <li>Pemandu wisata</li>
-                                    <li>Makan siang lokal</li>
-                                    <li>Air mineral</li>
-                                    <li>Trekking alam</li>
-                                    <li>Pertemuan budaya lokal</li>
-                                    <li>Sesi foto alam</li>
-                                </ul>
+                                <a href="http://wa.me/6283831597088">
+                                    <button className="w-full h-12 mt-4 bg-yellow-400 rounded-[50px] text-black text-lg font-bold">
+                                        Pilih paket
+                                    </button>
+                                </a>
                             </div>
+
                             <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <h3 className="text-xl font-bold">Platinum</h3>
+                                <h3 className="text-xl font-bold">
+                                    Paket 3 hari
+                                </h3>
                                 <p className="text-lg font-bold">
-                                    Rp 75.000/orang
+                                    Rp 350.000/orang
                                 </p>
-                                <button className="w-full h-12 mt-4 bg-red-600 rounded-[50px] text-black text-lg font-bold">
-                                    Pilih paket
-                                </button>
-                                <ul className="text-base font-semibold mt-2 space-y-2">
-                                    <li>Transportasi lokal</li>
-                                    <li>
-                                        Tiket masuk ke Dung Klorok dan Tiamo
-                                    </li>
-                                    <li>Pemandu wisata</li>
-                                    <li>Makan siang dan makan malam</li>
-                                    <li>Air mineral dan minuman ringan</li>
-                                    <li>Trekking alam</li>
-                                    <li>Pertemuan budaya lokal</li>
-                                    <li>Sesi foto profesional</li>
-                                    <li>Souvenir khas Desa Tajuk</li>
-                                    <li>Asuransi perjalanan</li>
-                                </ul>
+                                <a href="http://wa.me/6283831597088">
+                                    <button className="w-full h-12 mt-4 bg-red-600 rounded-[50px] text-black text-lg font-bold">
+                                        Pilih paket
+                                    </button>
+                                </a>
                             </div>
                         </div>
                         <div className="relative justify-self-center w-full left-1/2 transform -translate-x-1/2 text-sm lg:text-xl  text-center">

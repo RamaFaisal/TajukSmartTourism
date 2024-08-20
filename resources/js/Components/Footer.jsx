@@ -110,7 +110,7 @@ const Footer = () => {
                         </a>
                         <a
                             className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
-                            href="/login"
+                            href="/admin"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

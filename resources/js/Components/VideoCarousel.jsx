@@ -71,7 +71,7 @@ const VideoCarousel = () => {
                 <svg
                     className="w-3 h-4 lg:w-6 lg:h-10"
                     fill="none"
-                    stroke="currentColor"
+                    stroke="black"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >
@@ -90,7 +90,7 @@ const VideoCarousel = () => {
                 <svg
                     className="w-3 h-4 lg:w-6 lg:h-10"
                     fill="none"
-                    stroke="currentColor"
+                    stroke="black"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >
