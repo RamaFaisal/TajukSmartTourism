@@ -9,7 +9,6 @@ export default defineConfig({
             input: [
                 "resources/js/app.jsx",
                 "resources/css/app.css",
-                "resources/js/app.js",
             ],
             refresh: ["app/Livewire/**"],
         }),
