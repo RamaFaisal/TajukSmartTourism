@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 
 const images = [
+    "/imgHomepage/lapangan.png",
     "/imgHomepage/dungKluruk.jpg",
-    "/imgHomepage/Pinus.jpg",
-    "/imgHomepage/dungKluruk2.jpg",
-    "/imgHomepage/dungKluruk3.jpg",
+    "/imgHomepage/gpass.jpg",
+    "/imgHomepage/ngaduman.png",
+    "/imgHomepage/sokowolu.png",
 ];
 
 const Carousel = () => {

@@ -41,20 +41,17 @@ const Card = ({ imageUrl, title, link }) => {
 const Dusun = () => {
     const cards = [
         {
-            imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+            imageUrl: "/imgDusun/dsnPulihan/pulihanThumb.jpg",
             title: "Dusun Pulihan",
             link: "/Dusun/DusunPulihan",
         },
         {
-            imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+            imageUrl: "/imgDusun/dsnTajuk/tajukThumb.jpg",
             title: "Dusun Tajuk",
             link: "/Dusun/DusunTajuk",
         },
         {
-            imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+            imageUrl: "/imgDusun/dsnPuyang/puyangThumb.jpg",
             title: "Dusun Puyang",
             link: "/Dusun/DusunPuyang",
         },
@@ -66,13 +63,13 @@ const Dusun = () => {
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "/imgDusun/dsnMacanan/macananThumb.png",
             title: "Dusun Macanan",
             link: "/DsnPulihan",
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "/imgDusun/dsnMacanan/macananThumb.png",
             title: "Dusun Ngroto",
             link: "/DsnPulihan",
         },
