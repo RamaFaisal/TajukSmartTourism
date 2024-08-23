@@ -1,35 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Article() {
-    const [currentArticle, setCurrentArticle] = useState(0);
+    const [articles, setArticles] = useState([]);
+    const [currentArticle, setCurrentArticle] = useState(null);
 
-    const articles = [
-        {
-            image: "/imgDungKluruk/Tulisan.jpg",
-            title: "Artikel Tajuk",
-            text: "Dari pesisir pantai yang memikat hingga pegunungan yang megah, Pulau Jawa menawarkan pesona alam yang tak terlupakan. Air terjun yang menawan, danau yang tenang, dan kebun-kebun hijau yang subur menjadi saksi bisu keajaiban alamnya.",
-        },
-        {
-            image: "/mnt/data/image.png",
-            title: "Artikel Smart",
-            text: "Dari pesisir pantai yang memikat hingga pegunungan yang megah, Pulau Jawa menawarkan pesona alam yang tak terlupakan. Air terjun yang menawan, danau yang tenang, dan kebun-kebun hijau yang subur menjadi saksi bisu keajaiban alamnya.",
-        },
-        {
-            image: "/mnt/data/image.png",
-            title: "Artikel Tourism",
-            text: "Dari pesisir pantai yang memikat hingga pegunungan yang megah, Pulau Jawa menawarkan pesona alam yang tak terlupakan. Air terjun yang menawan, danau yang tenang, dan kebun-kebun hijau yang subur menjadi saksi bisu keajaiban alamnya.",
-        },
-    ];
+    useEffect(() => {
+        // Function to fetch articles from the API
+        const fetchArticles = async () => {
+            try {
+                const response = await fetch(
+                    "http://127.0.0.1:8000/api/articles"
+                );
+                const data = await response.json();
+                setArticles(data.data);
+
+                // Select a random article when articles are fetched
+                if (data.data.length > 0) {
+                    const randomIndex = Math.floor(
+                        Math.random() * data.data.length
+                    );
+                    setCurrentArticle(randomIndex);
+                }
+            } catch (error) {
+                console.error("Failed to fetch articles:", error);
+            }
+        };
+
+        fetchArticles();
+    }, []);
 
     const nextArticle = () => {
+        if (articles.length === 0) return;
         setCurrentArticle((prev) => (prev + 1) % articles.length);
     };
 
     const prevArticle = () => {
+        if (articles.length === 0) return;
         setCurrentArticle(
             (prev) => (prev - 1 + articles.length) % articles.length
         );
     };
+
+    if (articles.length === 0 || currentArticle === null) {
+        return <div>Loading...</div>; // Handle loading state
+    }
+
+    const article = articles[currentArticle]; // Use the current article
+
+    // Properly substring the content without cutting off words
+    const maxLength = 200;
+    let content = article.content.substring(0, maxLength);
+
+    let lastSpace = content.lastIndexOf(" ");
+    if (lastSpace > 0) {
+        content = content.substring(0, lastSpace);
+    }
+
+    content += "...";
 
     return (
         <div className="w-full h-full bg-transparent flex items-center justify-center p-4 lg:p-0 py-8">
@@ -50,26 +77,35 @@ export default function Article() {
                 </div>
                 <div className="flex flex-col lg:flex-row">
                     <div className="lg:w-1/2 lg:pr-4 mb-4 lg:mb-0">
-                        <div className="text-red-600 text-lg font-bold underline cursor-pointer mb-4">
-                            Lihat Semua
-                        </div>
-                        <p className="text-black lg:text-xl text-base">
-                            {articles[currentArticle].text}
-                        </p>
-                        <div className="mt-4 text-black text-sm">
-                            {articles[currentArticle].title}
-                        </div>
-                        <div className="mt-4 border-t border-gray-400 pt-2">
-                            <div className="text-black text-lg font-bold cursor-pointer flex items-center">
-                                Baca Selengkapnya
-                                <span className="ml-2">&#8594;</span>
+                        <div className="bg-transparent rounded-lg overflow-hidden">
+                            <div className="p-4">
+                                <h2 className="text-xl font-bold mb-2">
+                                    {article.title}
+                                </h2>
+                                <p className="text-gray-600 mb-2">
+                                    {new Date(
+                                        article.created_at
+                                    ).toLocaleDateString()}
+                                </p>
+                                <div
+                                    className="text-gray-600 mb-4 text-2xl"
+                                    dangerouslySetInnerHTML={{
+                                        __html: content,
+                                    }}
+                                />
+                                <a
+                                    href={`/Informasi/Berita/${article.id}`}
+                                    className="text-blue-500 hover:underline"
+                                >
+                                    Read more
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div className="lg:w-1/2">
                         <img
                             className="w-full h-auto rounded-md"
-                            src={articles[currentArticle].image}
+                            src={article.image}
                             alt="Article"
                         />
                     </div>

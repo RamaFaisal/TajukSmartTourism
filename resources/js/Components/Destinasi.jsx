@@ -188,7 +188,7 @@ const Destinasi = () => {
                         prevSlide();
                         resetInterval();
                     }}
-                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 left-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 left-0 bg-black bg-opacity-50 text-white p-2 rounded-xl"
                 >
                     &lt;
                 </button>
@@ -197,7 +197,7 @@ const Destinasi = () => {
                         nextSlide();
                         resetInterval();
                     }}
-                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 right-0 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 right-0 bg-black bg-opacity-50 text-white p-2 rounded-xl"
                 >
                     &gt;
                 </button>

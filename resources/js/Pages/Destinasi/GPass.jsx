@@ -10,26 +10,38 @@ export default function GPass(props) {
             <Navbar />
 
             <div className="w-full">
+                <div className="absolute inset-0 flex items-center justify-center z-10 h-[400px] bg-black bg-opacity-45">
+                    <div className="text-center text-white font-serif">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                            Selamat Datang di Gedong Pass
+                        </h1>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            Nikmati keindahan alam dan budaya lokal yang
+                            mempesona
+                        </p>
+                    </div>
+                </div>
                 <img
                     className="w-full h-[250px] md:h-full lg:h-[400px] object-cover"
-                    src="/imgDungKluruk/Tulisan.jpg"
-                    alt="Wisata DungKluruk"
+                    src="/imgGPass/Header.jpg"
+                    alt="Wisata Gedong Pass"
                 />
             </div>
 
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
-                            Selamat Datang di{" "}
-                            <span className="text-hijauNew underline">Gedong Pass</span>
-                        </h1>
-                        <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16">
-                            Dung-Kluruk merupakan taman wisata yang desain untuk
-                            wisata keluarga. Terdapat taman, embung dan aneka
-                            bermain untuk anak. Disamping taman dung-kluruk
-                            terdapat lapangan, yang sering digunakan untuk
-                            berbagai macam acara.
+                        <p className="text-black text-lg lg:text-xl font-normal lg:indent-16">
+                            Salah satu keindahan alam yang tidak boleh kamu
+                            lewatkan ketika berkunjung ke Desa Tajuk adalah
+                            wisata G-Pass. Wisata yang menawarkan ketenangan dan
+                            keindahan alam yaitu view Gunung Telomoyo, Gunung
+                            Ungaran, Gunung Waduk, Gunung Andong, Gunung Lawu,
+                            Gunung Muria (jika cuaca sedang cerah), Gunung
+                            Merbabu, hutan pinus sepanjang mata memandang,
+                            citylight ketika malam hari, dan tentunya ikon Kota
+                            Semarang yaitu Rawa Pening tentunya menjadi spot
+                            wisata yang sangat memikat untuk segera dikunjungi.
                         </p>
                     </div>
                     <div className="w-full lg:w-[550px] flex justify-center items-center">
@@ -37,8 +49,8 @@ export default function GPass(props) {
                             <div className="w-full lg:h-80 relative overflow-hidden">
                                 <img
                                     className="w-full h-auto lg:h-80 object-cover rounded-[20px]"
-                                    src="/imgDungKluruk/dungKluruk.jpg"
-                                    alt="Wisata DungKluruk"
+                                    src="/imgGPass/H2.png"
+                                    alt="Wisata Gedong Pass"
                                 />
                                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
                                     <Link
@@ -170,7 +182,7 @@ export default function GPass(props) {
                         </li>
                     </ul>
                     <br />
-                    
+
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Fasilitas:
                     </h2>

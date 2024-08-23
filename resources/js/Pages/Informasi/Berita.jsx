@@ -11,7 +11,9 @@ export default function Gallery(props) {
         // Function to fetch articles from the API
         const fetchArticles = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/articles");
+                const response = await fetch(
+                    "http://127.0.0.1:8000/api/articles"
+                );
                 const data = await response.json();
                 setArticles(data.data);
             } catch (error) {
@@ -21,6 +23,20 @@ export default function Gallery(props) {
 
         fetchArticles();
     }, []);
+
+    const truncateContent = (content, maxLength = 200) => {
+        let truncatedContent = content.substring(0, maxLength);
+
+        // Cari posisi terakhir dari spasi dalam substring tersebut
+        let lastSpace = truncatedContent.lastIndexOf(" ");
+
+        // Jika ada spasi, potong teks sampai spasi tersebut
+        if (lastSpace > 0) {
+            truncatedContent = truncatedContent.substring(0, lastSpace);
+        }
+
+        return truncatedContent + "...";
+    };
 
     return (
         <>
@@ -41,7 +57,7 @@ export default function Gallery(props) {
                 </div>
                 <Carousel />
             </div>
-            
+
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[150px]">
                 <div className="w-full max-w-[1127px] text-center px-4 md:px-8">
                     <p className="text-black font-sans text-xl md:text-2xl pt-10 lg:pt-32">
@@ -50,7 +66,7 @@ export default function Gallery(props) {
                     </p>
                 </div>
                 <div className="container mx-auto p-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-4">
                         {articles.map((article) => (
                             <div
                                 key={article.id}
@@ -71,13 +87,11 @@ export default function Gallery(props) {
                                         ).toLocaleDateString()}
                                     </p>
                                     <div
-                                        className="text-gray-600 mb-4"
+                                        className="text-gray-600 mb-4 text-2xl"
                                         dangerouslySetInnerHTML={{
-                                            __html:
-                                                article.content.substring(
-                                                    0,
-                                                    100
-                                                ) + "...",
+                                            __html: truncateContent(
+                                                article.content
+                                            ),
                                         }}
                                     />
                                     <Link

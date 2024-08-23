@@ -22,7 +22,9 @@ export default function DungKluruk(props) {
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
                         <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
                             Selamat Datang di{" "}
-                            <span className="text-hijauNew underline">Dung Kluruk</span>
+                            <span className="text-hijauNew underline">
+                                Dung Kluruk
+                            </span>
                         </h1>
                         <p className="text-black text-lg md:text-xl font-sans mt-4 md:indent-16">
                             Dung-Kluruk merupakan taman wisata yang desain untuk
@@ -132,7 +134,7 @@ export default function DungKluruk(props) {
                         murni.
                     </p>
                     <br />
-                    
+
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Daya Tarik Utama:
                     </h2>
