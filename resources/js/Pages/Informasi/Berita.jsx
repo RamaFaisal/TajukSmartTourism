@@ -4,7 +4,7 @@ import Carousel from "@/Components/Carousel";
 import { Head, Link } from "@inertiajs/react";
 import React, { useState, useEffect } from "react";
 
-export default function Gallery(props) {
+export default function Berita(props) {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,13 @@ export default function Gallery(props) {
                     "http://127.0.0.1:8000/api/articles"
                 );
                 const data = await response.json();
-                setArticles(data.data);
+
+                // Sort articles by created_at date in descending order
+                const sortedArticles = data.data.sort(
+                    (a, b) => new Date(b.created_at) - new Date(a.created_at)
+                );
+
+                setArticles(sortedArticles);
             } catch (error) {
                 console.error("Failed to fetch articles:", error);
             }

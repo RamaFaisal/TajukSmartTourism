@@ -42,7 +42,7 @@ export default function Article() {
     };
 
     if (articles.length === 0 || currentArticle === null) {
-        return <div>Loading...</div>; // Handle loading state
+        return <div className="text-center">Loading...</div>; // Handle loading state
     }
 
     const article = articles[currentArticle]; // Use the current article
