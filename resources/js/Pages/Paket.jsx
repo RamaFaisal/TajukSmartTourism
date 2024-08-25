@@ -42,9 +42,10 @@ export default function Paket(props) {
                     <div className="w-full max-w-[1127px] border border-zinc-400 mt-10"></div>
 
                     <div className="w-full max-w-[1127px] h-auto relative mt-10 border border-white p-4 md:p-8">
-                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold font-serif">
+                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold font-serif text-center">
                             Tingkatkan Petualangan Anda
                         </h2>
+
                         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
                                 <a href="/Paket/Family">
@@ -60,30 +61,67 @@ export default function Paket(props) {
                             </div>
 
                             <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <h3 className="text-xl font-bold">
-                                    Paket 2 hari
-                                </h3>
-                                <p className="text-lg font-bold">
-                                    Rp 250.000/orang
-                                </p>
-                                <a href="http://wa.me/6283831597088">
-                                    <button className="w-full h-12 mt-4 bg-yellow-400 rounded-[50px] text-black text-lg font-bold">
-                                        Pilih paket
-                                    </button>
+                                <a href="/Paket/Family">
+                                    <img
+                                        src="imgPaket/halfDay.jpg"
+                                        alt="Paket Pelajar - Fild Trip One Day"
+                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <h3 className="text-xl font-bold font-sans mt-2">
+                                        Paket Pelajar - Fild Trip One Day
+                                    </h3>
                                 </a>
                             </div>
 
                             <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <h3 className="text-xl font-bold">
-                                    Paket 3 hari
-                                </h3>
-                                <p className="text-lg font-bold">
-                                    Rp 350.000/orang
-                                </p>
-                                <a href="http://wa.me/6283831597088">
-                                    <button className="w-full h-12 mt-4 bg-red-600 rounded-[50px] text-black text-lg font-bold">
-                                        Pilih paket
-                                    </button>
+                                <a href="/Paket/Family">
+                                    <img
+                                        src="imgPaket/halfDay.jpg"
+                                        alt="Paket Pelajar - Fild Trip One Day"
+                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <h3 className="text-xl font-bold font-sans mt-2">
+                                        Paket Pelajar - Fild Trip One Day
+                                    </h3>
+                                </a>
+                            </div>
+
+                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
+                                <a href="/Paket/Family">
+                                    <img
+                                        src="imgPaket/halfDay.jpg"
+                                        alt="Paket Pelajar - Fild Trip One Day"
+                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <h3 className="text-xl font-bold font-sans mt-2">
+                                        Paket Pelajar - Fild Trip One Day
+                                    </h3>
+                                </a>
+                            </div>
+
+                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
+                                <a href="/Paket/Family">
+                                    <img
+                                        src="imgPaket/halfDay.jpg"
+                                        alt="Paket Pelajar - Fild Trip One Day"
+                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <h3 className="text-xl font-bold font-sans mt-2">
+                                        Paket Pelajar - Fild Trip One Day
+                                    </h3>
+                                </a>
+                            </div>
+
+                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
+                                <a href="/Paket/Family">
+                                    <img
+                                        src="imgPaket/halfDay.jpg"
+                                        alt="Paket Pelajar - Fild Trip One Day"
+                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <h3 className="text-xl font-bold font-sans mt-2">
+                                        Paket Pelajar - Fild Trip One Day
+                                    </h3>
                                 </a>
                             </div>
                         </div>
@@ -103,6 +141,7 @@ export default function Paket(props) {
                         <Destinasi />
                     </div>
                 </div>
+
                 <Footer />
             </div>
         </>

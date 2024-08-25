@@ -87,7 +87,7 @@ export default function DusunCingklok(props) {
             <div className="w-[370px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
-                    src="/Paket.jpg"
+                    src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
                     alt="Beautiful Landscape"
                 />
 

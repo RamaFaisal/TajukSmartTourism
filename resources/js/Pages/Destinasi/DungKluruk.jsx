@@ -10,28 +10,36 @@ export default function DungKluruk(props) {
             <Navbar />
 
             <div className="w-full">
+                <div className="absolute inset-0 flex items-center justify-center z-10 h-[350px] md:h-[400px] bg-black bg-opacity-45">
+                    <div className="text-center text-white font-serif px-10 md:px-0">
+                        <h1 className="text-xl md:text-5xl font-bold mb-4">
+                            Selamat Datang di DungKluruk
+                        </h1>
+                        <p className="text-md md:text-2xl">
+                            Nikmati keindahan alam dan budaya lokal yang
+                            mempesona
+                        </p>
+                    </div>
+                </div>
                 <img
-                    className="w-full h-[250px] md:h-full lg:h-[400px] object-cover"
-                    src="/imgDungKluruk/Tulisan.jpg"
-                    alt="Wisata DungKluruk"
+                    className="w-full h-[350px] md:h-full lg:h-[400px] object-cover"
+                    src="https://drive.google.com/thumbnail?id=1tkS1gi8WDwDTXSOlzDkJrI2cvFKT173J&sz=w2000"
+                    alt="Wisata Gedong Pass"
                 />
             </div>
 
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
-                            Selamat Datang di{" "}
-                            <span className="text-hijauNew underline">
-                                Dung Kluruk
-                            </span>
-                        </h1>
                         <p className="text-black text-lg md:text-xl font-sans mt-4 md:indent-16">
-                            Dung-Kluruk merupakan taman wisata yang desain untuk
-                            wisata keluarga. Terdapat taman, embung dan aneka
-                            bermain untuk anak. Disamping taman dung-kluruk
-                            terdapat lapangan, yang sering digunakan untuk
-                            berbagai macam acara.
+                            Anda seorang pecinta alam yang selalu mencari
+                            tempat-tempat wisata alam yang baru untuk
+                            dijelajahi? Jika ya, maka Wisata alam Dung Kluruk
+                            bisa menjadi destinasi pilihan yang sempurna untuk
+                            anda jelajahi. Dung Kluruk adalah salah satu
+                            destinasi wisata yang terletak di Kecamatan Getasan
+                            dan memiliki pesona alam yang siap memanjakan mata
+                            dan hati anda.
                         </p>
                     </div>
                     <div className="w-full lg:w-[550px] flex justify-center items-center">
@@ -39,7 +47,7 @@ export default function DungKluruk(props) {
                             <div className="w-full lg:h-80 relative overflow-hidden">
                                 <img
                                     className="w-full h-auto lg:h-80 object-cover rounded-[20px]"
-                                    src="/imgDungKluruk/dungKluruk.jpg"
+                                    src="https://drive.google.com/thumbnail?id=1_J3VAXJ5anX7IdwBPsvbI6kNDGV9CQXg&sz=w2000"
                                     alt="Wisata DungKluruk"
                                 />
                                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
@@ -72,7 +80,7 @@ export default function DungKluruk(props) {
                 <div className="w-[350px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                     <img
                         className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
-                        src="/Paket.jpg"
+                        src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
                         alt="Beautiful Landscape"
                     />
 
@@ -96,7 +104,7 @@ export default function DungKluruk(props) {
                     </h1>
                     <img
                         className="w-auto h-[210px] lg:h-[650px] object-cover mx-auto rounded-xl"
-                        src="/imgDungKluruk/templateAr.jpg"
+                        src="https://drive.google.com/thumbnail?id=1GI3O-Jc6NCMN-J4c4ByFxzdV25H4KZGZ&sz=w2000"
                         alt="Deskripsi Gambar"
                     />
 

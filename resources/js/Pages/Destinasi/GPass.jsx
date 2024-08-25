@@ -10,19 +10,19 @@ export default function GPass(props) {
             <Navbar />
 
             <div className="w-full">
-                <div className="absolute inset-0 flex items-center justify-center z-10 h-[400px] bg-black bg-opacity-45">
-                    <div className="text-center text-white font-serif">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                <div className="absolute inset-0 flex items-center justify-center z-10 h-[350px] md:h-[400px] bg-black bg-opacity-45">
+                    <div className="text-center text-white font-serif px-10 md:px-0">
+                        <h1 className="text-xl md:text-5xl font-bold mb-4">
                             Selamat Datang di Gedong Pass
                         </h1>
-                        <p className="text-lg md:text-xl lg:text-2xl">
+                        <p className="text-md md:text-2xl">
                             Nikmati keindahan alam dan budaya lokal yang
                             mempesona
                         </p>
                     </div>
                 </div>
                 <img
-                    className="w-full h-[250px] md:h-full lg:h-[400px] object-cover"
+                    className="w-full h-[350px] md:h-full lg:h-[400px] object-cover"
                     src="/imgGPass/Header.jpg"
                     alt="Wisata Gedong Pass"
                 />
@@ -31,7 +31,7 @@ export default function GPass(props) {
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <p className="text-black text-lg lg:text-xl font-normal lg:indent-16">
+                        <p className="text-black text-lg lg:text-xl lg:indent-16 leading-relaxed">
                             Salah satu keindahan alam yang tidak boleh kamu
                             lewatkan ketika berkunjung ke Desa Tajuk adalah
                             wisata G-Pass. Wisata yang menawarkan ketenangan dan
@@ -82,7 +82,7 @@ export default function GPass(props) {
                 <div className="w-[350px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                     <img
                         className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
-                        src="/Paket.jpg"
+                        src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
                         alt="Beautiful Landscape"
                     />
 

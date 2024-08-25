@@ -26,7 +26,7 @@ export default function Homepage(props) {
                         </p>
                     </div>
                 </div>
-                <Carousel/>
+                <Carousel />
             </div>
 
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[150px]">
@@ -67,7 +67,7 @@ export default function Homepage(props) {
                 <div className="w-[370px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                     <img
                         className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
-                        src="/Paket.jpg"
+                        src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
                         alt="Beautiful Landscape"
                     />
 
@@ -77,7 +77,7 @@ export default function Homepage(props) {
                             mempesona menanti Anda untuk dijelajahi
                         </span>
                         <Link
-                            href="/Paket"
+                            href="https://drive.google.com/1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
                             className="btn bg-white text-black text-xs py-1 px-2 sm:text-sm sm:py-2 sm:px-4 rounded hover:scale-105 transition duration-200 font-sans"
                         >
                             Lihat Paket

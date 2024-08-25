@@ -60,7 +60,7 @@ export default function Gallery(props) {
 
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[150px]">
                 <div className="w-full max-w-[1127px] text-center px-4 md:px-8">
-                    <p className="text-black font-sans text-xl md:text-2xl pt-10 lg:pt-32">
+                    <p className="text-black font-sans text-xl md:text-4xl pt-10 lg:pt-32">
                         Selamat datang di menu berita kami. Di sini, Anda dapat
                         menemukan berbagai berita terbaru mengenai desa Tajuk.
                     </p>
@@ -72,15 +72,19 @@ export default function Gallery(props) {
                                 key={article.id}
                                 className="bg-white shadow-md rounded-lg overflow-hidden"
                             >
-                                <img
-                                    src={article.image}
-                                    alt={article.title}
-                                    className="w-full h-48 object-cover"
-                                />
+                                <a href={`/Informasi/Berita/${article.id}`}>
+                                    <img
+                                        src={article.image}
+                                        alt={article.title}
+                                        className="w-full h-48 object-cover"
+                                    />
+                                </a>
                                 <div className="p-4">
-                                    <h2 className="text-xl font-bold mb-2">
-                                        {article.title}
-                                    </h2>
+                                    <a href={`/Informasi/Berita/${article.id}`}>
+                                        <h2 className="text-xl font-bold mb-2">
+                                            {article.title}
+                                        </h2>
+                                    </a>
                                     <p className="text-gray-600 mb-2">
                                         {new Date(
                                             article.created_at

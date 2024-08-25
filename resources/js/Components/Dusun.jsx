@@ -5,7 +5,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 // Komponen Card
 const Card = ({ imageUrl, title, link }) => {
     return (
-        <div className="relative w-[300px] h-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300 rounded">
+        <div className="relative md:w-[360px] w-[350px] h-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300 rounded overflow-hidden">
             {link ? (
                 <Link href={link} className="block h-full relative">
                     <img
@@ -41,17 +41,20 @@ const Card = ({ imageUrl, title, link }) => {
 const Dusun = () => {
     const cards = [
         {
-            imageUrl: "/imgDusun/dsnPulihan/pulihanThumb.jpg",
+            imageUrl:
+                "https://drive.google.com/thumbnail?id=15UyvgzCAypJvNbifsIaQVR4wGX52Bfv9&sz=w2000",
             title: "Dusun Pulihan",
             link: "/Dusun/DusunPulihan",
         },
         {
-            imageUrl: "/imgDusun/dsnTajuk/tajukThumb.jpg",
+            imageUrl:
+                "https://drive.google.com/thumbnail?id=1fDVeccjF7_hk9-OauHOJNVsdwM0VRO1A&sz=w2000",
             title: "Dusun Tajuk",
             link: "/Dusun/DusunTajuk",
         },
         {
-            imageUrl: "/imgDusun/dsnPuyang/puyangThumb.jpg",
+            imageUrl:
+                "https://drive.google.com/thumbnail?id=10b8L8YDm5jkXiFGP1ZWsXBYhLpj6A6ZY&sz=w2000",
             title: "Dusun Puyang",
             link: "/Dusun/DusunPuyang",
         },
@@ -63,43 +66,43 @@ const Dusun = () => {
         },
         {
             imageUrl:
-                "/imgDusun/dsnMacanan/macananThumb.png",
+                "https://drive.google.com/thumbnail?id=1x3SUpKByO8n2FToEQm9LS6-YeQ7Ukm9U&sz=w2000",
             title: "Dusun Macanan",
             link: "/DsnPulihan",
         },
         {
             imageUrl:
-                "/imgDusun/dsnMacanan/macananThumb.png",
+                "https://drive.google.com/thumbnail?id=1q7I_6FQLKUCzeuAB304j5Mx73G62jYwv&sz=w2000",
             title: "Dusun Ngroto",
             link: "/DsnPulihan",
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "https://drive.google.com/thumbnail?id=1_GAOlMWVmPq7s_rfKoqZ1DYGpgWycRgs&sz=w2000",
             title: "Dusun Banaran",
             link: "/DsnPulihan",
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "https://drive.google.com/thumbnail?id=1cOYIPZ-ON2HP1okUehIbxOVdhD84LMS8&sz=w2000",
             title: "Dusun Sokowolu",
             link: "/DsnPulihan",
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "https://drive.google.com/thumbnail?id=1Z5BuANxo0CHH4HMrGWQdXKyMah9rCGah&sz=w2000",
             title: "Dusun Ngaduman",
             link: "/Dusun/DusunNgaduman",
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "https://drive.google.com/thumbnail?id=16eppZkBAkD4HS1Bp-bli4ORfWYkF9ALN&sz=w2000",
             title: "Dusun Gedong",
             link: "/DsnPulihan",
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "https://drive.google.com/thumbnail?id=1bNrDW8Xtw9f_yG4Uwu8WjXI435u7IKSc&sz=w2000",
             title: "Dusun Kaliajeng",
             link: "/DsnPulihan",
         },

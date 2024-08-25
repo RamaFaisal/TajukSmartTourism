@@ -13,7 +13,7 @@ export default function DusunPulihan(props) {
             <div className="w-full relative">
                 <img
                     className="w-full h-[250px] md:h-full lg:h-[500px] object-cover"
-                    src="/imgDusun/dsnPulihan/Pulihan.jpg"
+                    src="https://drive.google.com/thumbnail?id=1QRIeFs1Uy-oeecgUz9J4DAW5VDgA8Unj&sz=w2000"
                     alt="Pemandangan Dusun Pulihan"
                 />
                 <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 w-full text-center">
@@ -101,7 +101,7 @@ export default function DusunPulihan(props) {
             <div className="w-[370px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
-                    src="/Paket.jpg"
+                    src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
                     alt="Beautiful Landscape"
                 />
 

@@ -8,16 +8,16 @@ const destinations = [
         title: "DungKluruk",
         lat: -7.396035596890162,
         lng: 110.45180818000935,
-        image: "/imgDungKluruk/Tulisan.jpg",
+        image: "https://drive.google.com/thumbnail?id=1tkS1gi8WDwDTXSOlzDkJrI2cvFKT173J&sz=w2000",
         description:
-            "Di tengah gemerlapnya Indonesia, Pulau Jawa berdiri kokoh sebagai pusat kekayaan budaya dan keindahan alam yang memikat.",
+            "Dung Kluruk adalah salah satu destinasi wisata yang terletak di Kecamatan Getasan dan memiliki pesona alam yang siap memanjakan mata dan hati anda.",
         link: "/Destinasi/DungKluruk",
     },
     {
         title: "Sokowolu",
         lat: -7.405295566315285,
         lng: 110.45791989350344,
-        image: "https://i.pinimg.com/564x/96/ee/0c/96ee0c7260a3a6b9d0965c25d1ed82a6.jpg",
+        image: "https://drive.google.com/thumbnail?id=1uoahO7LaBHukk-zJtdjOmKK1yPnmWW5-&sz=w2000",
         description:
             "Kepulauan Raja Ampat yang menakjubkan dengan keindahan bawah lautnya.",
         link: "/Destinasi/Sokowolu",
@@ -26,7 +26,7 @@ const destinations = [
         title: "Ngaduman",
         lat: -7.417724367829767,
         lng: 110.44035079535077,
-        image: "https://i.pinimg.com/564x/60/a8/4d/60a84dfeb33be58cf208d52ea990e580.jpg",
+        image: "https://drive.google.com/thumbnail?id=1WutfgpyKpbV_y5AYGRNrRFQvAEzRzriW&sz=w2000",
         description:
             "Gunung Bromo yang megah dengan pemandangan matahari terbit yang spektakuler.",
         link: "/Destinasi/Ngaduman",
@@ -35,9 +35,9 @@ const destinations = [
         title: "G-Pass",
         lat: -7.415801910724171,
         lng: 110.44408678000971,
-        image: "https://i.pinimg.com/564x/60/a8/4d/60a84dfeb33be58cf208d52ea990e580.jpg",
+        image: "https://drive.google.com/thumbnail?id=1No5U00Ne0uaBYNwoV0QhuUo97Gp5XNHr&sz=w2000",
         description:
-            "Gunung Bromo yang megah dengan pemandangan matahari terbit yang spektakuler.",
+            "Salah satu keindahan alam yang tidak boleh dilewatkan ketika berkunjung ke Desa Tajuk adalah wisata G-Pass atau Gedong Pass yang berada di Dusun Gedong",
         link: "/Destinasi/GPass",
     },
 ];
@@ -50,7 +50,7 @@ const truncateDescription = (description, maxLength) => {
 const Destinasi = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
-    const maxDescriptionLength = 100; // Panjang maksimal deskripsi yang diinginkan
+    const maxDescriptionLength = 151; // Panjang maksimal deskripsi yang diinginkan
     const intervalTime = 5000; // Interval untuk otomatis berpindah slide (dalam milidetik)
 
     const updateScreenSize = () => {
