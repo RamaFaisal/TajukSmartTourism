@@ -62,13 +62,26 @@ Route::get('/Paket', function() {
 });
 
 //Form
-Route::get('/PaketDetail/FormLivein1', function () {
-    return Inertia::render('PaketDetail/FormLivein1', [
+Route::get('/Paket/FormLiveIn1', function () {
+    return Inertia::render('Paket/FormLiveIn1', [
         'title' => 'Form Live In 1',
         'description' => 'Form Live In 1'
     ]);
 });
 
+Route::get('/Paket/FormLiveIn2', function () {
+    return Inertia::render('Paket/FormLiveIn2', [
+        'title' => 'Form Live In 1',
+        'description' => 'Form Live In 1'
+    ]);
+});
+
+Route::get('/Paket/FormLiveIn3', function () {
+    return Inertia::render('Paket/FormLiveIn3', [
+        'title' => 'Form Live In 1',
+        'description' => 'Form Live In 1'
+    ]);
+});
 
 // Informasi
 Route::get('/Informasi/Berita', function() {
