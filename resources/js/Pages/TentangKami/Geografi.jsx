@@ -12,7 +12,7 @@ export default function Geografi(props) {
             <div className="relative w-full h-[300px] md:h-[600px] overflow-hidden">
                 <img
                     className="fixed w-full h-[600px] md:h-full lg:h-[730px] object-cover top-0 left-0 z-0"
-                    src="/imgTentangKami/Geografi.jpg"
+                    src="https://drive.google.com/thumbnail?id=17B0bZl4UVuUafmxZ4umQK29Fq0yR8TGP&sz=w2000"
                     alt="Profile Desa"
                 />
             </div>

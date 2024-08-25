@@ -12,7 +12,7 @@ export default function Ngaduman(props) {
             <div className="w-full">
                 <img
                     className="w-full h-[250px] md:h-full lg:h-[400px] object-cover"
-                    src="/imgSokowolu/sokowoluHead.jpg"
+                    src="https://drive.google.com/thumbnail?id=1WutfgpyKpbV_y5AYGRNrRFQvAEzRzriW&sz=w2000"
                     alt="Wisata DungKluruk"
                 />
             </div>
@@ -39,7 +39,7 @@ export default function Ngaduman(props) {
                             <div className="w-full lg:h-80 relative overflow-hidden">
                                 <img
                                     className="w-full h-auto lg:h-80 object-cover rounded-[20px]"
-                                    src="/imgDungKluruk/dungKluruk.jpg"
+                                    src="https://drive.google.com/thumbnail?id=1YgVxJSZrXVHYyYM1UoOyGbi9jNhMQkKG&sz=w2000"
                                     alt="Wisata DungKluruk"
                                 />
                                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
@@ -96,7 +96,7 @@ export default function Ngaduman(props) {
                     </h1>
                     <img
                         className="w-auto h-[210px] lg:h-[650px] object-cover mx-auto rounded-xl"
-                        src="/imgDungKluruk/templateAr.jpg"
+                        src="https://drive.google.com/thumbnail?id=1GI3O-Jc6NCMN-J4c4ByFxzdV25H4KZGZ&sz=w2000"
                         alt="Deskripsi Gambar"
                     />
 

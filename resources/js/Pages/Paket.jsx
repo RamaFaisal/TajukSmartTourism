@@ -1,11 +1,64 @@
 import React from "react";
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
 import Carousel from "@/Components/Carousel";
 import Footer from "@/Components/Footer";
 import Destinasi from "@/Components/Destinasi";
 
 export default function Paket(props) {
+    const packages = [
+        {
+            title: "Paket Live in 1",
+            price: "IDR 150.000",
+            perks: [
+                "Welcome drink & Welcome Dance",
+                "Kamar kaps 2-3 Orang",
+                "Makan 3x",
+                "Snack 2x",
+                "Listrik & Air",
+                "Outbond / Game",
+                "Family Activity",
+            ],
+            jls: "1 hari / org",
+            image: "https://drive.google.com/thumbnail?id=10R_wkLV2tSs2OoytjDRQpHLzmLjF-l1b&sz=w2000",
+            link: "/Paket/Family",
+        },
+        {
+            title: "Paket Live in 2",
+            price: "IDR 250.000",
+            perks: [
+                "Welcome drink & Welcome Dance",
+                "Kamar kaps 2-3 orang",
+                "Makan 6x",
+                "Snack 4x",
+                "Listrik & Air",
+                "Outbond / Game",
+                "Senam",
+                "Family Activity",
+            ],
+            jls: "2 hari / org",
+            image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
+            link: "/Paket/Form2",
+        },
+        {
+            title: "Paket Live in 3",
+            price: "IDR 350.000",
+            perks: [
+                "Welcome drink & Welcome Dance",
+                "Kamar kaps 2-3 orang sesuai kondisi",
+                "Makan 9x",
+                "Snack 6x",
+                "Listrik & Air",
+                "Outbond / Game",
+                "Senam",
+                "Family Activity",
+            ],
+            jls: "3 hari / org",
+            image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
+            link: "/Paket/Form3",
+        },
+    ];
+
     return (
         <>
             <Head title={props.title} />
@@ -47,86 +100,43 @@ export default function Paket(props) {
                         </h2>
 
                         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <a href="/Paket/Family">
+                            {packages.map((pkg, index) => (
+                                <div key={index} className="w-full h-auto p-4">
                                     <img
-                                        src="imgPaket/halfDay.jpg"
-                                        alt="Paket Pelajar - Fild Trip One Day"
-                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
+                                        src={pkg.image}
+                                        alt={pkg.title}
+                                        className="rounded-lg w-full h-[200px] object-cover"
                                     />
-                                    <h3 className="text-xl font-bold font-sans mt-2">
-                                        Paket Pelajar - Fild Trip One Day
-                                    </h3>
-                                </a>
-                            </div>
-
-                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <a href="/Paket/Family">
-                                    <img
-                                        src="imgPaket/halfDay.jpg"
-                                        alt="Paket Pelajar - Fild Trip One Day"
-                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
-                                    />
-                                    <h3 className="text-xl font-bold font-sans mt-2">
-                                        Paket Pelajar - Fild Trip One Day
-                                    </h3>
-                                </a>
-                            </div>
-
-                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <a href="/Paket/Family">
-                                    <img
-                                        src="imgPaket/halfDay.jpg"
-                                        alt="Paket Pelajar - Fild Trip One Day"
-                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
-                                    />
-                                    <h3 className="text-xl font-bold font-sans mt-2">
-                                        Paket Pelajar - Fild Trip One Day
-                                    </h3>
-                                </a>
-                            </div>
-
-                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <a href="/Paket/Family">
-                                    <img
-                                        src="imgPaket/halfDay.jpg"
-                                        alt="Paket Pelajar - Fild Trip One Day"
-                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
-                                    />
-                                    <h3 className="text-xl font-bold font-sans mt-2">
-                                        Paket Pelajar - Fild Trip One Day
-                                    </h3>
-                                </a>
-                            </div>
-
-                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <a href="/Paket/Family">
-                                    <img
-                                        src="imgPaket/halfDay.jpg"
-                                        alt="Paket Pelajar - Fild Trip One Day"
-                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
-                                    />
-                                    <h3 className="text-xl font-bold font-sans mt-2">
-                                        Paket Pelajar - Fild Trip One Day
-                                    </h3>
-                                </a>
-                            </div>
-
-                            <div className="w-full h-auto p-4 border border-gray-300 rounded-lg">
-                                <a href="/Paket/Family">
-                                    <img
-                                        src="imgPaket/halfDay.jpg"
-                                        alt="Paket Pelajar - Fild Trip One Day"
-                                        className="rounded-lg transform hover:scale-105 transition-transform duration-300"
-                                    />
-                                    <h3 className="text-xl font-bold font-sans mt-2">
-                                        Paket Pelajar - Fild Trip One Day
-                                    </h3>
-                                </a>
-                            </div>
+                                    <div className="p-4 bg-white rounded-lg border border-gray-300 transform transition duration-300 group hover:-translate-y-2 hover:drop-shadow-2xl mt-4">
+                                        <h3 className="text-xl font-bold font-sans mt-2">
+                                            {pkg.title}
+                                        </h3>
+                                        <p className="text-lg text-green-600 font-semibold">
+                                            {pkg.price} / {pkg.jls}
+                                        </p>
+                                        <ul className="mt-4 text-gray-600">
+                                            {pkg.perks.map((perk, i) => (
+                                                <li
+                                                    key={i}
+                                                    className="flex items-center"
+                                                >
+                                                    <span className="mr-2 text-green-600">
+                                                        ✔
+                                                    </span>
+                                                    {perk}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                                            <a href={pkg.link}>Klik disini</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        <div className="relative justify-self-center w-full left-1/2 transform -translate-x-1/2 text-sm lg:text-xl  text-center">
-                            <span className="justify-items-end mt-4">
+
+                        <div className="relative justify-self-center w-full left-1/2 transform -translate-x-1/2 text-sm lg:text-xl text-center mt-10">
+                            <span className="justify-items-end">
                                 Ada yang Ingin Ditanyakan?{" "}
                                 <span className="underline">
                                     Kami Siap Membantu, Hubungi Kami

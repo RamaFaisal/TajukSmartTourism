@@ -30,7 +30,8 @@ const Footer = () => {
                         Semarang Jawa Tengah 50774
                     </p>
                     <p className="text-sm lg:text-lg mb-2">
-                        <strong>Telepon:</strong> (024) 3517261
+                        <strong>Telepon:</strong>
+                        <a href="https://wa.me/6283831597088" target="_blank"> 083831597088</a>
                     </p>
                 </div>
 
@@ -116,7 +117,6 @@ const Footer = () => {
                         >
                             Login
                         </a>
-
                     </div>
                 </div>
 

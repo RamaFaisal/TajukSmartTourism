@@ -10,9 +10,9 @@ export default function Family(props) {
             <Navbar />
             <div className="relative w-full">
                 <img
-                    src="/imgPaket/dungKluruk.jpg"
+                    src="https://drive.google.com/thumbnail?id=1k9vBYV43kBww9T_NSgxFdfd7hzEnXRdZ&sz=w2000"
                     alt=""
-                    className="w-full h-auto"
+                    className="w-full h-[400px] object-cover"
                 />
             </div>
 
@@ -22,10 +22,7 @@ export default function Family(props) {
                     <div className="flex flex-col">
                         {/* Header Tabs */}
                         <div className="flex space-x-4">
-                            {[
-                                "ITINERARY"
-
-                            ].map((tab, index) => (
+                            {["ITINERARY"].map((tab, index) => (
                                 <button
                                     key={index}
                                     className={`py-2 px-4 rounded-t-lg ${

@@ -13,7 +13,7 @@ export default function ProfileDesa(props) {
             <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
                 <img
                     className="fixed w-full h-[600px] md:h-full lg:h-[730px] object-cover top-0 left-0 z-0"
-                    src="/kantorDesa.JPG"
+                    src="https://drive.google.com/thumbnail?id=1sRaY7jlybHTX2AnjNQ0oJPL_a8qVsxYr&sz=w2000"
                     alt="Profile Desa"
                 />
             </div>
@@ -40,7 +40,9 @@ export default function ProfileDesa(props) {
                     <p>
                         <span className="font-bold text-3xl">
                             Selamat datang di Profil Desa Tajuk.{" "}
-                        </span><br /><br />
+                        </span>
+                        <br />
+                        <br />
                         Desa Tajuk adalah sebuah destinasi wisata yang
                         menggabungkan keindahan alam dengan kekayaan budaya yang
                         khas. Terletak di tengah-tengah pegunungan yang hijau
@@ -101,8 +103,8 @@ export default function ProfileDesa(props) {
 
                 <img
                     className="w-[370px] h-56 lg:w-[1127px] lg:h-[500px] z-10"
-                    src="https://i.pinimg.com/564x/cc/b1/66/ccb16625ace80da8c9c43ca4023604cf.jpg"
-                    alt=""
+                    src="https://drive.google.com/thumbnail?id=1ULlvhv57GV9uHrJeKTEL06R6zahCKmQ5&sz=w2000"
+                    alt="Gambar Profile Desa"
                 />
 
                 <div className="w-full lg:w-[1160px] h-auto text-justify text-base md:text-lg lg:text-xl mt-2 px-5 z-10">

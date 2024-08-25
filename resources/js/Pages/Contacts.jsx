@@ -25,11 +25,13 @@ export default function Contacts(props) {
             <div className="w-96 lg:w-[1127px] bg-white bg-opacity-50 border border-black p-6 rounded-lg relative flex flex-col lg:flex-row">
                 <img
                     className="w-80 h-80 lg:w-[600px] lg:h-[600px] rounded-[10px] object-cover mb-4 lg:mb-0"
-                    src="/kantorDesa.jpg"
+                    src="https://drive.google.com/thumbnail?id=1sRaY7jlybHTX2AnjNQ0oJPL_a8qVsxYr&sz=w2000"
                     alt="Contact Image"
                 />
                 <div className="lg:ml-[50px]">
-                    <h3 className="text-black text-base font-serif">Bantuan & Dukungan</h3>
+                    <h3 className="text-black text-base font-serif">
+                        Bantuan & Dukungan
+                    </h3>
                     <h2 className="text-black text-lg lg:text-xl font-bold font-serif">
                         Kami senang mendengar dari Anda
                     </h2>

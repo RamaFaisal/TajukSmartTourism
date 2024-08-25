@@ -61,12 +61,14 @@ Route::get('/Paket', function() {
     ]);
 });
 
-Route::get('/Paket/Family', function() {
-    return Inertia::render('Paket/Family', [
-        'title' => 'Paket Wisata',
-        'description' => 'Paket Family'
+//Form
+Route::get('/PaketDetail/FormLivein1', function () {
+    return Inertia::render('PaketDetail/FormLivein1', [
+        'title' => 'Form Live In 1',
+        'description' => 'Form Live In 1'
     ]);
 });
+
 
 // Informasi
 Route::get('/Informasi/Berita', function() {

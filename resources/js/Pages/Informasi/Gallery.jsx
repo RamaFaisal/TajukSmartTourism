@@ -8,83 +8,83 @@ export default function Gallery(props) {
     // Data gambar dan link Instagram untuk kartu
     const cards = [
         {
-            src: "/imgGaleri/1.jpg",
+            src: "https://drive.google.com/thumbnail?id=1SmHb-j86cV82xilSCoWAc_p7okhWI_8e&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/2.jpg",
+            src: "https://drive.google.com/thumbnail?id=1fmeLTVY00RD0p1SJ8yn44J2CM3XJxZQP&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/3.jpg",
+            src: "https://drive.google.com/thumbnail?id=1mb13jMebgns5zuesZ-cAbZ-kxSarWbEe&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/4.jpg",
+            src: "https://drive.google.com/thumbnail?id=1ebZTNZGlaX2bhB9m-Tc2lILHZ43ZwHKm&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/5.jpg",
+            src: "https://drive.google.com/thumbnail?id=1O9gpHAuUlifxq1rS9aL72-RtFqrfENOn&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/6.jpg",
+            src: "https://drive.google.com/thumbnail?id=1eYfKksQqODA5k5508mlHcVtnnl4Z1DRM&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/7.jpg",
+            src: "https://drive.google.com/thumbnail?id=1dXSVeGFo9NrQj26nyn-q3CWSndRB0acC&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/8.jpg",
+            src: "https://drive.google.com/thumbnail?id=1Q9kLspp6GEoJ7UWMPuCI8RzIrt2vSPVT&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/9.png",
+            src: "https://drive.google.com/thumbnail?id=1LPlybj-9twx280NhTKxASZve-eIQY085&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/10.jpg",
+            src: "https://drive.google.com/thumbnail?id=1jYrU29jPA0NAx6EMYkYCsT0KKmVWaaJb&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/11.png",
+            src: "https://drive.google.com/thumbnail?id=17Yj6RwuB_Br3CD3lUn7OhK1a_n903Anm&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/12.png",
+            src: "https://drive.google.com/thumbnail?id=1pI7DHqRkHdKSt-HfywBcYd_MHRi7FbdA&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/13.jpg",
+            src: "https://drive.google.com/thumbnail?id=1fwBvy_ELwBg8lCoNzUb8SYYlZdaVPuDD&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/14.png",
+            src: "https://drive.google.com/thumbnail?id=1gRiDFq3coLxJ5K5g2_GixOD-0hXw41yZ&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/15.jpg",
+            src: "https://drive.google.com/thumbnail?id=1-w5gW_LdypMGNmWHYbv96vQORzLpJuRM&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/16.jpg",
+            src: "https://drive.google.com/thumbnail?id=1yuIVcKgKTkDAsZxfiLlsUkeyttyv8sTx&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/17.png",
+            src: "https://drive.google.com/thumbnail?id=1iglTMYZR7meXv_aFcBa4JoaAXXwbK_x9&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/18.jpg",
+            src: "https://drive.google.com/thumbnail?id=1KWTb3xH957jB5-o3ULIYjF_jF1NqWYLa&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/19.jpg",
+            src: "https://drive.google.com/thumbnail?id=1Z4FgxS1opvwIzuRZ3pHa1jF-Z3gW5ZSv&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
         {
-            src: "/imgGaleri/20.jpg",
+            src: "https://drive.google.com/thumbnail?id=1Rsb1BlnbvmsETtrIuZfzwrD0edyzwLxj&sz=w2000",
             link: "https://www.instagram.com/tajuksmarttourism.official?igsh=NGk2a2RrNWo5d3B3",
         },
     ];
