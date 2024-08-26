@@ -33,9 +33,9 @@ export default function Sokowolu(props) {
             </div>
 
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
-                <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 md:px-52">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16 font-sans">
+                        <p className="text-black text-lg lg:text-xl font-normal mt-4 font-sans">
                             Ketika kamu berkunjung ke Kabupaten Semarang,
                             pengalaman liburan Anda akan terasa kurang lengkap
                             tanpa mengeksplorasi destinasi wisata alam yang
@@ -102,16 +102,10 @@ export default function Sokowolu(props) {
                     </div>
                 </div>
 
-                <div className="w-full px-8 lg:px-40 bg-transparent font-sans text-black text-xl">
+                <div className="w-full px-8 md:px-52 bg-transparent font-sans text-black text-xl">
                     <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20 font-serif text-hijauNew">
                         Sokowolu
                     </h1>
-                    <img
-                        className="w-auto h-[210px] lg:h-[650px] object-cover mx-auto rounded-xl"
-                        src="https://drive.google.com/thumbnail?id=1T7830QNBwGErBN67pRe7nZK1kV8-qfut&sz=w2000"
-                        alt="Deskripsi Gambar"
-                    />
-
                     <p className="mb-4 mt-10 lg:mt-20">
                         Buka: Setiap Hari
                         <br />

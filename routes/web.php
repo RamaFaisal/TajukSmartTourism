@@ -91,6 +91,12 @@ Route::get('/Informasi/Berita', function() {
     ]);
 });
 
+//AR
+Route::get('/AR', function () {
+    return view('ARv1/index');
+});
+
+
 // Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
 // public function show($id)

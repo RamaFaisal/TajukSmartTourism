@@ -61,16 +61,16 @@ export default function Article() {
     return (
         <div className="w-full h-full bg-transparent flex items-center justify-center p-4 lg:p-0 py-8">
             <div className="relative bg-white p-6 border border-gray-300 rounded-md shadow-md max-w-6xl w-full lg:w-[1090px] lg:h-[335px]">
-                <div className="absolute top-4 right-4 flex space-x-2">
+                <div className="absolute top-4 right-4 md:top-7 md:right-7 flex space-x-2">
                     <button
                         onClick={prevArticle}
-                        className="w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center"
+                        className="z-5 w-8 h-8 bg-green-600 hover:bg-green-800 shadow-4xl text-white rounded-full flex items-center justify-center"
                     >
                         &#8592;
                     </button>
                     <button
                         onClick={nextArticle}
-                        className="w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center"
+                        className="z-1 w-8 h-8 bg-green-600 hover:bg-green-800 shadow-4xl text-white rounded-full flex items-center justify-center"
                     >
                         &#8594;
                     </button>
@@ -79,7 +79,7 @@ export default function Article() {
                     <div className="lg:w-1/2 lg:pr-4 mb-4 lg:mb-0">
                         <div className="bg-transparent rounded-lg overflow-hidden">
                             <div className="p-4">
-                                <h2 className="text-xl font-bold mb-2">
+                                <h2 className="text-2xl font-bold mb-2">
                                     {article.title}
                                 </h2>
                                 <p className="text-gray-600 mb-2">
@@ -88,7 +88,7 @@ export default function Article() {
                                     ).toLocaleDateString()}
                                 </p>
                                 <div
-                                    className="text-gray-600 mb-4 text-2xl"
+                                    className="text-gray-600 mb-4 text-xl"
                                     dangerouslySetInnerHTML={{
                                         __html: content,
                                     }}
@@ -104,7 +104,7 @@ export default function Article() {
                     </div>
                     <div className="lg:w-1/2">
                         <img
-                            className="w-full h-auto rounded-md"
+                            className="w-full md:max-h-72 rounded-md object-cover"
                             src={article.image}
                             alt="Article"
                         />

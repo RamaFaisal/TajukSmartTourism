@@ -52,7 +52,9 @@ export default function Navbar() {
             )}
             <div
                 className={`navbar-main fixed top-0 w-full z-50 shadow-outline transition-colors duration-1 ${
-                    isScrolled ? "bg-hijauNew shadow-lg" : "bg-hijauNew opacity-85 shadow-lg"
+                    isScrolled
+                        ? "bg-hijauNew shadow-lg"
+                        : "bg-hijauNew opacity-85 shadow-lg"
                 }`}
             >
                 <div className="navbar lg:px-20 text-black fontFamily-sans">
@@ -381,7 +383,12 @@ export default function Navbar() {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <a className="btn">AR</a>
+                        <a
+                            className="btn"
+                            href="https://feby-akliji23.github.io/AR-BETA_V01/"
+                        >
+                            AR
+                        </a>
                     </div>
                 </div>
             </div>
