@@ -149,7 +149,7 @@ const Destinasi = () => {
                             {group.map((destination, i) => (
                                 <div
                                     key={i}
-                                    className={`w-full pl-6 pr-6 ${
+                                    className={`w-full pr-5 pl-5 ${
                                         isDesktop ? "md:w-1/2" : ""
                                     }`}
                                 >
@@ -188,7 +188,7 @@ const Destinasi = () => {
                         prevSlide();
                         resetInterval();
                     }}
-                    className="w-5 md:h-[335px] h-[200px] absolute top-1/2 transform -translate-y-1/2 left-0 bg-putih bg-opacity-100 text-black rounded-md"
+                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 left-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
                 >
                     &lt;
                 </button>
@@ -197,7 +197,7 @@ const Destinasi = () => {
                         nextSlide();
                         resetInterval();
                     }}
-                    className="w-5 md:h-[335px] h-[200px] absolute top-1/2 transform -translate-y-1/2 right-0 bg-putih bg-opacity-100 text-black rounded-md"
+                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 right-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
                 >
                     &gt;
                 </button>

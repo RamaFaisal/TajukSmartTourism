@@ -18,7 +18,7 @@ export default function ProfileDesa(props) {
                 />
             </div>
 
-            <div className="relative w-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover text-black rounded-t-[20px] rounded-t-[150px]">
+            <div className="relative w-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover text-black rounded-t-[20px] rounded-t-[50px]">
                 <div className="container mx-auto mt-10 pt-10 lg:w-[1280px] px-5 md:px-8 lg:px-16 pt-10 text-center z-10">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif">
                         Profile Desa Tajuk

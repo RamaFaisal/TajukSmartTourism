@@ -24,7 +24,7 @@ export default function Produk(props) {
                 <Carousel />
             </div>
 
-            <div className="relative w-full bg-white text-lg md:text-xl flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[150px] text-black">
+            <div className="relative w-full bg-white text-lg md:text-xl flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px] text-black">
                 <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center pt-20">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                         Berbagai Produk Desa Tajuk

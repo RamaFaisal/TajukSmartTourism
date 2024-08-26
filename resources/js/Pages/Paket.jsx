@@ -78,7 +78,7 @@ export default function Paket(props) {
                 <Carousel />
             </div>
 
-            <div className="relative w-full bg-white text-black text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 rounded-t-[20px] lg:rounded-t-[150px]">
+            <div className="relative w-full bg-white text-black text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 rounded-t-[20px] lg:rounded-t-[50px]">
                 <div className="w-full max-w-[1440px] flex flex-col items-center px-4 md:px-8 lg:px-16">
                     <div className="w-full max-w-[1127px] text-center">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold pt-10 lg:pt-32 font-serif">
