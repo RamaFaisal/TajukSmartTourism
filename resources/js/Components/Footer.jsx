@@ -31,7 +31,10 @@ const Footer = () => {
                     </p>
                     <p className="text-sm lg:text-lg mb-2">
                         <strong>Telepon:</strong>
-                        <a href="https://wa.me/6283831597088" target="_blank"> 083831597088</a>
+                        <a href="https://wa.me/6283831597088" target="_blank">
+                            {" "}
+                            083831597088
+                        </a>
                     </p>
                 </div>
 
@@ -109,6 +112,7 @@ const Footer = () => {
                         >
                             Paket
                         </a>
+                        <span className="block md:hidden"> /</span>
                         <a
                             className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
                             href="/admin"

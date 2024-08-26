@@ -7,11 +7,26 @@ export default function Sokowolu(props) {
     return (
         <>
             <Head title={props.title} />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            />
             <Navbar />
 
             <div className="w-full">
+                <div className="absolute inset-0 flex items-center justify-center z-10 h-[350px] md:h-[400px] bg-black bg-opacity-45">
+                    <div className="text-center text-white font-serif px-10 md:px-0">
+                        <h1 className="text-xl md:text-5xl font-bold mb-4">
+                            Selamat Datang di Sokowolu
+                        </h1>
+                        <p className="text-md md:text-2xl">
+                            Eksplorasi Keindahan Alam Hutan Pinus Tiamo Sokowolu
+                            Getasan Semarang.
+                        </p>
+                    </div>
+                </div>
                 <img
-                    className="w-full h-[250px] md:h-full lg:h-[400px] object-cover"
+                    className="w-full h-[350px] md:h-full lg:h-[400px] object-cover"
                     src="https://drive.google.com/thumbnail?id=1uoahO7LaBHukk-zJtdjOmKK1yPnmWW5-&sz=w2000"
                     alt="Wisata DungKluruk"
                 />
@@ -20,18 +35,15 @@ export default function Sokowolu(props) {
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
-                            Selamat Datang di{" "}
-                            <span className="text-hijauNew underline">
-                                Sokowolu
-                            </span>
-                        </h1>
-                        <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16">
-                            Dung-Kluruk merupakan taman wisata yang desain untuk
-                            wisata keluarga. Terdapat taman, embung dan aneka
-                            bermain untuk anak. Disamping taman dung-kluruk
-                            terdapat lapangan, yang sering digunakan untuk
-                            berbagai macam acara.
+                        <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16 font-sans">
+                            Ketika kamu berkunjung ke Kabupaten Semarang,
+                            pengalaman liburan Anda akan terasa kurang lengkap
+                            tanpa mengeksplorasi destinasi wisata alam yang
+                            populer di daerah kabupaten Semarang. Salah satunya
+                            adalah Hutan Pinus Tiamo yang terletak di Dusun
+                            Sokowolu. Destinasi ini terkenal dengan keindahan
+                            alamnya, menawarkan area rekreasi yang dikelilingi
+                            oleh hutan pinus yang memukau.
                         </p>
                     </div>
                     <div className="w-full lg:w-[550px] flex justify-center items-center">
@@ -39,7 +51,7 @@ export default function Sokowolu(props) {
                             <div className="w-full lg:h-80 relative overflow-hidden">
                                 <img
                                     className="w-full h-auto lg:h-80 object-cover rounded-[20px]"
-                                    src="https://drive.google.com/thumbnail?id=1k9vBYV43kBww9T_NSgxFdfd7hzEnXRdZ&sz=w2000"
+                                    src="https://drive.google.com/thumbnail?id=16iw8d-XWlKrucOoEJotZj7gvqdP_ocAy&sz=w2000"
                                     alt="Wisata DungKluruk"
                                 />
                                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
@@ -104,35 +116,29 @@ export default function Sokowolu(props) {
                         Buka: Setiap Hari
                         <br />
                         Waktu: 06:00 - 19:00
-                        <br />
-                        Lokasi: -
                     </p>
                     <br />
 
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
-                        Harga Tiket Masuk:
+                        Harga Tiket Masuk: Rp 5.000,00
                     </h2>
-                    <ul className="list-disc list-inside mb-4">
-                        <li>Dewasa: Rp 100.000</li>
-                        <li>Anak-anak (3-12 tahun): Rp 50.000</li>
-                        <li>Balita (di bawah 3 tahun): Gratis</li>
-                    </ul>
+                    <p className="mb-4">
+                        Biaya parkir juga berlaku, dengan tarif Rp 2.000,00
+                        untuk sepeda motor dan Rp 5.000,00 untuk mobil
+                    </p>
                     <br />
 
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Tentang Destinasi:
                     </h2>
                     <p className="mb-4">
-                        Dungkluruk, sebuah kawasan pegunungan yang terletak jauh
-                        dari keramaian kota, adalah destinasi ideal bagi para
-                        petualang dan pecinta alam. Dengan pemandangan
-                        pegunungan yang dramatis, hutan yang lebat, dan air
-                        terjun yang memukau, Dungkluruk menawarkan berbagai
-                        kegiatan luar ruangan yang menantang dan memuaskan.
-                        Destinasi ini terkenal dengan keasliannya yang masih
-                        terjaga, menawarkan pengalaman otentik bagi para
-                        pengunjung yang ingin menikmati keindahan alam yang
-                        murni.
+                        Hutan Pinus Tiamo berada di Dusun Sokowolu, Tajuk,
+                        Kecamatan Getasan, Kabupaten Semarang, Jawa Tengah.
+                        Sebelum memutuskan untuk berkunjung, pastikan kendaraan
+                        Anda dalam kondisi optimal. Untuk merasakan suasana yang
+                        lebih tenang dan udara yang lebih segar, disarankan
+                        datang pada pagi atau sore hari, saat cuaca lebih sejuk
+                        dan tidak terlalu panas.
                     </p>
                     <br />
 
@@ -140,35 +146,38 @@ export default function Sokowolu(props) {
                         Daya Tarik Utama:
                     </h2>
                     <ul className="list-disc list-inside mb-4">
-                        <li>
-                            <strong>Gunung Dungkluruk:</strong> Puncak gunung
-                            yang menawarkan pemandangan panorama yang
-                            menakjubkan, jalur pendakian yang menantang, dan
-                            udara pegunungan yang segar. Pemandangan dari puncak
-                            gunung ini sangat memukau, terutama saat matahari
-                            terbit dan terbenam.
+                        <li className="mt-2">
+                            <strong>Hutan Pinus:</strong> Keberadaan pohon pinus
+                            menjadi salah satu daya tarik utama di tempat wisata
+                            alam terbuka ini. Dikelilingi pepohonan hijau yang
+                            tinggi, kamu dapat merasakan ketenangan dan
+                            kedamaian yang sulit ditemukan di kota.
                         </li>
-                        <li>
-                            <strong>Air Terjun Seribu Bidadari:</strong> Air
-                            terjun yang megah dan indah, dikelilingi oleh hutan
-                            lebat, ideal untuk berenang dan berfoto. Air terjun
-                            ini menawarkan suasana yang tenang dan pemandangan
-                            yang mempesona.
+                        <li className="mt-2">
+                            <strong>Tiamo Waterfall:</strong> Selain menyuguhkan
+                            pemandangan hutan pinus yang luas, kawasan ini juga
+                            memiliki air terjun yang menawan bernama Tiamo
+                            Waterfall. Meskipun air terjun ini tidak begitu
+                            tinggi dan alirannya tidak terlalu deras, kejernihan
+                            airnya tetap memukau.
                         </li>
-                        <li>
-                            <strong>Lembah Hijau:</strong> Lembah yang subur
-                            dengan hamparan padang rumput hijau dan bunga-bunga
-                            liar, sempurna untuk piknik dan rekreasi. Lembah ini
-                            menjadi tempat yang ideal untuk berjalan santai dan
-                            menikmati keindahan alam.
+                        <li className="mt-2">
+                            <strong>Camping Ground:</strong> Di Hutan Pinus
+                            Tiamo, ada daya tarik lain yang tak kalah menarik
+                            berupa camping ground yang luas dan nyaman. Kamu
+                            akan dimanjakan dengan pemandangan spektakuler dari
+                            gunung dan bukit yang mengelilingi tempat ini.
+                            Dengan suasana yang begitu memikat, kamu pasti akan
+                            merasa betah untuk berkemah bersama teman atau
+                            sekeluarga selama beberapa hari disini.
                         </li>
-                        <li>
-                            <strong>Desa Tradisional Dungkluruk:</strong> Desa
-                            yang mempertahankan cara hidup tradisional, di mana
-                            pengunjung dapat belajar tentang budaya dan tradisi
-                            lokal. Desa ini juga menawarkan penginapan homestay
-                            yang memberikan pengalaman hidup bersama penduduk
-                            setempat.
+                        <li className="mt-2">
+                            <strong>Photo Spot:</strong> Hal yang paling diincar
+                            wisatawan adalah spot foto yang cantik. Di sini, ada
+                            tulisan “Tiamo” yang dapat dijadikan sebagai spot
+                            foto tambahan. Di area ini, Anda akan menemukan
+                            berbagai latar belakang menarik lainnya yang cocok
+                            untuk mempercantik foto Anda.
                         </li>
                     </ul>
                     <br />
@@ -176,16 +185,24 @@ export default function Sokowolu(props) {
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Fasilitas:
                     </h2>
-                    <ul className="list-disc list-inside">
-                        <li>Jalur Trekking</li>
-                        <li>Pemandu Wisata</li>
-                        <li>Tempat Istirahat dan Bersantai</li>
-                        <li>Area Piknik</li>
-                        <li>Tikar dan Selimut</li>
-                        <li>Toilet Umum</li>
-                        <li>Area Parkir</li>
-                        <li>Area Camping</li>
-                    </ul>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-faucet mr-6"></i>
+                            Air Mengalir
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-restroom mr-6"></i>
+                            Toilet
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-campground mr-6"></i>
+                            Area Camping
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-toolbox mr-6"></i>
+                            Penyewaan Peralatan Camping
+                        </div>
+                    </div>
                 </div>
 
                 <Footer />

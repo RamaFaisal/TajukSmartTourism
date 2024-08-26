@@ -6,7 +6,12 @@ import { Head, Link } from "@inertiajs/react";
 export default function DungKluruk(props) {
     return (
         <>
-            <Head title={props.title} />
+            <Head title={props.title}>
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+                />
+            </Head>
             <Navbar />
 
             <div className="w-full">
@@ -16,8 +21,8 @@ export default function DungKluruk(props) {
                             Selamat Datang di DungKluruk
                         </h1>
                         <p className="text-md md:text-2xl">
-                            Nikmati keindahan alam dan budaya lokal yang
-                            mempesona
+                            Dung Kluruk menjadi destinasi wisata alam yang
+                            instragamable dan siap memanjakan mata kamu.
                         </p>
                     </div>
                 </div>
@@ -111,88 +116,72 @@ export default function DungKluruk(props) {
                     <p className="mb-4 mt-10 lg:mt-20">
                         Buka: Setiap Hari
                         <br />
-                        Waktu: 06:00 - 19:00
-                        <br />
-                        Lokasi: -
+                        Waktu: 08:00 - 17:00
                     </p>
                     <br />
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
-                        Harga Tiket Masuk:
+                        Harga Tiket Masuk: Rp 5.000,00
                     </h2>
-                    <ul className="list-disc list-inside mb-4">
-                        <li>Dewasa: Rp 100.000</li>
-                        <li>Anak-anak (3-12 tahun): Rp 50.000</li>
-                        <li>Balita (di bawah 3 tahun): Gratis</li>
-                    </ul>
                     <br />
 
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Tentang Destinasi:
                     </h2>
                     <p className="mb-4">
-                        Dungkluruk, sebuah kawasan pegunungan yang terletak jauh
-                        dari keramaian kota, adalah destinasi ideal bagi para
-                        petualang dan pecinta alam. Dengan pemandangan
-                        pegunungan yang dramatis, hutan yang lebat, dan air
-                        terjun yang memukau, Dungkluruk menawarkan berbagai
-                        kegiatan luar ruangan yang menantang dan memuaskan.
-                        Destinasi ini terkenal dengan keasliannya yang masih
-                        terjaga, menawarkan pengalaman otentik bagi para
-                        pengunjung yang ingin menikmati keindahan alam yang
-                        murni.
+                        Wisata G-Pass dibuka mulai pukul 08.00-18.00 WIB saat
+                        weekdays (Senin-Jumat). Lalu saat weekend (Sabtu dan
+                        Minggu), wisata ini dibuka mulai dari jam 12.00 WIB dan
+                        tidak ditutup di malam hari sehingga sering dibuat
+                        camping oleh para pengunjung. Harga tiket masuk yang
+                        ditetapkan untuk mengunjungi wisata ini sebesar Rp
+                        5.000,00. Pada saat kamu sampai di lokasi, kamu akan
+                        bertemu penjaga area G-Pass yang sangat ramah dan
+                        informatif yang akan menjelaskan tentang wisata elok
+                        satu ini.
                     </p>
                     <br />
 
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Daya Tarik Utama:
                     </h2>
-                    <ul className="list-disc list-inside mb-4">
-                        <li>
-                            <strong>Gunung Dungkluruk:</strong> Puncak gunung
-                            yang menawarkan pemandangan panorama yang
-                            menakjubkan, jalur pendakian yang menantang, dan
-                            udara pegunungan yang segar. Pemandangan dari puncak
-                            gunung ini sangat memukau, terutama saat matahari
-                            terbit dan terbenam.
-                        </li>
-                        <li>
-                            <strong>Air Terjun Seribu Bidadari:</strong> Air
-                            terjun yang megah dan indah, dikelilingi oleh hutan
-                            lebat, ideal untuk berenang dan berfoto. Air terjun
-                            ini menawarkan suasana yang tenang dan pemandangan
-                            yang mempesona.
-                        </li>
-                        <li>
-                            <strong>Lembah Hijau:</strong> Lembah yang subur
-                            dengan hamparan padang rumput hijau dan bunga-bunga
-                            liar, sempurna untuk piknik dan rekreasi. Lembah ini
-                            menjadi tempat yang ideal untuk berjalan santai dan
-                            menikmati keindahan alam.
-                        </li>
-                        <li>
-                            <strong>Desa Tradisional Dungkluruk:</strong> Desa
-                            yang mempertahankan cara hidup tradisional, di mana
-                            pengunjung dapat belajar tentang budaya dan tradisi
-                            lokal. Desa ini juga menawarkan penginapan homestay
-                            yang memberikan pengalaman hidup bersama penduduk
-                            setempat.
-                        </li>
-                    </ul>
+                    <p className="mb-4">
+                        Bagi kamu yang ingin menikmati berenang di dengan
+                        sensasi dingin dan sejuk, Dung Kluruk menawarkan
+                        pengalaman berenang yang menarik dan asyik. Menikmati
+                        sensasi berenang dengan air yang sejuk dan pemandangan
+                        pegunungan yang indah
+                    </p>
                     <br />
 
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Fasilitas:
                     </h2>
-                    <ul className="list-disc list-inside">
-                        <li>Jalur Trekking</li>
-                        <li>Pemandu Wisata</li>
-                        <li>Tempat Istirahat dan Bersantai</li>
-                        <li>Area Piknik</li>
-                        <li>Tikar dan Selimut</li>
-                        <li>Toilet Umum</li>
-                        <li>Area Parkir</li>
-                        <li>Area Camping</li>
-                    </ul>
+                    <div className="flex flex-col space-y-2">
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-mosque mr-6"></i>
+                            Mushola
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-couch mr-6"></i>
+                            Tempat Istirahat dan Bersantai
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-tree mr-6"></i>
+                            Area Piknik
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-restroom mr-6"></i>
+                            Toilet Umum
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-car mr-6"></i>
+                            Area Parkir
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-campground mr-6"></i>
+                            Area Camping
+                        </div>
+                    </div>
                 </div>
 
                 <Footer />

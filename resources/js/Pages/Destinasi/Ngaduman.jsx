@@ -7,11 +7,27 @@ export default function Ngaduman(props) {
     return (
         <>
             <Head title={props.title} />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            />
             <Navbar />
 
             <div className="w-full">
+                <div className="absolute inset-0 flex items-center justify-center z-10 h-[350px] md:h-[400px] bg-black bg-opacity-45">
+                    <div className="text-center text-white font-serif px-10 md:px-0">
+                        <h1 className="text-xl md:text-5xl font-bold mb-4">
+                            Selamat Datang di Ngaduman
+                        </h1>
+                        <p className="text-md md:text-2xl">
+                            Nikmati pengalaman tinggal di Dusun Ngaduman dan
+                            mengikuti keseharian warga melalui program Live in
+                            Dusun Ngaduman.
+                        </p>
+                    </div>
+                </div>
                 <img
-                    className="w-full h-[250px] md:h-full lg:h-[400px] object-cover"
+                    className="w-full h-[350px] md:h-full lg:h-[400px] object-cover"
                     src="https://drive.google.com/thumbnail?id=1WutfgpyKpbV_y5AYGRNrRFQvAEzRzriW&sz=w2000"
                     alt="Wisata DungKluruk"
                 />
@@ -20,18 +36,12 @@ export default function Ngaduman(props) {
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 lg:px-40">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <h1 className="text-black text-4xl md:text-4xl lg:text-6xl font-bold font-serif">
-                            Selamat Datang di{" "}
-                            <span className="text-hijauNew underline">
-                                Ngaduman
-                            </span>
-                        </h1>
-                        <p className="text-black text-lg lg:text-xl font-normal mt-4 lg:indent-16">
-                            Dung-Kluruk merupakan taman wisata yang desain untuk
-                            wisata keluarga. Terdapat taman, embung dan aneka
-                            bermain untuk anak. Disamping taman dung-kluruk
-                            terdapat lapangan, yang sering digunakan untuk
-                            berbagai macam acara.
+                        <p className="text-black text-lg lg:text-xl font-sans mt-4 lg:indent-16">
+                            Tinggal di lingkungan sejuk dengan sambutan hangat
+                            penduduk yang menerimamu untuk mengikuti keseharian
+                            mereka akan menjadi pengalaman tak terlupakan. Hal
+                            ini bisa kamu dapatkan melalui paket wisata ‘Live
+                            in’ Dusun Ngaduman.
                         </p>
                     </div>
                     <div className="w-full lg:w-[550px] flex justify-center items-center">
@@ -100,39 +110,19 @@ export default function Ngaduman(props) {
                         alt="Deskripsi Gambar"
                     />
 
-                    <p className="mb-4 mt-10 lg:mt-20">
-                        Buka: Setiap Hari
-                        <br />
-                        Waktu: 06:00 - 19:00
-                        <br />
-                        Lokasi: -
-                    </p>
-                    <br />
-
-                    <h2 className="text-xl lg:text-2xl font-semibold mb-2">
-                        Harga Tiket Masuk:
-                    </h2>
-                    <ul className="list-disc list-inside mb-4">
-                        <li>Dewasa: Rp 100.000</li>
-                        <li>Anak-anak (3-12 tahun): Rp 50.000</li>
-                        <li>Balita (di bawah 3 tahun): Gratis</li>
-                    </ul>
-                    <br />
-
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Tentang Destinasi:
                     </h2>
                     <p className="mb-4">
-                        Dungkluruk, sebuah kawasan pegunungan yang terletak jauh
-                        dari keramaian kota, adalah destinasi ideal bagi para
-                        petualang dan pecinta alam. Dengan pemandangan
-                        pegunungan yang dramatis, hutan yang lebat, dan air
-                        terjun yang memukau, Dungkluruk menawarkan berbagai
-                        kegiatan luar ruangan yang menantang dan memuaskan.
-                        Destinasi ini terkenal dengan keasliannya yang masih
-                        terjaga, menawarkan pengalaman otentik bagi para
-                        pengunjung yang ingin menikmati keindahan alam yang
-                        murni.
+                        Dusun Ngaduman merupakan salah satu dusun yang ada di
+                        Desa Tajuk, Kecamatan Getasan, Kabupaten Semarang.
+                        Berada di pemukiman tertinggi lereng Gunung Merbabu,
+                        program wisata 'Live in' Dusun Ngaduman menjadi
+                        destinasi yang sempurna untuk menepi dari hiruk-pikuk
+                        perkotaan. Melalui program ini, kamu akan mendapat
+                        kesempatan untuk merasakan langsung keseharian warga
+                        dusun. Inilah yang menjadi daya tarik utama dari program
+                        'Live in' Dusun Ngaduman.
                     </p>
                     <br />
 
@@ -140,35 +130,41 @@ export default function Ngaduman(props) {
                         Daya Tarik Utama:
                     </h2>
                     <ul className="list-disc list-inside mb-4">
-                        <li>
-                            <strong>Gunung Dungkluruk:</strong> Puncak gunung
-                            yang menawarkan pemandangan panorama yang
-                            menakjubkan, jalur pendakian yang menantang, dan
-                            udara pegunungan yang segar. Pemandangan dari puncak
-                            gunung ini sangat memukau, terutama saat matahari
-                            terbit dan terbenam.
+                        <li className="mt-2">
+                            <strong>
+                                Pengalaman Tinggal dengan Keluarga Asuh:
+                            </strong>
+                            Kamu akan tinggal bersama keluarga asuh, yang
+                            memungkinkan kamu untuk merasakan kehidupan
+                            sehari-hari warga Dusun Ngaduman secara langsung.
+                            Serta, Berpartisipasi dalam aktivitas sehari-hari
+                            seperti berkebun, memasak, dan kegiatan budaya
+                            lainnya.
                         </li>
-                        <li>
-                            <strong>Air Terjun Seribu Bidadari:</strong> Air
-                            terjun yang megah dan indah, dikelilingi oleh hutan
-                            lebat, ideal untuk berenang dan berfoto. Air terjun
-                            ini menawarkan suasana yang tenang dan pemandangan
-                            yang mempesona.
+                        <li className="mt-2">
+                            <strong>Pembelajaran Berkebun Kopi:</strong> Dusun
+                            ini dikelilingi oleh kebun kopi yang luas, dan kamu
+                            akan diajarkan cara berkebun kopi secara langsung
+                            oleh penduduk setempat.
                         </li>
-                        <li>
-                            <strong>Lembah Hijau:</strong> Lembah yang subur
-                            dengan hamparan padang rumput hijau dan bunga-bunga
-                            liar, sempurna untuk piknik dan rekreasi. Lembah ini
-                            menjadi tempat yang ideal untuk berjalan santai dan
-                            menikmati keindahan alam.
+                        <li className="mt-2">
+                            <strong>Kegiatan Budaya:</strong> Berpartisipasi
+                            dalam kegiatan budaya, termasuk tarian selamat
+                            datang dan prosesi pembukaan yang hangat saat
+                            pertama kali tiba.
                         </li>
-                        <li>
-                            <strong>Desa Tradisional Dungkluruk:</strong> Desa
-                            yang mempertahankan cara hidup tradisional, di mana
-                            pengunjung dapat belajar tentang budaya dan tradisi
-                            lokal. Desa ini juga menawarkan penginapan homestay
-                            yang memberikan pengalaman hidup bersama penduduk
-                            setempat.
+                        <li className="mt-2">
+                            <strong>Fleksibilitas Durasi Program:</strong>{" "}
+                            Program menawarkan fleksibilitas dalam memilih
+                            durasi tinggal, mulai dari 2 hari 1 malam hingga 4
+                            hari 3 malam.
+                        </li>
+                        <li className="mt-2">
+                            <strong>Sambutan Tradisional:</strong> Saat pertama
+                            kali tiba, kamu akan disambut dengan minuman,
+                            makanan ringan, tarian selamat datang, dan prosesi
+                            sambutan yang melibatkan perwakilan dusun dan
+                            pengunjung
                         </li>
                     </ul>
                     <br />
@@ -176,16 +172,36 @@ export default function Ngaduman(props) {
                     <h2 className="text-xl lg:text-2xl font-semibold mb-2">
                         Fasilitas:
                     </h2>
-                    <ul className="list-disc list-inside">
-                        <li>Jalur Trekking</li>
-                        <li>Pemandu Wisata</li>
-                        <li>Tempat Istirahat dan Bersantai</li>
-                        <li>Area Piknik</li>
-                        <li>Tikar dan Selimut</li>
-                        <li>Toilet Umum</li>
-                        <li>Area Parkir</li>
-                        <li>Area Camping</li>
-                    </ul>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-bed mr-7"></i>
+                            Akomodasi
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-shuttle-van mr-7"></i>
+                            Transportasi Tradisional
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-utensils mr-7"></i>
+                            Makanan dan Minuman
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-restroom mr-7"></i>
+                            Toilet
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-list-alt mr-7"></i>
+                            Kegiatan Terstruktur
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-mountain mr-7"></i>
+                            Downhill
+                        </div>
+                        <div className="flex items-center">
+                            <i className="fa-solid fa-mug-hot mr-7"></i>
+                            Kopi Khas Ngaduman
+                        </div>
+                    </div>
                 </div>
 
                 <Footer />

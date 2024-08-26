@@ -95,6 +95,16 @@ export default function Gallery(props) {
             <Navbar />
 
             <div className="relative w-full h-[300px] sm:h-[300px] md:h-[500px] overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                    <div className="text-center text-white font-serif">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                            Galeri Desa Wisata Tajuk
+                        </h1>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            --------
+                        </p>
+                    </div>
+                </div>
                 <Carousel />
             </div>
 

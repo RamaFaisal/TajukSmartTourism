@@ -53,7 +53,7 @@ export default function Berita(props) {
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                     <div className="text-center text-white font-serif">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                            Berita di Desa Wisata Tajuk
+                            Berita Desa Wisata Tajuk
                         </h1>
                         <p className="text-lg md:text-xl lg:text-2xl">
                             Nikmati keindahan alam dan budaya lokal yang

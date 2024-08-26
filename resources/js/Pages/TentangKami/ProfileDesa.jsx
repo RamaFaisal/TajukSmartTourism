@@ -10,7 +10,7 @@ export default function ProfileDesa(props) {
             <Head title={props.title} />
             <Navbar />
 
-            <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
+            <div className="relative w-full h-[300px] md:h-[600px] overflow-hidden">
                 <img
                     className="fixed w-full h-[600px] md:h-full lg:h-[730px] object-cover top-0 left-0 z-0"
                     src="https://drive.google.com/thumbnail?id=1sRaY7jlybHTX2AnjNQ0oJPL_a8qVsxYr&sz=w2000"
@@ -38,11 +38,6 @@ export default function ProfileDesa(props) {
 
                 <div className="w-full lg:w-[1160px] h-auto text-justify text-base md:text-lg lg:text-xl lg:mt-2 px-5 z-10">
                     <p>
-                        <span className="font-bold text-3xl">
-                            Selamat datang di Profil Desa Tajuk.{" "}
-                        </span>
-                        <br />
-                        <br />
                         Desa Tajuk adalah sebuah destinasi wisata yang
                         menggabungkan keindahan alam dengan kekayaan budaya yang
                         khas. Terletak di tengah-tengah pegunungan yang hijau
