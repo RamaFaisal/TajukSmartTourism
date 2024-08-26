@@ -13,7 +13,7 @@ export default function DusunCingklok(props) {
             <div className="w-full relative">
                 <img
                     className="w-full h-[250px] md:h-full lg:h-[500px] object-cover"
-                    src="/imgDusun/dsnPulihan/Pulihan.jpg"
+                    src="https://drive.google.com/thumbnail?id=1gePUgAUMCqOACcfkq8KsNELgcaN6ZB92&sz=w2000"
                     alt="Pemandangan Dusun Pulihan"
                 />
                 <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 w-full text-center">
@@ -24,63 +24,69 @@ export default function DusunCingklok(props) {
                 </div>
             </div>
 
-            <div className="w-full px-8 md:px-40 text-justify space-y-6 leading-relaxed">
+            <div className="w-full px-8 md:px-52 text-justify space-y-6 leading-relaxed">
                 <p>
-                    Bayangkan betapa seru dan menyenangkannya hidup di{" "}
-                    <strong>Dusun Tajuk</strong> yang terkenal dengan
-                    keaktifannya dalam berpartisipasi di berbagai kegiatan desa.
-                    Bahkan, warga dusun ini juga berpatisipasi aktif dalam
-                    kelompok desa. Misalnya menjadi anggota BUMDES dan Karang
-                    Taruna.
+                    Saat berwisata tidak lengkap rasanya jika tidak membawa
+                    oleh-oleh untuk teman, saudara, ataupun orang terdekat
+                    lainnya. Oleh-oleh ini ada beragam bentuknya. Bahkan, hasil
+                    pertanian seperti sayuran segar juga bisa menjadi oleh-oleh
+                    loh. Maka dari itu, sebelum pulang dari Desa Tajuk, ada
+                    baiknya kamu berkunjung ke Dusun Cingklok untuk membawa
+                    oleh-oleh.
                 </p>
                 <p>
-                    Dusun Tajuk menjadi salah satu bagian Desa Tajuk yang
-                    terletak di Kecamatan Getasan, Kabupaten Semarang. Dusun ini
-                    dihuni oleh 124 Kepala Keluarga (KK). Selain aktif dalam
-                    kegiatan di desa, Dusun Tajuk juga memiliki keindahan dan
-                    kesejukan alam yang asri. Dusun ini memiliki perkebunan yang
-                    dan terdapat peternakan sapi sebagai salah satu sumber mata
-                    pencarian warga mengingat sebagian besar warga berprofesi
-                    sebagai peternak dan petani sayur. Hasil pertanian dari
-                    dusun ini biasanya berupa kol, cabai, dan tembakau. Namun,
-                    untuk tanaman tembakau hanya bisa ditemukan di bulan-bulan
-                    tertentu. Misalnya di bulan Agustus dan September.
+                    Dusun Cingklok menjadi salah satu bagian dusun yang terletak
+                    di Desa Tajuk, Kecamatan Getasan, Kabupaten Semarang. Dusun
+                    yang dihuni oleh sebanyak 88 Kepala Keluarga (KK) ini
+                    memiliki luas lahan sekitar 1,67 Ha. Mayoritas pekerjaan
+                    warga dusun adalah petani dan peternak. Kehidupan di dusun
+                    ini sangat kental dengan aktivitas pertanian, dimana sayuran
+                    dan susu segar menjadi hasil bumi warta setempat.
                 </p>
                 <p>
-                    Secara geografis, jarak Dusun Tajuk ke Kecamatan Getasan
-                    sekitar 5 KM. Dusun yang paling berdekatan dengan Dusun
-                    Tajuk adalah Dusun Ngroto. Selain hasil pertanian, potensi
-                    lain yang dimiliki oleh dusun ini adalah peternakan.
-                    Terdapat hasil susu dari sapi perah yang juga dapat diolah.
-                    Hasil pertanian dan peternakan ini biasanya dijual ke pasar
-                    ataupun juragan.
+                    Di Dusun Cingklok, terdapat sekelompok warga yang tergabung
+                    dalam Kelompok Wanita Tani (KWT) bernama ‘Mekar Asih’.
+                    Kelompok ini terdiri dari sekumpulan ibu-ibu yang berinovasi
+                    menghasilkan produk pertanian organik. Produk sayuran Dusun
+                    Cingklok memiliki keunggulan. Hal yang paling menonjol
+                    adalah bebas dari bahaya zat kimia. Hal ini dikarenakan
+                    mereka memfokuskan pada upaya pembuatan pupuk dan pestisida
+                    organik.
                 </p>
                 <p>
-                    Selain itu, terdapat 1 UMKM yang masih aktif yaitu UMKM yang
-                    bergerak untuk mengolah tempe. UMKM Tempe di dusun tajuk
-                    sangat aktif karena usaha dari warga desa yang memanfaatkan
-                    potensi ini dengan maksimal. semua hasil olahan kedelai
-                    mulai dari proses hingga produksi, dilakukan sendiri oleh
-                    warga dengan kerja sama dan gotong royong.
+                    Selain itu, sayuran ini juga memiliki tingkat keawetan yang
+                    cukup lama. Sayuran yang kamu bawa dari Dusun Cingklok bisa
+                    bertahan 1-2 minggu. Tentunya, ini jadi pilihan oleh-oleh
+                    yang ideal bagi kamu setelah berwisata di Desa Tajuk untuk
+                    dibagikan kepada orang-orang terdekat.
                 </p>
                 <p>
-                    Mayoritas penduduk beragama Islam dan sebagian lagi beragama
-                    Kristen. Di dusun ini, warganya juga masih menerapkan
-                    kalender jawa. .Ada tradisi Saparan yang berbeda-beda
-                    tanggal pelaksanannya di masing-masing dusun. Di Dusun Tajuk
-                    sendiri tradisi ini diperingati oleh warga pada tanggal 30
-                    Agustus. Biasanya dilaksanakan di minggu legi dengan
-                    mengikuti kalender jawa. Tradisi Saparan ini masih dilakukan
-                    karena warga percaya bahwa tradisi ini merupakan wujud
-                    syukur dengan tujuan agar diberikan keselamatan hidup dunia
-                    akhirat. Selain itu juga memanjatkan harapan agar
-                    mendapatkan banyak berkah dan rezeki, serta jauh dari
-                    malapetaka. Ketika mengunjungi Dusun Tajuk, kamu juga akan
-                    disambut dengan hangat oleh warganya. Mau tau bagaimana
-                    euforia kehidupan yang menyenangkan lainnya di Mau tau
-                    bagaimana euforia kehidupan yang menyenangkan lainnya di
-                    Dusun Tajuk? Yuk, kunjungi Dusun Tajuk, Desa Tajuk,
-                    Kecamatan Getasan, Kabupaten Semarang, Jawa Tengah.
+                    Mengunjungi Dusun Cingklok bukan hanya tentang menikmati
+                    hasil pertanian yang berkualitas. Bukan juga sekadar membeli
+                    oleh-oleh untuk bekal kembali ke rumah dan dibagikan ke
+                    orang-orang. Lebih daripada itu, di dusun ini kamu juga akan
+                    merasakan semangat warga dusun dalam menyiapkan oleh-oleh
+                    yang berkesan dan berkualitas untuk wisatawan. Terlebih,
+                    semangat dari para wanita pekerja keras yang tergabung dalam
+                    Kelompok Wanita Tani Mekar Asih.
+                </p>
+                <p>
+                    Kelompok Wanita Tani Mekar Asih di Dusun Cingklok, dipimpin
+                    oleh seorang tokoh yang sangat bersemangat dan penuh
+                    dedikasi. Bu Darsih sapaan akrabnya. Dari yang hanya
+                    beranggotakan 5-6 orang, kini kelompok tersebut sudah
+                    menggaet puluhan orang untuk aktif memproduksi hasil
+                    pertanian yang berkualitas. Di sini, kamu juga bisa belajar
+                    lebih banyak tentang proses pertanian organik hingga
+                    berdiskusi dengan para warga dusun. Khususnya yang tergabung
+                    dalam kelompok tani.
+                </p>
+                <p>
+                    Jadi, ketika kamu berkunjung ke Desa Tajuk, jangan lupa
+                    untuk bersinggah di Dusun Cingklok ya. Kamu akan disambut
+                    panorama alam yang menakjubkan, warga dusun yang penuh
+                    keramahan, dan bawalah oleh-oleh dari dusun ini untuk
+                    orang-orang tersayang.
                 </p>
             </div>
 

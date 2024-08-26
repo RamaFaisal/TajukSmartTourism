@@ -60,7 +60,7 @@ const Dusun = () => {
         },
         {
             imageUrl:
-                "https://i.pinimg.com/564x/7b/45/48/7b4548cfcb1a023e3a1cacae29f58df3.jpg",
+                "https://drive.google.com/thumbnail?id=18waK4Tmk1flYIHvJN3IqF6dOHpm960DP&sz=w2000",
             title: "Dusun Cingklok",
             link: "/Dusun/DusunCingklok",
         },
@@ -68,25 +68,25 @@ const Dusun = () => {
             imageUrl:
                 "https://drive.google.com/thumbnail?id=1x3SUpKByO8n2FToEQm9LS6-YeQ7Ukm9U&sz=w2000",
             title: "Dusun Macanan",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunMacanan",
         },
         {
             imageUrl:
                 "https://drive.google.com/thumbnail?id=1q7I_6FQLKUCzeuAB304j5Mx73G62jYwv&sz=w2000",
             title: "Dusun Ngroto",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunNgroto",
         },
         {
             imageUrl:
                 "https://drive.google.com/thumbnail?id=1_GAOlMWVmPq7s_rfKoqZ1DYGpgWycRgs&sz=w2000",
             title: "Dusun Banaran",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunBanaran",
         },
         {
             imageUrl:
                 "https://drive.google.com/thumbnail?id=1cOYIPZ-ON2HP1okUehIbxOVdhD84LMS8&sz=w2000",
             title: "Dusun Sokowolu",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunSokowolu",
         },
         {
             imageUrl:
@@ -98,13 +98,13 @@ const Dusun = () => {
             imageUrl:
                 "https://drive.google.com/thumbnail?id=16eppZkBAkD4HS1Bp-bli4ORfWYkF9ALN&sz=w2000",
             title: "Dusun Gedong",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunGedong",
         },
         {
             imageUrl:
                 "https://drive.google.com/thumbnail?id=1bNrDW8Xtw9f_yG4Uwu8WjXI435u7IKSc&sz=w2000",
             title: "Dusun Kaliajeng",
-            link: "/DsnPulihan",
+            link: "/Dusun/DusunKaliajeng",
         },
     ];
 

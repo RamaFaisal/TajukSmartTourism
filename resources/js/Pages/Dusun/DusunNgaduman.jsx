@@ -11,88 +11,100 @@ export default function DusunNgaduman(prop) {
             <div className="w-full relative">
                 <img
                     className="w-full h-[250px] md:h-full lg:h-[500px] object-cover"
-                    src="/imgDusun/dsnPulihan/Pulihan.jpg"
-                    alt="Pemandangan Dusun Pulihan"
+                    src="https://drive.google.com/thumbnail?id=1Z5BuANxo0CHH4HMrGWQdXKyMah9rCGah&sz=w2000"
+                    alt="Pemandangan Dusun Ngaduman"
                 />
                 <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 w-full text-center">
                     <h1 className="lg:text-4xl text-3xl font-serif font-bold">
-                        Menikmati Sensasi Petik Sayur di Desa Pulihan
+                        Dusun Ngaduman Suguhkan Damainya Kehidupan yang
+                        Menyenangkan
                     </h1>
                 </div>
             </div>
 
-            <div className="w-full px-8 md:px-44 text-justify space-y-6 leading-relaxed">
+            <div className="w-full px-8 md:px-52 text-justify space-y-6 leading-relaxed">
                 <p>
-                    Jika kamu mengunjungi <strong>Dusun Pulihan</strong>, kamu
-                    akan menemukan keindahan alam yang tidak pernah ditemukan di
-                    perkotaan. Terlebih lagi dusun yang dihuni kurang lebih
-                    sebanyak <strong>42 Kepala Keluarga (KK)</strong> ini
-                    dikelilingi oleh hutan dan pemandangan alam Gunung Merbabu.
-                    Dusun yang berada di ketinggian{" "}
-                    <strong>1500-1737 mdpl</strong> ini menjadi pusat aktivitas
-                    kegiatan warga Desa Tajuk. Hal ini karena, di Dusun Pulihan
-                    terdapat kantor kelurahan dan balai desa.
+                    Bayangkan betapa nikmatnya tinggal di sebuah dusun yang asri
+                    dengan kesejukan alam pegunungan. Dikelilingi kebun kopi
+                    yang menjadi kebanggaan. Disambut hangat oleh warga lokal
+                    yang penuh keramahtamahan. Sensasi hidup tenang dan damai
+                    seperti itu bisa kamu rasakan di Dusun Ngaduman.
                 </p>
                 <p>
-                    Dusun Pulihan ini memiliki suhu udara yang dingin, sehingga
-                    memiliki potensi untuk pertanian. Salah satu hasil pertanian
-                    yang ditonjolkan yaitu <strong>tembakau dan sayuran</strong>
-                    . Aneka sayur dari hasil panen Dusun Pulihan, Kecamatan
-                    Getasan ini sebagian dikonsumsi pribadi oleh warganya.
-                    Namun, sebagian lagi dijual ke juragan sayur atau langsung
-                    ke pasar.
+                    Dusun Ngaduman adalah salah satu bagian dusun dari Desa
+                    Tajuk, Kecamatan Getasan, Kabupaten Semarang, Jawa Tengah.
+                    Terletak di ketinggian 1.736 mdpl, dusun ini menjadi
+                    pemukiman tertinggi di bagian utara lereng Gunung Merbabu.
+                    Dusun Ngaduman menjadi pembatas antara Desa Tajuk dan Desa
+                    Batur.
                 </p>
                 <p>
-                    Mengunjungi Dusun Pulihan ini bukan hanya untuk menikmati
-                    keindahan alam ataupun membeli sayur di pasar. Namun tak ada
-                    salahnya, untuk kamu mencoba petik sayur sendiri. Kamu akan
-                    mendapat menemukan keseruan yang berbeda. Lain lagi, jika
-                    sayur mayur yang ada baru memasuki musim tanam. Kamu juga
-                    dapat merasakan untuk menanam dan merawat sayur mulai dari
-                    bibit. Seru sekali bukan!
+                    Sebagian penduduk Dusun Ngaduman bermatapencaharian sebagai
+                    petani. Namun, ada pula pengrajin tangan bahan-bahan alami
+                    seperti kerajinan anyaman dan lukisan. Di dusun ini, kamu
+                    bisa merasakan pengalaman liburan yang berkesan melalui
+                    paket wisata "live in".
                 </p>
                 <p>
-                    Mayoritas warga di Dusun Pulihan ini masih menganut{" "}
-                    <strong>kalender Jawa</strong>. Hal itulah yang membuat
-                    tradisi Jawa di dusun tersebut sangat kental dengan adanya
-                    kegiatan seperti <em>malam satu suro, saparan</em>, dan lain
-                    sebagainya.
+                    Kamu akan merasakan pengalaman tinggal langsung selama 3
+                    hari dan berbaur bersama penduduk Dusun Ngaduman. Dusun ini
+                    dihuni oleh 77 Kepala Keluarga (KK). Biasanya, satu rumah
+                    diisi oleh 4-5 pengunjung. Pada hari pertama, kamu akan
+                    disambut dengan tarian tradisional. Kemudian, kamu bisa
+                    mengikuti keseharian mereka mulai dari bangun tidur, hingga
+                    tidur lagi. Bangun tidur, sarapan, berkebun, istirahat
+                    siang, berkegiatan sore, hingga malamnya pun beraktivitas
+                    bersama-sama.
                 </p>
                 <p>
-                    Jika kamu mengunjungi Desa Tajuk di bulan September, kamu
-                    dapat melihat bagaimana tradisi saparan itu digelar. Namun
-                    setiap dusun memiliki penanggalan Jawa yang berbeda. Oleh
-                    karena itu, untuk Dusun Pulihan sendiri mengadakan acara
-                    saparan di tanggal <strong>28 September</strong>.
+                    Mengingat letaknya yang berada di lereng gunung, untuk
+                    sampai di dusun ini kamu harus melewati jalanan yang
+                    menanjak dan berliku. Namun, perjalanan panjang itu akan
+                    terbayar lunas dengan sambutan hangat dari warga dusun.
+                    Setiap berpapasan dengan warga dalam perjalanan, kamu akan
+                    mendapat senyuman ramah yang seolah menyapa dan menerima
+                    kehadiranmu di sini.
                 </p>
                 <p>
-                    Warga Dusun Pulihan memiliki{" "}
-                    <strong>jiwa sosial yang tinggi</strong>. Terlebih lagi, di
-                    desa ini rasa saling tolong menolong dan empati antar warga
-                    sangatlah tinggi. Apalagi jika ada warga yang terkena
-                    musibah. Bisa dibayangkan bukan betapa tingginya empati yang
-                    dimiliki oleh warga di dusun ini? Kamu juga akan merasakan
-                    keramahan dan sambutan hangat para warga ketika berkunjung
-                    ke sini.
+                    Selain live in, di dusun yang memiliki akronim 'adem dan
+                    aman' ini juga memiliki wisata tracking downhill untuk para
+                    pecinta sepeda. Tracking memiliki rute dari Dusun Ngaduman,
+                    hingga Dung Kluruk yang terletak di Dusun Pulihan.
                 </p>
                 <p>
-                    Selain menawarkan keindahan alam dan beberapa tradisi, di
-                    Dusun Pulihan ini juga terdapat kesenian{" "}
-                    <strong>rebana</strong> yang patut diunggulkan. Di desa ini
-                    mayoritas warganya beragama muslim. Oleh karena itu,
-                    terdapat kegiatan keberagamaan seperti{" "}
-                    <strong>TPA (Tempat Pembelajaran Al-Quran)</strong> yang
-                    diperuntukan anak-anak usia 5-10 tahun dalam memperdalam
-                    ilmu Al-Quran.
+                    Bagi pecinta kopi, Dusun Ngaduman bagaikan surga. Banyak
+                    sekali kebun kopi dan menjadi khas yang ditonjolkan di Dusun
+                    Ngaduman. Semua hasil olahan kopi mulai dari proses panen
+                    hingga produksi, dilakukan sendiri oleh warga.
                 </p>
                 <p>
-                    Jika kamu mengunjungi Desa Tajuk ini, tak ada salahnya
-                    mengunjungi Dusun Pulihan juga. Kamu akan disambut dengan{" "}
-                    <strong>view Gunung Merbabu</strong> yang sangat indah.
-                    Selain itu kamu juga akan dapat merasakan kehangatan warga
-                    lokal yang memiliki profesi sebagi petani sayur. Yuk
-                    kunjungi Dusun Pulihan dan rasakan pengalaman untuk memetik
-                    sayur sendiri.
+                    Di Ngaduman, kedai kopi yang terkenal adalah Kedai Kopi
+                    Damalung. Terdapat kopi arabica khas Ngaduman yang ditanam
+                    di lahan ketinggian 2.000 mdpl. Di sini, kamu bisa menikmati
+                    hangatnya secangkir kopi dengan suguhan panorama alam yang
+                    indah dan udara yang sejuk. Fakta menarik dari kata
+                    'Damalung' ternyata dulunya adalah nama dari Gunung Merbabu.
+                    Ada pula fakta menarik lainnya dari kedai kopi kebanggaan
+                    Dusun Ngaduman ini, masih berdiri atas nama Koperasi Rahayu
+                    Ngudi Makmur.
+                </p>
+                <p>
+                    Mayoritas penduduk di Dusun Ngaduman adalah protestan. Ada
+                    tradisi 'Aprilan' yang diperingati warga pada tanggal paskah
+                    di setiap tahun. Budaya ini, mirip-mirip seperti budaya
+                    Saparan. 1-4 hari sebelum hari-h, biasanya seluruh warga
+                    melakukan kegiatan 'Bersih Kampung'. Di Hari Paskah, digelar
+                    doa bersama di gereja dan dilanjutkan oleh makan bersama.
+                    Oleh karena itu, setiap bulan April, warga Ngaduman tidak
+                    menerima pengunjung untuk live in.
+                </p>
+                <p>
+                    Dusun Ngaduman menjadi persinggahan yang tepat untuk menepi
+                    dari hiruk-pikuk dunia urban. Udara dingin di sini bak
+                    penyejuk pikiran yang lelah dan memanas setelah dihantam
+                    berbagai kesibukan. Apalagi, sambutan hangat dari warga
+                    dusun akan membuat kamu merasa benar-benar diterima
+                    seutuhnya dengan penuh kasih sayang.
                 </p>
             </div>
 

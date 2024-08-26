@@ -120,22 +120,6 @@ export default function FormLiveIn2(props) {
                             </div>
                         </div>
                         <div className="mb-4">
-                            <p className="block text-gray-700 font-semibold mb-2">
-                                Paket
-                            </p>
-                            <p className="text-gray-600">
-                                Paket Live In 1
-                                <br />
-                                Rp. ,000.00 /Pax
-                            </p>
-                        </div>
-                        <div className="mb-4">
-                            <p className="text-gray-700 font-semibold mb-2">
-                                Total
-                            </p>
-                            <p className="text-gray-600">Rp. 0,00</p>
-                        </div>
-                        <div className="mb-4">
                             <label
                                 htmlFor="catatan"
                                 className="block text-gray-700 font-semibold mb-2"

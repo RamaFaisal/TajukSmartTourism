@@ -111,9 +111,9 @@ export default function Paket(props) {
                                         <h3 className="text-xl font-bold font-sans mt-2">
                                             {pkg.title}
                                         </h3>
-                                        <p className="text-lg text-green-600 font-semibold">
+                                        {/* <p className="text-lg text-green-600 font-semibold">
                                             {pkg.price} / {pkg.jls}
-                                        </p>
+                                        </p> */}
                                         <ul className="mt-4 text-gray-600">
                                             {pkg.perks.map((perk, i) => (
                                                 <li

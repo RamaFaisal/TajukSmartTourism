@@ -152,6 +152,13 @@ Route::get('/Dusun/DusunTajuk', function() {
     ]);
 });
 
+Route::get('/Dusun/DusunPuyang', function() {
+    return Inertia::render('Dusun/DusunPuyang', [
+        'title' => 'Profile Dusun Puyang',
+        'description' => 'Profile Dusun Puyang Desa Tajuk'
+    ]);
+});
+
 Route::get('/Dusun/DusunCingklok', function() {
     return Inertia::render('Dusun/DusunCingklok', [
         'title' => 'Profile Dusun Cingklok',
@@ -163,6 +170,48 @@ Route::get('/Dusun/DusunNgaduman', function() {
     return Inertia::render('Dusun/DusunNgaduman', [
         'title' => 'Profile Dusun Ngaduman',
         'description' => 'Profile Dusun Ngaduman Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunMacanan', function() {
+    return Inertia::render('Dusun/DusunMacanan', [
+        'title' => 'Profile Dusun Macanan',
+        'description' => 'Profile Dusun Macanan Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunNgroto', function() {
+    return Inertia::render('Dusun/DusunNgroto', [
+        'title' => 'Profile Dusun Ngroto',
+        'description' => 'Profile Dusun Ngroto Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunBanaran', function() {
+    return Inertia::render('Dusun/DusunBanaran', [
+        'title' => 'Profile Dusun Banaran',
+        'description' => 'Profile Dusun Banaran Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunSokowolu', function() {
+    return Inertia::render('Dusun/DusunSokowolu', [
+        'title' => 'Profile Dusun Sokowolu',
+        'description' => 'Profile Dusun Sokowolu Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunGedong', function() {
+    return Inertia::render('Dusun/DusunGedong', [
+        'title' => 'Profile Dusun Gedong',
+        'description' => 'Profile Dusun Gedong Desa Tajuk'
+    ]);
+});
+
+Route::get('/Dusun/DusunKaliajeng', function() {
+    return Inertia::render('Dusun/DusunKaliajeng', [
+        'title' => 'Profile Dusun Kaliajeng',
+        'description' => 'Profile Dusun Kaliajeng Desa Tajuk'
     ]);
 });
 

@@ -23,7 +23,7 @@ export default function DusunTajuk(props) {
                 </div>
             </div>
 
-            <div className="w-full px-8 md:px-48 text-justify space-y-6 leading-relaxed">
+            <div className="w-full px-8 md:px-52 text-justify space-y-6 leading-relaxed">
                 <p>
                     Bayangkan betapa seru dan menyenangkannya hidup di{" "}
                     <strong>Dusun Tajuk</strong> yang terkenal dengan
