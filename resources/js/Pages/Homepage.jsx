@@ -77,7 +77,7 @@ export default function Homepage(props) {
                             mempesona menanti Anda untuk dijelajahi
                         </span>
                         <Link
-                            href="https://drive.google.com/1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
+                            href="/Paket"
                             className="btn bg-white text-black text-xs py-1 px-2 sm:text-sm sm:py-2 sm:px-4 rounded hover:scale-105 transition duration-200 font-sans"
                         >
                             Lihat Paket
