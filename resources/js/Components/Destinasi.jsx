@@ -163,7 +163,7 @@ const Destinasi = () => {
                                             <h3 className="text-lg font-semibold mb-2 font-serif">
                                                 {destination.title}
                                             </h3>
-                                            <p className="text-gray-700 text-sm font-sans">
+                                            <p className="text-sm font-sans">
                                                 {truncateDescription(
                                                     destination.description,
                                                     maxDescriptionLength
