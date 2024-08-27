@@ -30,13 +30,13 @@ export default function Homepage(props) {
             </div>
 
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
-                <div className="relative flex flex-col items-center md:items-start md:flex-row pt-10 lg:pt-32 lg:px-32 z-10">
+                <div className="relative flex flex-col items-center md:items-start md:flex-row pt-10 md:pt-32 md:px-32 z-10 text-black">
                     <div className="text-4xl lg:text-5xl font-bold font-serif text-center md:text-right mb-8 md:mb-0">
                         <div>DIMENSI BARU</div>
                         <div>WISATA TAJUK</div>
                     </div>
 
-                    <div className="md:ml-8 text-lg lg:text-3xl font-sans leading-relaxed md:border-l-4 md:border-black px-4 md:px-8">
+                    <div className="md:ml-8 text-lg md:text-3xl font-sans leading-relaxed md:border-l-4 md:border-black px-12 text-center md:text-left md:px-8">
                         <p>
                             Desa Wisata Tajuk adalah surga tersembunyi yang
                             menawarkan keindahan alam, kekayaan budaya, dan
@@ -64,7 +64,7 @@ export default function Homepage(props) {
                     <VideoCarousel />
                 </div>
 
-                <div className="w-[370px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
+                <div className="w-[350px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                     <img
                         className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
                         src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"

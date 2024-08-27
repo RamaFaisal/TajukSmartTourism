@@ -5,7 +5,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 // Komponen Card
 const Card = ({ imageUrl, title, link }) => {
     return (
-        <div className="relative md:w-[360px] w-[350px] h-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300 rounded overflow-hidden">
+        <div className="relative md:w-[360px] w-[290px] h-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300 rounded overflow-hidden">
             {link ? (
                 <Link href={link} className="block h-full relative">
                     <img

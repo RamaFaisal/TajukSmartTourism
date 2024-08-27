@@ -21,7 +21,6 @@ export default function Paket(props) {
             ],
             jls: "1 hari / org",
             image: "https://drive.google.com/thumbnail?id=10R_wkLV2tSs2OoytjDRQpHLzmLjF-l1b&sz=w2000",
-            link: "/Paket/FormLiveIn1",
         },
         {
             title: "Paket Live in 2",
@@ -38,7 +37,6 @@ export default function Paket(props) {
             ],
             jls: "2 hari / org",
             image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
-            link: "/Paket/FormLiveIn2",
         },
         {
             title: "Paket Live in 3",
@@ -55,7 +53,6 @@ export default function Paket(props) {
             ],
             jls: "3 hari / org",
             image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
-            link: "/Paket/FormLiveIn3",
         },
     ];
 
@@ -128,7 +125,7 @@ export default function Paket(props) {
                                             ))}
                                         </ul>
                                         <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                                            <a href={pkg.link}>Klik disini</a>
+                                            <a href="https://wa.me/6283831597088" target="_blank">Book Now</a>
                                         </button>
                                     </div>
                                 </div>

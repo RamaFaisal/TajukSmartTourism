@@ -114,7 +114,7 @@ const Destinasi = () => {
                             position={[destination.lat, destination.lng]}
                         >
                             <Popup>
-                                <div>
+                                <div className="text-black">
                                     <h3>{destination.title}</h3>
                                     <p>
                                         {truncateDescription(

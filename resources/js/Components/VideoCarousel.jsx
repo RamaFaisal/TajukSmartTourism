@@ -69,35 +69,50 @@ const VideoCarousel = () => {
                 onClick={handlePrevVideo}
             >
                 <svg
-                    className="w-3 h-4 lg:w-6 lg:h-10"
+                    className="w-7 h-7 lg:w-6 lg:h-10 stroke-white md:stroke-black"
                     fill="none"
-                    stroke="black"
+                    stroke="white"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="11"
+                        className="stroke-white md:stroke-black"
+                        strokeWidth="2"
+                        fill="none"
+                    />
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
+                        strokeWidth="3"
                         d="M15 19l-7-7 7-7"
                     />
                 </svg>
             </button>
             <button
-                className="absolute right-1 lg:right-12 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded-full"
+                className="absolute right-1 lg:right-12 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 font-bold py-2 px-4 rounded-full"
                 onClick={handleNextVideo}
             >
                 <svg
-                    className="w-3 h-4 lg:w-6 lg:h-10"
+                    className="w-7 h-7 lg:w-6 lg:h-10 stroke-white md:stroke-black"
                     fill="none"
-                    stroke="black"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="11"
+                        className="stroke-white md:stroke-black"
+                        strokeWidth="2"
+                        fill="none"
+                    />
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
+                        strokeWidth="3"
                         d="M9 5l7 7-7 7"
                     />
                 </svg>

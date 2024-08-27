@@ -61,7 +61,7 @@ export default function GPass(props) {
                                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
                                     <Link
                                         className="text-black font-semibold font-sans"
-                                        href="/Gallery"
+                                        href="/Informasi/Gallery"
                                     >
                                         Lihat Semua Galeri
                                     </Link>
