@@ -180,7 +180,7 @@ const Destinasi = () => {
                                         isDesktop ? "md:w-1/2" : ""
                                     }`}
                                 >
-                                    <div className="bg-white w-auto justify-center items-center rounded-lg shadow-lg overflow-hidden">
+                                    <div className="bg-white w-auto justify-center items-center rounded-lg shadow-lg overflow-hidden text-black">
                                         <img
                                             src={destination.image}
                                             alt={destination.title}
@@ -190,7 +190,7 @@ const Destinasi = () => {
                                             <h3 className="text-lg font-semibold mb-2 font-serif">
                                                 {destination.title}
                                             </h3>
-                                            <p className="text-sm font-sans text-black">
+                                            <p className="text-sm font-sans">
                                                 {truncateDescription(
                                                     destination.description,
                                                     maxDescriptionLength

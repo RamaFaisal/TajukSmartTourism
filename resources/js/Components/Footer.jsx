@@ -67,7 +67,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col items-center lg:justify-start md:items-end lg:items-start mb-5 w-full md:w-1/3 lg:w-1/4 p-5 text-center md:text-right lg:text-left">
-                    <div className="flex flex-row md:flex-col flex-wrap justify-center md:justify-start space-x-4 md:space-x-0 md:space-y-4">
+                    <div className="flex flex-row md:flex-col flex-wrap justify-center md:justify-start space-x-2 md:space-x-0 md:space-y-4">
                         <Link
                             className="text-sm lg:text-lg mb-2 md:mb-0 hover:text-color1"
                             href="TentangKami/ProfileDesa"

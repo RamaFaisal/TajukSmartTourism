@@ -22,7 +22,7 @@ export default function DusunKaliajeng(prop) {
                 </div>
             </div>
 
-            <div className="w-full px-8 md:px-52 text-justify space-y-6 leading-relaxed">
+            <div className="w-full px-8 md:px-52 text-justify space-y-6 leading-relaxed text-black">
                 <p>
                     Betapa menyejukkan berlibur di sebuah dusun yang rindang
                     dengan kesejukan alam pegunungan. Dikelilingi oleh ladang
@@ -114,7 +114,7 @@ export default function DusunKaliajeng(prop) {
                 </p>
             </div>
 
-            <div className="w-[370px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
+            <div className="w-[330px] lg:w-[1100px] h-auto lg:h-44 relative overflow-hidden rounded-lg">
                 <img
                     className="w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover transform transition-transform duration-500 hover:scale-110"
                     src="https://drive.google.com/thumbnail?id=1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-&sz=w2000"
@@ -122,9 +122,9 @@ export default function DusunKaliajeng(prop) {
                 />
 
                 <div className="absolute top-0 left-0 w-full h-auto lg:h-44 flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
-                    <span className="text-white text-center text-xs lg:text-2xl mb-4 font-serif">
-                        Langit yang biru, gunung yang megah, dan hutan yang
-                        mempesona menanti Anda untuk dijelajahi
+                    <span className="text-white text-center text-xs lg:text-2xl mb-4 font-serif tracking-wide">
+                        Langit yang biru, gunung yang megah, dan dusun kaya
+                        budaya menanti Anda untuk dijelajahi
                     </span>
                     <Link
                         href="/Paket"
