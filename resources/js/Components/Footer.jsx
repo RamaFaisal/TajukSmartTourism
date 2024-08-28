@@ -70,31 +70,17 @@ const Footer = () => {
                     <div className="flex flex-row md:flex-col flex-wrap justify-center md:justify-start space-x-4 md:space-x-0 md:space-y-4">
                         <Link
                             className="text-sm lg:text-lg mb-2 md:mb-0 hover:text-color1"
-                            href="/ProfileDesa"
+                            href="TentangKami/ProfileDesa"
                         >
                             Tentang Kami
                         </Link>
                         <span className="block md:hidden"> /</span>
                         <Link
                             className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
-                            href="404.html"
+                            href="/Informasi/Berita"
                         >
                             Informasi
                         </Link>
-                        <span className="block md:hidden"> /</span>
-                        <Link
-                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
-                            href="/DungKluruk"
-                        >
-                            Destinasi
-                        </Link>
-                        <span className="block md:hidden"> /</span>
-                        <a
-                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
-                            href="/PasarJawi"
-                        >
-                            Event
-                        </a>
                         <span className="block md:hidden"> /</span>
                         <a
                             className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
