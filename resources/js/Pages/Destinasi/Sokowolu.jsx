@@ -54,9 +54,9 @@ export default function Sokowolu(props) {
                                     src="https://drive.google.com/thumbnail?id=16iw8d-XWlKrucOoEJotZj7gvqdP_ocAy&sz=w2000"
                                     alt="Wisata DungKluruk"
                                 />
-                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
+                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2">
                                     <Link
-                                        className="text-black font-semibold font-sans"
+                                        className="text-black font-semibold font-sans text-xs md:text-lg"
                                         href="/Informasi/Gallery"
                                     >
                                         Lihat Semua Galeri

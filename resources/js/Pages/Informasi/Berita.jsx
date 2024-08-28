@@ -55,10 +55,6 @@ export default function Berita(props) {
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                             Berita Desa Wisata Tajuk
                         </h1>
-                        <p className="text-lg md:text-xl lg:text-2xl">
-                            Nikmati keindahan alam dan budaya lokal yang
-                            mempesona
-                        </p>
                     </div>
                 </div>
                 <Carousel />

@@ -100,9 +100,6 @@ export default function Gallery(props) {
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                             Galeri Desa Wisata Tajuk
                         </h1>
-                        <p className="text-lg md:text-xl lg:text-2xl">
-                            --------
-                        </p>
                     </div>
                 </div>
                 <Carousel />
@@ -110,10 +107,7 @@ export default function Gallery(props) {
 
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
                 <div className="w-full max-w-[1127px] text-center px-4 md:px-8">
-                    <h1 className="text-black font-serif text-3xl md:text-4xl lg:text-[55px] font-bold pt-10 lg:pt-32">
-                        Berbagai Galeri Desa Tajuk
-                    </h1>
-                    <p className="text-black font-sans text-base md:text-lg lg:text-[25px] pt-8">
+                    <p className="text-black font-sans text-xl md:text-4xl pt-10 lg:pt-32">
                         Selamat datang di Menu Galeri kami. Di sini, Anda dapat
                         menemukan berbagai foto keragaman yang berkaitan dengan
                         desa Tajuk.

@@ -55,9 +55,9 @@ export default function DungKluruk(props) {
                                     src="https://drive.google.com/thumbnail?id=1_J3VAXJ5anX7IdwBPsvbI6kNDGV9CQXg&sz=w2000"
                                     alt="Wisata DungKluruk"
                                 />
-                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
+                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2">
                                     <Link
-                                        className="text-black font-semibold"
+                                        className="font-semibold text-black text-xs md:text-lg"
                                         href="/Informasi/Gallery"
                                     >
                                         Lihat Semua Galeri
@@ -96,7 +96,7 @@ export default function DungKluruk(props) {
                         </span>
                         <Link
                             href="/Paket"
-                            className="btn bg-white text-black text-xs py-1 px-2 sm:text-sm sm:py-2 sm:px-4 rounded hover:scale-105 transition duration-200"
+                            className="btn bg-white text-black text-xs md:px-2 px-1 rounded hover:scale-105 transition duration-200"
                         >
                             Lihat Paket
                         </Link>

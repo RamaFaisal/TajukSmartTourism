@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import markerShadowPng from "leaflet/dist/images/marker-shadow.png";
 
 const destinations = [
     {
@@ -50,8 +53,9 @@ const truncateDescription = (description, maxLength) => {
 const Destinasi = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
-    const maxDescriptionLength = 151; // Panjang maksimal deskripsi yang diinginkan
-    const intervalTime = 5000; // Interval untuk otomatis berpindah slide (dalam milidetik)
+    const [mapInteractive, setMapInteractive] = useState(false);
+    const maxDescriptionLength = 151;
+    const intervalTime = 5000;
 
     const updateScreenSize = () => {
         setIsDesktop(window.innerWidth >= 1024);
@@ -65,7 +69,7 @@ const Destinasi = () => {
 
     useEffect(() => {
         const interval = setInterval(nextSlide, intervalTime);
-        return () => clearInterval(interval); // Membersihkan interval saat komponen dibongkar
+        return () => clearInterval(interval);
     }, [currentSlide]);
 
     const resetInterval = () => {
@@ -73,7 +77,6 @@ const Destinasi = () => {
         setInterval(nextSlide, intervalTime);
     };
 
-    // Membagi destinasi menjadi grup 1 atau 2 tergantung ukuran layar
     const itemsPerGroup = isDesktop ? 2 : 1;
     const groupedDestinations = [];
     for (let i = 0; i < destinations.length; i += itemsPerGroup) {
@@ -94,15 +97,31 @@ const Destinasi = () => {
         );
     };
 
+    const handleMapClick = () => {
+        setMapInteractive(true);
+    };
+
     return (
         <div className="w-full lg:w-full lg:h-auto rounded-xl mx-auto">
             {/* Peta Utama */}
-            <div className="relative w-full h-96 my-10 overflow-hidden z-0 px-3 lg:px-2">
+            <div className="relative w-full h-96 my-10 overflow-hidden z-0 px-3 lg:px-2 flex">
+                <div
+                    className={`absolute top-0 left-0 w-auto h-full bg-black transition-opacity duration-300 z-10 ${
+                        mapInteractive
+                            ? "opacity-0 pointer-events-none"
+                            : "opacity-50"
+                    }`}
+                    onClick={handleMapClick}
+                ></div>
                 <MapContainer
                     center={[-7.405443964245397, 110.44818385903196]}
                     zoom={14}
                     style={{ height: "100%", width: "100%" }}
                     className="rounded-lg relative overflow-hidden"
+                    scrollWheelZoom={mapInteractive}
+                    dragging={mapInteractive}
+                    touchZoom={mapInteractive}
+                    doubleClickZoom={mapInteractive}
                 >
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -112,10 +131,18 @@ const Destinasi = () => {
                         <Marker
                             key={index}
                             position={[destination.lat, destination.lng]}
+                            icon={L.icon({
+                                iconUrl: markerIconPng,
+                                shadowUrl: markerShadowPng,
+                                iconSize: [25, 41],
+                                iconAnchor: [15, 41],
+                            })}
                         >
                             <Popup>
                                 <div className="text-black">
-                                    <h3>{destination.title}</h3>
+                                    <h3 className="font-serif text-lg">
+                                        {destination.title}
+                                    </h3>
                                     <p>
                                         {truncateDescription(
                                             destination.description,
@@ -124,7 +151,7 @@ const Destinasi = () => {
                                     </p>
                                     <Link
                                         href={destination.link}
-                                        className="text-blue-500 hover:text-blue-700"
+                                        className="text-blue-500 hover:text-blue-700 text-center"
                                     >
                                         Lihat Detail
                                     </Link>

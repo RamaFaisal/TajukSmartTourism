@@ -58,9 +58,9 @@ export default function GPass(props) {
                                     src="https://drive.google.com/thumbnail?id=1Utm9pGSR5mqXXOZGNjwgvdxOYajma_Hy&sz=w2000"
                                     alt="Wisata Gedong Pass"
                                 />
-                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2 text-xs sm:text-base lg:text-lg">
+                                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2">
                                     <Link
-                                        className="text-black font-semibold font-sans"
+                                        className="text-black font-semibold text-xs md:text-lg"
                                         href="/Informasi/Gallery"
                                     >
                                         Lihat Semua Galeri
