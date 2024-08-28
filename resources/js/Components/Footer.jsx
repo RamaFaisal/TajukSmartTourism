@@ -45,34 +45,24 @@ const Footer = () => {
                     <br />
                     <h4 className="text-sm lg:text-lg mb-3">Ikuti Kami</h4>
                     <div className="flex space-x-3 lg:space-x-5">
-                        <a
-                            href="https://www.facebook.com/login.php/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://www.instagram.com/tajuksmarttourism.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
                             <FontAwesomeIcon
-                                icon={faFacebookF}
+                                icon={faInstagram}
                                 className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
                             />
                         </a>
-                        <a href="">
+                        <a href="https://www.tiktok.com/@tstbemfik?is_from_webapp=1&sender_device=pc" target="_blank">
                             <FontAwesomeIcon
-                                icon={faTwitter}
+                                icon={faTiktok}
                                 className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
                             />
                         </a>
-                        <FontAwesomeIcon
-                            icon={faInstagram}
-                            className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
-                        />
-                        <FontAwesomeIcon
-                            icon={faTiktok}
-                            className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
-                        />
-                        <FontAwesomeIcon
-                            icon={faYoutube}
-                            className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
-                        />
+                        <a href="https://www.youtube.com/@TajukSmartTourism" target="_blank">
+                            <FontAwesomeIcon
+                                icon={faYoutube}
+                                className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
+                            />
+                        </a>
                     </div>
                 </div>
 

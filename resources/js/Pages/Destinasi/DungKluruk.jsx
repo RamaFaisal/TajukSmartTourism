@@ -51,7 +51,7 @@ export default function DungKluruk(props) {
                         <div className="w-full max-w-[1127px] px-4 lg:px-0">
                             <div className="w-full lg:h-80 relative overflow-hidden">
                                 <img
-                                    className="w-full h-auto lg:h-80 object-cover rounded-[20px]"
+                                    className="w-full h-40 lg:h-80 object-cover rounded-[20px]"
                                     src="https://drive.google.com/thumbnail?id=1_J3VAXJ5anX7IdwBPsvbI6kNDGV9CQXg&sz=w2000"
                                     alt="Wisata DungKluruk"
                                 />

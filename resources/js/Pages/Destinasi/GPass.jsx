@@ -54,7 +54,7 @@ export default function GPass(props) {
                         <div className="w-full max-w-[1127px] px-4 lg:px-0">
                             <div className="w-full lg:h-80 relative overflow-hidden">
                                 <img
-                                    className="w-full h-auto lg:h-80 object-cover rounded-[20px]"
+                                    className="w-full h-40 lg:h-80 object-cover rounded-[20px]"
                                     src="https://drive.google.com/thumbnail?id=1Utm9pGSR5mqXXOZGNjwgvdxOYajma_Hy&sz=w2000"
                                     alt="Wisata Gedong Pass"
                                 />
