@@ -20,7 +20,7 @@ export default function Paket(props) {
                 "Family Activity",
             ],
             jls: "1 hari / org",
-            image: "https://drive.google.com/thumbnail?id=10R_wkLV2tSs2OoytjDRQpHLzmLjF-l1b&sz=w2000",
+            image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
         },
         {
             title: "Paket Live in 2",
@@ -36,7 +36,7 @@ export default function Paket(props) {
                 "Family Activity",
             ],
             jls: "2 hari / org",
-            image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
+            image: "https://drive.google.com/thumbnail?id=1iGxBfaMWVQj90a3eT5VigasU5rTfZWxm&sz=w2000",
         },
         {
             title: "Paket Live in 3",
@@ -52,7 +52,7 @@ export default function Paket(props) {
                 "Family Activity",
             ],
             jls: "3 hari / org",
-            image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
+            image: "https://drive.google.com/thumbnail?id=10R_wkLV2tSs2OoytjDRQpHLzmLjF-l1b&sz=w2000",
         },
     ];
 
