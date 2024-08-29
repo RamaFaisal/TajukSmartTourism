@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 const VideoCarousel = () => {
     const videos = [
         {
-            url: "https://www.youtube.com/embed/DN3IuwHTcoc?si=5oe0kOJ9tlrMxNme",
+            url: "https://www.youtube.com/embed/r4LUlAHGoHI?si=9PLIZQxJvwkj_cLU",
             title: "Video 1",
         },
         {
@@ -11,7 +11,7 @@ const VideoCarousel = () => {
             title: "Video 2",
         },
         {
-            url: "https://www.youtube.com/embed/pnSJKx2nLv4?si=pr_eXeyNU9QrUCaz",
+            url: "https://www.youtube.com/embed/DN3IuwHTcoc?si=5oe0kOJ9tlrMxNme",
             title: "Video 3",
         },
     ];
