@@ -13,14 +13,14 @@ const BeritaDetail = ({ article }) => {
                 alt={article.title}
                 className="w-full h-[500px] object-cover"
             />
-            <div className="container mx-auto px-20 mt-10">
-                <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
+            <div className="container mx-auto px-5 md:px-20 mt-10">
+                <h1 className="text-xl md:text-4xl font-bold mb-4">{article.title}</h1>
                 <p className="text-gray-600 mb-4">
                     By {article.author || "Admin"} |{" "}
                     {new Date(article.created_at).toLocaleDateString()}
                 </p>
                 <div
-                    className="text-lg"
+                    className="text-lg pb-10"
                     dangerouslySetInnerHTML={{ __html: article.content }}
                 />
             </div>
