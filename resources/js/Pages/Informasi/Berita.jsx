@@ -83,7 +83,7 @@ export default function Berita(props) {
                                 </a>
                                 <div className="p-4">
                                     <a href={`/Informasi/Berita/${article.id}`}>
-                                        <h2 className="text-xl font-bold mb-2">
+                                        <h2 className="text-2xl text-black font-bold mb-2">
                                             {article.title}
                                         </h2>
                                     </a>
@@ -93,7 +93,7 @@ export default function Berita(props) {
                                         ).toLocaleDateString()}
                                     </p>
                                     <div
-                                        className="text-gray-600 mb-4 text-2xl"
+                                        className="text-black mb-4 text-xl"
                                         dangerouslySetInnerHTML={{
                                             __html: truncateContent(
                                                 article.content
