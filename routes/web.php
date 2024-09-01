@@ -25,28 +25,28 @@ Route::get('/', function() {
 });
 
 // Destinasi
-Route::get('/Destinasi/DungKluruk', function() {
+Route::get('/destinasi/dungKluruk', function() {
     return Inertia::render('Destinasi/DungKluruk', [
         'title' => 'Wisata DungKluruk',
         'description' => 'Selamat Datang di Wisata DungKluruk, Tajuk, Getasan'
     ]);
 });
 
-Route::get('/Destinasi/Sokowolu', function() {
+Route::get('/destinasi/sokowolu', function() {
     return Inertia::render('Destinasi/Sokowolu', [
         'title' => 'Wisata Sokowolu',
         'description' => 'Selamat Datang di Wisata Sokowolu, Tajuk, Getasan'
     ]);
 });
 
-Route::get('/Destinasi/Ngaduman', function() {
+Route::get('/destinasi/ngaduman', function() {
     return Inertia::render('Destinasi/Ngaduman', [
         'title' => 'Wisata Edukasi Ngaduman',
         'description' => 'Selamat Datang di Wisata Edukasi Ngaduman, Tajuk, Getasan'
     ]);
 });
 
-Route::get('/Destinasi/GPass', function() {
+Route::get('/destinasi/gpass', function() {
     return Inertia::render('Destinasi/GPass', [
         'title' => 'Wisata Gedong Pass',
         'description' => 'Selamat Datang di Wisata Gedong Pass, Tajuk, Getasan'
@@ -54,7 +54,7 @@ Route::get('/Destinasi/GPass', function() {
 });
 
 // Paket
-Route::get('/Paket', function() {
+Route::get('/paket', function() {
     return Inertia::render('Paket', [
         'title' => 'Paket Wisata',
         'description' => 'Selamat Datang di Paket Wisata Desa Tajuk'
@@ -62,21 +62,21 @@ Route::get('/Paket', function() {
 });
 
 //Form
-Route::get('/Paket/FormLiveIn1', function () {
+Route::get('/paket/formlivein1', function () {
     return Inertia::render('Paket/FormLiveIn1', [
         'title' => 'Form Live In 1',
         'description' => 'Form Live In 1'
     ]);
 });
 
-Route::get('/Paket/FormLiveIn2', function () {
+Route::get('/paket/formlivein2', function () {
     return Inertia::render('Paket/FormLiveIn2', [
         'title' => 'Form Live In 1',
         'description' => 'Form Live In 1'
     ]);
 });
 
-Route::get('/Paket/FormLiveIn3', function () {
+Route::get('/paket/formlivein3', function () {
     return Inertia::render('Paket/FormLiveIn3', [
         'title' => 'Form Live In 1',
         'description' => 'Form Live In 1'
@@ -84,7 +84,7 @@ Route::get('/Paket/FormLiveIn3', function () {
 });
 
 // Informasi
-Route::get('/Informasi/Berita', function() {
+Route::get('/informasi/berita', function() {
     return Inertia::render('Informasi/Berita', [
         'title' => 'Berita Desa',
         'description' => 'Berita Desa Tajuk'
@@ -107,7 +107,7 @@ Route::get('/AR', function () {
 //     ]);
 // }
 
-Route::get('/Informasi/Berita/{id}' ,function($id){
+Route::get('/informasi/berita/{id}' ,function($id){
     $article = Article::findOrFail($id);
     return Inertia::render('Informasi/BeritaDetail', [
         'article' => [
@@ -123,14 +123,14 @@ Route::get('/Informasi/Berita/{id}' ,function($id){
     ]);
 });
 
-Route::get('/Informasi/Gallery', function() {
+Route::get('/informasi/gallery', function() {
     return Inertia::render('Informasi/Gallery', [
         'title' => 'Galeri Desa',
         'description' => 'Galeri Desa Tajuk'
     ]);
 });
 
-Route::get('/Informasi/Produk', function() {
+Route::get('/informasi/produk', function() {
     return Inertia::render('Informasi/Produk', [
         'title' => 'Produk Desa',
         'description' => 'Produk Desa'
@@ -138,77 +138,77 @@ Route::get('/Informasi/Produk', function() {
 });
 
 // Dusun
-Route::get('/Dusun/DusunPulihan', function() {
+Route::get('/dusun/dusunpulihan', function() {
     return Inertia::render('Dusun/DusunPulihan', [
         'title' => 'Profile Dusun Pulihan',
         'description' => 'Profile Dusun Pulihan Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunTajuk', function() {
+Route::get('/dusun/dusuntajuk', function() {
     return Inertia::render('Dusun/DusunTajuk', [
         'title' => 'Profile Dusun Tajuk',
         'description' => 'Profile Dusun Tajuk Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunPuyang', function() {
+Route::get('/dusun/dusunpuyang', function() {
     return Inertia::render('Dusun/DusunPuyang', [
         'title' => 'Profile Dusun Puyang',
         'description' => 'Profile Dusun Puyang Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunCingklok', function() {
+Route::get('/dusun/dusuncingklok', function() {
     return Inertia::render('Dusun/DusunCingklok', [
         'title' => 'Profile Dusun Cingklok',
         'description' => 'Profile Dusun Cingklok Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunNgaduman', function() {
+Route::get('/dusun/dusunngaduman', function() {
     return Inertia::render('Dusun/DusunNgaduman', [
         'title' => 'Profile Dusun Ngaduman',
         'description' => 'Profile Dusun Ngaduman Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunMacanan', function() {
+Route::get('/dusun/dusunmacanan', function() {
     return Inertia::render('Dusun/DusunMacanan', [
         'title' => 'Profile Dusun Macanan',
         'description' => 'Profile Dusun Macanan Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunNgroto', function() {
+Route::get('/dusun/dusunNgroto', function() {
     return Inertia::render('Dusun/DusunNgroto', [
         'title' => 'Profile Dusun Ngroto',
         'description' => 'Profile Dusun Ngroto Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunBanaran', function() {
+Route::get('/dusun/dusunbanaran', function() {
     return Inertia::render('Dusun/DusunBanaran', [
         'title' => 'Profile Dusun Banaran',
         'description' => 'Profile Dusun Banaran Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunSokowolu', function() {
+Route::get('/dusun/dusunsokowolu', function() {
     return Inertia::render('Dusun/DusunSokowolu', [
         'title' => 'Profile Dusun Sokowolu',
         'description' => 'Profile Dusun Sokowolu Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunGedong', function() {
+Route::get('/dusun/dusungedong', function() {
     return Inertia::render('Dusun/DusunGedong', [
         'title' => 'Profile Dusun Gedong',
         'description' => 'Profile Dusun Gedong Desa Tajuk'
     ]);
 });
 
-Route::get('/Dusun/DusunKaliajeng', function() {
+Route::get('/dusun/dusunkaliajeng', function() {
     return Inertia::render('Dusun/DusunKaliajeng', [
         'title' => 'Profile Dusun Kaliajeng',
         'description' => 'Profile Dusun Kaliajeng Desa Tajuk'
@@ -216,14 +216,14 @@ Route::get('/Dusun/DusunKaliajeng', function() {
 });
 
 // Tentang Kami
-Route::get('/TentangKami/ProfileDesa', function() {
+Route::get('/tentangkami/profiledesa', function() {
     return Inertia::render('TentangKami/ProfileDesa', [
         'title' => 'Profile Desa Tajuk',
         'description' => 'Profile Desa Wisata Tajuk'
     ]);
 });
 
-Route::get('/TentangKami/Geografi', function() {
+Route::get('/tentangkami/geografi', function() {
     return Inertia::render('TentangKami/Geografi', [
         'title' => 'Profile Desa Tajuk',
         'description' => 'Profile Desa Wisata Tajuk'
@@ -231,7 +231,7 @@ Route::get('/TentangKami/Geografi', function() {
 });
 
 // Kontak
-Route::get('/Contacts', function() {
+Route::get('/contacts', function() {
     return Inertia::render('Contacts', [
         'title' => 'Kontak Kami',
         'description' => 'Hubungi Kami'
