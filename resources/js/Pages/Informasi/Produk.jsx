@@ -54,55 +54,79 @@ export default function Produk(props) {
                         {/* Bottom Images and Descriptions */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             <div className="p-4 rounded">
-                                <div className="w-full h-40 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://drive.google.com/thumbnail?id=1ef5caDWmvCCF1jqniESyZXEv_It9b-9a&sz=w2000"
-                                        alt=""
-                                        className="w-full h-44 object-cover"
-                                    />
-                                </div>
-                                <div className="text-center text-lg">
-                                    <p>Kopi Damalung</p>
-                                </div>
+                                <a
+                                    href="https://www.instagram.com/damalung_kopi/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
+                                        <img
+                                            src="https://drive.google.com/thumbnail?id=1IQVcUtU6T7AgX-B56ZNtH6a1Sb4FGEyj&sz=w2000"
+                                            https:alt="Kopi Damalung"
+                                            className="w-full h-44 md:h-56 object-cover"
+                                        />
+                                    </div>
+                                    <div className="text-center text-lg">
+                                        <p>Kopi Damalung</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://drive.google.com/thumbnail?id=18VJiggBom4np48f3NH1S95PMyaZP0g7w&sz=w2000"
-                                        alt="Teh dan Kripik"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>Teh dan Kripik</p>
-                                </div>
+                                <a
+                                    href="https://shopee.co.id/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
+                                        <img
+                                            src="https://drive.google.com/thumbnail?id=1U5N5XTRC6TUo6PSK_5rN7zVNVFyyMxvi&sz=w2000"
+                                            https:alt="Teh dan Kripik"
+                                            className="w-full h-44 object-cover"
+                                        />
+                                    </div>
+                                    <div className="text-center">
+                                        <p>Teh dan Kripik</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://drive.google.com/thumbnail?id=1xnN8v6OpdEsL4y6w6Oa9H0SEutW_qp3m&sz=w2000"
-                                        alt="Ampyang Coklat"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>Ampyang Coklat</p>
-                                </div>
+                                <a
+                                    href="https://shopee.co.id/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
+                                        <img
+                                            src="https://drive.google.com/thumbnail?id=1wyLZ2boUq5HQZKbt_ySoR3mXNp0cJ0kc&sz=w2000"
+                                            https:alt="Ampyang Coklat"
+                                            className="w-full h-44 object-cover"
+                                        />
+                                    </div>
+                                    <div className="text-center">
+                                        <p>Ampyang Coklat</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://drive.google.com/thumbnail?id=1AMRD3YsT-I2e7xfXpG64LP7lRHHRdHZp&sz=w2000"
-                                        alt="Youghrt"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>Youghrt</p>
-                                </div>
+                                <a
+                                    href="https://shopee.co.id/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
+                                        <img
+                                            src="https://drive.google.com/thumbnail?id=1wY4hrXrnjdRGvShJBCy7tYIegQJfvN-9&sz=w2000"
+                                            alt="Youghrt"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <div className="text-center">
+                                        <p>Youghrt</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
