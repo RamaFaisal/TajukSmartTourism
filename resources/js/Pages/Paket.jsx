@@ -139,7 +139,7 @@ export default function Paket(props) {
                             <span className="justify-items-end">
                                 Ada yang Ingin Ditanyakan?{" "}
                                 <span className="underline">
-                                    <a href="https://wa.me/6283831597088">
+                                    <a href="https://wa.me/6289670486737?text=Halo,%20Apakah%20Anda%20bisa%20membantu%20saya?">
                                         Kami Siap Membantu, Hubungi Kami
                                     </a>
                                 </span>
