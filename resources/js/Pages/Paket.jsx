@@ -21,7 +21,7 @@ export default function Paket(props) {
             ],
             jls: "1 hari / org",
             image: "https://drive.google.com/thumbnail?id=1XUqqWIBY0KOpjkOY-nt-5juLs4CKVwa1&sz=w2000",
-            link: "/Paket/FormLiveIn1",
+            link: "https://wa.me/6289670486737?text=Halo,%20Apakah%20paket%20Live%20In%201%20masih%20ada?",
         },
         {
             title: "Paket Live in 2",
@@ -38,7 +38,7 @@ export default function Paket(props) {
             ],
             jls: "2 hari / org",
             image: "https://drive.google.com/thumbnail?id=1iGxBfaMWVQj90a3eT5VigasU5rTfZWxm&sz=w2000",
-            link: "/Paket/FormLiveIn2",
+            link: "https://wa.me/6289670486737?text=Halo,%20Apakah%20paket%20Live%20In%202%20masih%20ada?",
         },
         {
             title: "Paket Live in 3",
@@ -55,7 +55,7 @@ export default function Paket(props) {
             ],
             jls: "3 hari / org",
             image: "https://drive.google.com/thumbnail?id=10R_wkLV2tSs2OoytjDRQpHLzmLjF-l1b&sz=w2000",
-            link: "/Paket/FormLiveIn3",
+            link: "https://wa.me/6289670486737?text=Halo,%20Apakah%20paket%20Live%20In%203%20masih%20ada?",
         },
     ];
 
@@ -128,7 +128,7 @@ export default function Paket(props) {
                                             ))}
                                         </ul>
                                         <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                                            <a href={pkg.link}>Book Now</a>
+                                            <a href={pkg.link} target="_blank">Book Now</a>
                                         </button>
                                     </div>
                                 </div>

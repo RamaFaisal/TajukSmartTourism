@@ -32,18 +32,89 @@ export default function Produk(props) {
                 </div>
 
                 <div className="w-full max-w-7xl mx-auto px-4">
-                    {/* Header */}
-                    <div className="flex justify-center my-8">
+                    {/* Main Content Produk Olahan */}
+                    <div className="p-8 rounded ">
+                        {/* Main Image and Description */}
+                        <div className="mb-8">
+                            <div className="flex w-full h-36 lg:h-64 rounded mb-4 overflow-hidden gap-5 justify-center">
+                                <img
+                                    src="https://drive.google.com/thumbnail?id=1tTJG7FhbMLdITzWCuH0DAZ_kAaAPmdmK&sz=w2000"
+                                    alt="Bermacam Produk Olahan Desa Tajuk"
+                                    className="w-full h-36 lg:h-64 object-cover"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <p>
+                                    Deskripsi utama produk atau informasi
+                                    terkait.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Bottom Images and Descriptions */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            <div className="p-4 rounded">
+                                <div className="w-full h-40 rounded mb-4 overflow-hidden">
+                                    <img
+                                        src="https://drive.google.com/thumbnail?id=1ef5caDWmvCCF1jqniESyZXEv_It9b-9a&sz=w2000"
+                                        alt=""
+                                        className="w-full h-44 object-cover"
+                                    />
+                                </div>
+                                <div className="text-center text-lg">
+                                    <p>Kopi Damalung</p>
+                                </div>
+                            </div>
+
+                            <div className="p-4 rounded">
+                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
+                                    <img
+                                        src="https://drive.google.com/thumbnail?id=18VJiggBom4np48f3NH1S95PMyaZP0g7w&sz=w2000"
+                                        alt="Teh dan Kripik"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <p>Teh dan Kripik</p>
+                                </div>
+                            </div>
+
+                            <div className="p-4 rounded">
+                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
+                                    <img
+                                        src="https://drive.google.com/thumbnail?id=1xnN8v6OpdEsL4y6w6Oa9H0SEutW_qp3m&sz=w2000"
+                                        alt="Ampyang Coklat"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <p>Ampyang Coklat</p>
+                                </div>
+                            </div>
+
+                            <div className="p-4 rounded">
+                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
+                                    <img
+                                        src="https://drive.google.com/thumbnail?id=1AMRD3YsT-I2e7xfXpG64LP7lRHHRdHZp&sz=w2000"
+                                        alt="Youghrt"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <p>Youghrt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <div className="flex justify-center my-8">
                         <div className="text-center">
                             <h1 className="text-2xl lg:text-6xl font-bold">
                                 Produk Wisata
                             </h1>
                         </div>
                     </div>
-
-                    {/* Main Content */}
                     <div className="bg-transparent p-8 rounded">
-                        {/* Main Image and Description */}
                         <div className="mb-8">
                             <div className="flex w-full h-36 lg:h-64 rounded mb-4 overflow-hidden gap-5 justify-center">
                                 <img
@@ -59,8 +130,6 @@ export default function Produk(props) {
                                 </p>
                             </div>
                         </div>
-
-                        {/* Bottom Images and Descriptions */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="p-4 rounded">
                                 <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
@@ -126,103 +195,7 @@ export default function Produk(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    {/* Header Produk Olahan */}
-                    <div className="flex justify-center my-10">
-                        <div className="text-center">
-                            <h1 className="text-2xl lg:text-6xl font-bold">
-                                Produk Olahan
-                            </h1>
-                        </div>
-                    </div>
-
-                    {/* Main Content Produk Olahan */}
-                    <div className="p-8 rounded mt-10">
-                        {/* Main Image and Description */}
-                        <div className="mb-8">
-                            <div className="flex w-full h-36 lg:h-64 rounded mb-4 overflow-hidden gap-5 justify-center">
-                                <img
-                                    src="https://via.placeholder.com/600x400"
-                                    alt="Gambar Utama"
-                                    className="w-full h-36 lg:h-64 object-cover"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <p>
-                                    Deskripsi utama produk atau informasi
-                                    terkait.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Bottom Images and Descriptions */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 1"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 2"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 3"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 4"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> */}
                 </div>
                 <Footer />
             </div>
