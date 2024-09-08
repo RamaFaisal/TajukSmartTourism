@@ -43,12 +43,6 @@ export default function Produk(props) {
                                     className="w-full h-36 lg:h-64 object-cover"
                                 />
                             </div>
-                            <div className="text-center">
-                                <p>
-                                    Deskripsi utama produk atau informasi
-                                    terkait.
-                                </p>
-                            </div>
                         </div>
 
                         {/* Bottom Images and Descriptions */}
