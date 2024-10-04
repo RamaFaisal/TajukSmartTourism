@@ -25,7 +25,7 @@ export default function Contacts(props) {
             <div className="w-96 lg:w-[1127px] bg-white bg-opacity-50 border border-black p-6 rounded-lg relative flex flex-col lg:flex-row">
                 <img
                     className="w-80 h-80 lg:w-[600px] lg:h-[600px] rounded-[10px] object-cover mb-4 lg:mb-0"
-                    src="https://drive.google.com/thumbnail?id=1sRaY7jlybHTX2AnjNQ0oJPL_a8qVsxYr&sz=w2000"
+                    src="https://drive.google.com/thumbnail?id=17S_quDNkAiFvw9p6hqyaY-gaFrfdApM8&sz=w2000"
                     alt="Contact Image"
                 />
                 <div className="lg:ml-[50px]">
@@ -35,7 +35,11 @@ export default function Contacts(props) {
                     <h2 className="text-black text-lg lg:text-xl font-bold font-serif">
                         Kami senang mendengar dari Anda
                     </h2>
-                    <form className="mt-4">
+                    <form
+                        className="mt-4"
+                        action="{{ route('submit.message') }}"
+                        method="POST"
+                    >
                         <div className="bg-neutral-100 rounded-[10px] p-4 mb-4">
                             <label
                                 htmlFor="name"
@@ -48,6 +52,7 @@ export default function Contacts(props) {
                                 id="name"
                                 name="name"
                                 className="w-full p-2 border border-gray-300 rounded-lg"
+                                required
                             />
                         </div>
                         <div className="bg-neutral-100 rounded-[10px] p-4 mb-4">
@@ -62,6 +67,7 @@ export default function Contacts(props) {
                                 id="email"
                                 name="email"
                                 className="w-full p-2 border border-gray-300 rounded-lg"
+                                required
                             />
                         </div>
                         <div className="bg-neutral-100 rounded-[10px] p-4 mb-4 h-[220px]">
@@ -75,6 +81,7 @@ export default function Contacts(props) {
                                 id="message"
                                 name="message"
                                 className="w-full border border-gray-300 rounded-lg h-40"
+                                required
                             ></textarea>
                         </div>
                         <button

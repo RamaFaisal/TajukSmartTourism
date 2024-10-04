@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ArticleController;
 use App\Models\Article;
+use App\Http\Controllers\ContactMessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -267,3 +268,6 @@ Route::middleware('auth')->group(function () {
 Route::resource('articles', ArticleController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
+
+Route::post('/submit-message', [ContactMessageController::class, 'store'])->name('submit.message');
+
