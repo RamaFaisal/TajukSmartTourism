@@ -26,7 +26,7 @@ export default function Contacts(props) {
                 <img
                     className="w-80 h-80 lg:w-[600px] lg:h-[600px] rounded-[10px] object-cover mb-4 lg:mb-0"
                     src="https://drive.google.com/thumbnail?id=17S_quDNkAiFvw9p6hqyaY-gaFrfdApM8&sz=w2000"
-                    alt="Contact Image"
+                    alt="Gambar Balai Desa Tajuk"
                 />
                 <div className="lg:ml-[50px]">
                     <h3 className="text-black text-base font-serif">

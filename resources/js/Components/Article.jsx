@@ -5,7 +5,7 @@ export default function Article() {
     const [currentArticle, setCurrentArticle] = useState(null);
 
     useEffect(() => {
-        // Function to fetch articles from the API
+        
         const fetchArticles = async () => {
             try {
                 const response = await fetch(
@@ -14,7 +14,6 @@ export default function Article() {
                 const data = await response.json();
                 setArticles(data.data);
 
-                // Select a random article when articles are fetched
                 if (data.data.length > 0) {
                     const randomIndex = Math.floor(
                         Math.random() * data.data.length
