@@ -20,7 +20,7 @@ export default function ProfileDesa(props) {
 
             <div className="relative w-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover text-black rounded-t-[20px] rounded-t-[50px]">
                 <div className="container mx-auto mt-10 pt-10 lg:w-[1280px] px-5 md:px-8 lg:px-16 pt-10 text-center z-10">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                         Profile Desa Tajuk
                     </h1>
                     <p className="text-lg md:text-xl lg:text-2xl mt-12 font-sans">
@@ -56,7 +56,7 @@ export default function ProfileDesa(props) {
 
                 <div className="lg:w-[1120px] w-[380px] h-auto relative mt-2 p-3 bg-white bg-opacity-50 border border-black z-10 rounded-lg">
                     <div className="text-justify px-2">
-                        <h2 className="text-black text-xl md:text-2xl lg:text-3xl font-serif">
+                        <h2 className="text-black text-xl md:text-2xl lg:text-3xl ">
                             Visi:
                         </h2>
                         <p className="text-black text-base md:text-lg lg:text-xl mt-2 font-sans">
@@ -65,7 +65,7 @@ export default function ProfileDesa(props) {
                             memberikan pengalaman wisata yang berkesan dan
                             memberdayakan masyarakat lokal."
                         </p>
-                        <h2 className="text-black text-xl md:text-2xl lg:text-3xl mt-4 font-serif">
+                        <h2 className="text-black text-xl md:text-2xl lg:text-3xl mt-4 ">
                             Misi:
                         </h2>
                         <ul className="text-black text-base md:text-lg lg:text-xl list-disc ml-5 font-sans">
@@ -103,7 +103,7 @@ export default function ProfileDesa(props) {
                 />
 
                 <div className="w-full lg:w-[1160px] h-auto text-justify text-base md:text-lg lg:text-xl mt-2 px-5 z-10">
-                    <h1 className="text-4xl font-bold text-center pb-10 font-serif">
+                    <h1 className="text-4xl font-bold text-center pb-10">
                         Potensi Desa
                     </h1>
                     <p className="font-sans">

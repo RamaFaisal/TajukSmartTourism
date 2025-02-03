@@ -210,7 +210,7 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    <div className="navbar-center hidden text-white lg:flex font-serif">
+                    <div className="navbar-center hidden text-white lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             <li
                                 className={`font-bold ${

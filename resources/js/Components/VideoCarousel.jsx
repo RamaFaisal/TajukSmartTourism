@@ -7,12 +7,8 @@ const VideoCarousel = () => {
             title: "Video 1",
         },
         {
-            url: "https://www.youtube.com/embed/gWzAhfV-k6o?si=lbOkwG7WQQG_plep",
-            title: "Video 2",
-        },
-        {
             url: "https://www.youtube.com/embed/DN3IuwHTcoc?si=5oe0kOJ9tlrMxNme",
-            title: "Video 3",
+            title: "Video 2",
         },
     ];
 

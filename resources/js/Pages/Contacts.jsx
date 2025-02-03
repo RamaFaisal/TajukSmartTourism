@@ -12,7 +12,7 @@ export default function Contacts(props) {
             </div>
 
             <div className="w-full flex flex-col lg:flex-row items-center justify-center pt-0 lg:pt-20 px-5 lg:px-20">
-                <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:mr-8 font-serif">
+                <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:mr-8">
                     <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold">
                         Butuh Bantuan? Jangan ragu untuk{" "}
                         <span className="text-hijauNew">Menghubungi kami!</span>
@@ -29,10 +29,10 @@ export default function Contacts(props) {
                     alt="Gambar Balai Desa Tajuk"
                 />
                 <div className="lg:ml-[50px]">
-                    <h3 className="text-black text-base font-serif">
+                    <h3 className="text-black text-base">
                         Bantuan & Dukungan
                     </h3>
-                    <h2 className="text-black text-lg lg:text-xl font-bold font-serif">
+                    <h2 className="text-black text-lg lg:text-xl font-bold">
                         Kami senang mendengar dari Anda
                     </h2>
                     <form

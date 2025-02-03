@@ -17,7 +17,7 @@ export default function DusunPulihan(props) {
                     alt="Pemandangan Dusun Pulihan"
                 />
                 <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4 w-full text-center">
-                    <h1 className="lg:text-4xl text-xl font-serif font-bold">
+                    <h1 className="lg:text-4xl text-xl font-bold">
                         Menikmati Sensasi Petik Sayur di Desa Pulihan
                     </h1>
                 </div>
@@ -106,7 +106,7 @@ export default function DusunPulihan(props) {
                 />
 
                 <div className="absolute top-0 left-0 w-full h-auto lg:h-44 flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
-                    <span className="text-white text-center text-xs lg:text-2xl mb-4 font-serif tracking-wide">
+                    <span className="text-white text-center text-xs lg:text-2xl mb-4 tracking-wide">
                         Langit yang biru, gunung yang megah, dan dusun kaya
                         budaya menanti Anda untuk dijelajahi
                     </span>

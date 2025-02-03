@@ -15,7 +15,7 @@ export default function Sokowolu(props) {
 
             <div className="w-full">
                 <div className="absolute inset-0 flex items-center justify-center z-10 h-[350px] md:h-[400px] bg-black bg-opacity-45">
-                    <div className="text-center text-white font-serif px-10 md:px-0">
+                    <div className="text-center text-white  px-10 md:px-0">
                         <h1 className="text-xl md:text-5xl font-bold mb-4">
                             Selamat Datang di Sokowolu
                         </h1>
@@ -89,7 +89,7 @@ export default function Sokowolu(props) {
                     />
 
                     <div className="absolute top-0 left-0 w-full h-auto lg:h-44 flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
-                        <span className="text-white text-center text-xs lg:text-2xl mb-4 font-serif tracking-wide">
+                        <span className="text-white text-center text-xs lg:text-2xl mb-4  tracking-wide">
                             Langit yang biru, gunung yang megah, dan dusun kaya
                             budaya menanti Anda untuk dijelajahi.
                         </span>
@@ -103,7 +103,7 @@ export default function Sokowolu(props) {
                 </div>
 
                 <div className="w-full px-8 md:px-52 bg-transparent font-sans text-black text-xl">
-                    <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20 font-serif text-hijauNew">
+                    <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20  text-hijauNew">
                         Sokowolu
                     </h1>
                     <p className="mb-4 mt-10 lg:mt-20">
