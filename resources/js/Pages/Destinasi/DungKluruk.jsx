@@ -20,7 +20,7 @@ export default function DungKluruk(props) {
                         <h1 className="text-xl md:text-5xl font-bold mb-4 drop-shadow">
                             Selamat Datang di Dungkluruk
                         </h1>
-                        <p className="text-md md:text-2xl">
+                        <p className="text-sm md:text-xl text-center">
                             Dung Kluruk menjadi destinasi wisata alam yang
                             instragamable dan siap memanjakan mata kamu.
                         </p>
@@ -36,7 +36,7 @@ export default function DungKluruk(props) {
             <div className="w-full h-full bg-white text-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-25 pt-10">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-center px-5 md:px-52">
                     <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-                        <p className="text-black text-lg md:text-xl font-sans mt-4">
+                        <p className="text-black text-sm md:text-xl mt-4">
                             Anda seorang pecinta alam yang selalu mencari
                             tempat-tempat wisata alam yang baru untuk
                             dijelajahi? Jika ya, maka Wisata alam Dung Kluruk
@@ -57,7 +57,7 @@ export default function DungKluruk(props) {
                                 />
                                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-4 rounded-full flex items-center space-x-2">
                                     <Link
-                                        className="font-semibold text-black text-xs md:text-lg"
+                                        className="font-semibold w-auto text-black text-xs md:text-lg"
                                         href="/Informasi/Gallery"
                                     >
                                         Lihat Semua Galeri
@@ -96,7 +96,7 @@ export default function DungKluruk(props) {
                         </span>
                         <Link
                             href="/Paket"
-                            className="btn bg-white text-black text-xs md:px-2 px-1 rounded hover:scale-105 transition duration-200"
+                            className="btn bg-white text-black text-base md:px-2 px-1 rounded hover:scale-105 transition duration-200"
                         >
                             Lihat Paket
                         </Link>
@@ -107,21 +107,21 @@ export default function DungKluruk(props) {
                     <h1 className="text-4xl lg:text-7xl text-center font-bold mb-5 lg:mb-20  text-hijauNew">
                         Dungkluruk
                     </h1>
-                    <p className="mb-4 mt-10 lg:mt-20">
+                    <p className="mb-4 mt-10 lg:mt-20 text-sm lg:text-xl">
                         Buka: Setiap Hari
                         <br />
                         Waktu: 08:00 - 17:00
                     </p>
                     <br />
-                    <h2 className="text-xl lg:text-2xl font-semibold mb-2">
+                    <h2 className="text-sm lg:text-xl font-semibold mb-2">
                         Harga Tiket Masuk: Rp 5.000,00
                     </h2>
                     <br />
 
-                    <h2 className="text-xl lg:text-2xl font-semibold mb-2">
+                    <h2 className="text-sm lg:text-xl font-semibold mb-2">
                         Tentang Destinasi:
                     </h2>
-                    <p className="mb-4">
+                    <p className="mb-4 text-sm lg:text-xl">
                         Wisata G-Pass dibuka mulai pukul 08.00-18.00 WIB saat
                         weekdays (Senin-Jumat). Lalu saat weekend (Sabtu dan
                         Minggu), wisata ini dibuka mulai dari jam 12.00 WIB dan
@@ -135,10 +135,10 @@ export default function DungKluruk(props) {
                     </p>
                     <br />
 
-                    <h2 className="text-xl lg:text-2xl font-semibold mb-2">
+                    <h2 className="text-sm lg:text-xl font-semibold mb-2">
                         Daya Tarik Utama:
                     </h2>
-                    <p className="mb-4">
+                    <p className="mb-4 text-sm lg:text-xl">
                         Bagi kamu yang ingin menikmati berenang di dengan
                         sensasi dingin dan sejuk, Dung Kluruk menawarkan
                         pengalaman berenang yang menarik dan asyik. Menikmati
