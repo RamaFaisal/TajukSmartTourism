@@ -17,10 +17,10 @@ export default function Homepage(props) {
             <div className="relative w-full h-[490px] sm:h-[500px] md:h-[600px] lg:h-[710px] overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                     <div className="text-center text-white font-serif">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">
                             Selamat Datang di Desa Wisata Tajuk
                         </h1>
-                        <p className="text-lg md:text-xl lg:text-2xl">
+                        <p className="text-md md:text-lg lg:text-2xl text-center">
                             Nikmati keindahan alam dan budaya lokal yang
                             mempesona
                         </p>
@@ -31,12 +31,12 @@ export default function Homepage(props) {
 
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
                 <div className="relative flex flex-col items-center md:items-start md:flex-row pt-10 md:pt-32 md:px-32 z-10 text-black">
-                    <div className="text-4xl lg:text-5xl font-bold font-serif text-center md:text-right mb-8 md:mb-0">
+                    <div className="text-3xl lg:text-4xl font-bold font-serif text-center right md:text-right mb-8 md:mb-0">
                         <div>DIMENSI BARU</div>
                         <div>WISATA TAJUK</div>
                     </div>
 
-                    <div className="md:ml-8 text-lg md:text-3xl font-sans leading-relaxed md:border-l-4 md:border-black px-12 text-center md:text-left md:px-8">
+                    <div className="md:ml-8 text-lg md:text-xl lg:text-3xl font-sans md:border-l-4 md:border-black px-12 text-center md:text-left md:px-8">
                         <p>
                             Desa Wisata Tajuk adalah surga tersembunyi yang
                             menawarkan keindahan alam, kekayaan budaya, dan
@@ -72,7 +72,7 @@ export default function Homepage(props) {
                     />
 
                     <div className="absolute top-0 left-0 w-full h-auto lg:h-44 flex flex-col items-center justify-center bg-black bg-opacity-50 rounded-lg p-4">
-                        <span className="text-white text-center text-xs lg:text-2xl mb-4 font-serif tracking-wide">
+                        <span className="text-white text-center text-xs lg:text-2xl mb-4">
                             Langit yang biru, gunung yang megah, dan dusun kaya
                             budaya menanti Anda untuk dijelajahi
                         </span>

@@ -17,8 +17,8 @@ export default function DungKluruk(props) {
             <div className="w-full">
                 <div className="absolute inset-0 flex items-center justify-center z-10 h-[350px] md:h-[400px] bg-black bg-opacity-45">
                     <div className="text-center text-white font-serif px-10 md:px-0">
-                        <h1 className="text-xl md:text-5xl font-bold mb-4">
-                            Selamat Datang di DungKluruk
+                        <h1 className="text-xl md:text-5xl font-bold mb-4 drop-shadow">
+                            Selamat Datang di Dungkluruk
                         </h1>
                         <p className="text-md md:text-2xl">
                             Dung Kluruk menjadi destinasi wisata alam yang

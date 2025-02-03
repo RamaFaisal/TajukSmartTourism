@@ -14,7 +14,7 @@ const Card = ({ imageUrl, title, link }) => {
                         className="w-full h-[210px] object-cover rounded-lg"
                     />
                     <div className="absolute bottom-0 w-full bg-black bg-opacity-60 text-white text-center p-2">
-                        <h2 className="text-lg sm:text-base font-bold">
+                        <h2 className="text-lg sm:text-base font-bold text-center">
                             {title}
                         </h2>
                     </div>

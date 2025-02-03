@@ -140,7 +140,7 @@ const Destinasi = () => {
                         >
                             <Popup>
                                 <div className="text-black">
-                                    <h3 className="font-serif text-lg">
+                                    <h3 className="text-lg">
                                         {destination.title}
                                     </h3>
                                     <p>
@@ -177,7 +177,7 @@ const Destinasi = () => {
                                 <div
                                     key={i}
                                     className={`w-full pr-5 pl-5 ${
-                                        isDesktop ? "md:w-1/2" : ""
+                                        isDesktop ? "sm:w-1/2" : ""
                                     }`}
                                 >
                                     <div className="bg-white w-auto justify-center items-center rounded-lg shadow-lg overflow-hidden text-black">
@@ -186,11 +186,11 @@ const Destinasi = () => {
                                             alt={destination.title}
                                             className="w-full h-48 object-cover"
                                         />
-                                        <div className="p-4 text-center">
-                                            <h3 className="text-lg font-semibold mb-2 font-serif">
+                                        <div className="p-4">
+                                            <h3 className="text-lg font-semibold mb-2 text-center">
                                                 {destination.title}
                                             </h3>
-                                            <p className="text-sm font-sans">
+                                            <p className="text-sm text-justify">
                                                 {truncateDescription(
                                                     destination.description,
                                                     maxDescriptionLength
@@ -215,7 +215,7 @@ const Destinasi = () => {
                         prevSlide();
                         resetInterval();
                     }}
-                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 left-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
+                    className="w-10 h-10 text-center absolute top-1/2 transform -translate-y-1/2 left-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
                 >
                     &lt;
                 </button>
@@ -224,7 +224,7 @@ const Destinasi = () => {
                         nextSlide();
                         resetInterval();
                     }}
-                    className="w-10 h-10 absolute top-1/2 transform -translate-y-1/2 right-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
+                    className="w-10 h-10 text-center absolute top-1/2 transform -translate-y-1/2 right-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
                 >
                     &gt;
                 </button>

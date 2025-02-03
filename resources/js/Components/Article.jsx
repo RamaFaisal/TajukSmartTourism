@@ -78,7 +78,7 @@ export default function Article() {
                     <div className="lg:w-1/2 lg:pr-4 mb-4 lg:mb-0">
                         <div className="bg-transparent rounded-lg overflow-hidden">
                             <div className="p-4">
-                                <h2 className="text-xl md:text-xl text-black font-bold mb-2">
+                                <h2 className="text-lg md:text-xl text-black font-bold mb-2">
                                     {article.title}
                                 </h2>
                                 <p className="text-gray-200 mb-2">
@@ -87,7 +87,7 @@ export default function Article() {
                                     ).toLocaleDateString()}
                                 </p>
                                 <div
-                                    className="text-black mb-4 text-lg md:text-lg"
+                                    className="text-black mb-4 text-md md:text-lg"
                                     dangerouslySetInnerHTML={{
                                         __html: content,
                                     }}
