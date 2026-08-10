@@ -1,80 +1,111 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const images = [
-    "https://drive.google.com/thumbnail?id=1iUFsaecxCYEbc60h9l6Sm2VOJuKy_tnE&sz=w2000",
-    "https://drive.google.com/thumbnail?id=12_5kV2kbcMarszeGgDiLv7dDX3UVeBK_&sz=w2000",
-    "https://drive.google.com/thumbnail?id=1bsUBzBF7_pbMg_qCmymPkkK8gj29x2Qx&sz=w2000",
-    "https://drive.google.com/thumbnail?id=114fGKGqQf6djYIP-JL2Ks-3DzSRLovn9&sz=w2000",
-    "https://drive.google.com/thumbnail?id=1k9vBYV43kBww9T_NSgxFdfd7hzEnXRdZ&sz=w2000",
+const SLIDES = [
+    {
+        src: "https://drive.google.com/thumbnail?id=1iUFsaecxCYEbc60h9l6Sm2VOJuKy_tnE&sz=w2000",
+        alt: "Pemandangan pegunungan Desa Tajuk",
+    },
+    {
+        src: "https://drive.google.com/thumbnail?id=12_5kV2kbcMarszeGgDiLv7dDX3UVeBK_&sz=w2000",
+        alt: "Keindahan alam Desa Tajuk",
+    },
+    {
+        src: "https://drive.google.com/thumbnail?id=114fGKGqQf6djYIP-JL2Ks-3DzSRLovn9&sz=w2000",
+        alt: "Hamparan sawah hijau di Desa Tajuk",
+    },
+    {
+        src: "https://drive.google.com/thumbnail?id=1k9vBYV43kBww9T_NSgxFdfd7hzEnXRdZ&sz=w2000",
+        alt: "Matahari terbenam di Desa Tajuk",
+    },
 ];
 
-const Carousel = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = images.length;
-    const slideIntervalRef = useRef(null);
+const AUTOPLAY_MS = 6000;
 
-    const goToPreviousSlide = () => {
-        setCurrentSlide(
-            (prevSlide) => (prevSlide - 1 + totalSlides) % totalSlides
+const Carousel = () => {
+    const [current, setCurrent] = useState(0);
+    const [paused, setPaused] = useState(false);
+    const timerRef = useRef(null);
+    const total = SLIDES.length;
+
+    const restartTimer = () => {
+        clearInterval(timerRef.current);
+        timerRef.current = setInterval(
+            () => setCurrent((prev) => (prev + 1) % total),
+            AUTOPLAY_MS
         );
     };
 
-    const goToNextSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
+    const goTo = (index) => {
+        setCurrent(((index % total) + total) % total);
+        restartTimer();
     };
 
+    useEffect(() => {
+        restartTimer();
+        return () => clearInterval(timerRef.current);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     const handlers = useSwipeable({
-        onSwipedLeft: () => {
-            goToNextSlide();
-            resetSlideInterval();
-        },
-        onSwipedRight: () => {
-            goToPreviousSlide();
-            resetSlideInterval();
-        },
+        onSwipedLeft: () => goTo(current + 1),
+        onSwipedRight: () => goTo(current - 1),
         preventDefaultTouchmoveEvent: true,
         trackMouse: true,
     });
 
-    const startSlideInterval = () => {
-        slideIntervalRef.current = setInterval(goToNextSlide, 5000);
-    };
-
-    const resetSlideInterval = () => {
-        clearInterval(slideIntervalRef.current);
-        startSlideInterval();
-    };
-
-    useEffect(() => {
-        startSlideInterval();
-        return () => clearInterval(slideIntervalRef.current);
-    }, []);
-
     return (
         <div
             {...handlers}
-            className="fixed w-full h-full flex flex-col overflow-hidden"
+            className="absolute inset-0 overflow-hidden"
+            onMouseEnter={() => {
+                setPaused(true);
+                clearInterval(timerRef.current);
+            }}
+            onMouseLeave={() => {
+                setPaused(false);
+                restartTimer();
+            }}
         >
-            {/* Background hitam yang menutupi carousel */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+            {/* Slide gambar — crossfade + Ken Burns */}
+            {SLIDES.map((slide, index) => (
+                <div
+                    key={index}
+                    aria-hidden={index !== current}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                        index === current ? "opacity-100" : "opacity-0"
+                    }`}
+                >
+                    <img
+                        src={slide.src}
+                        alt={slide.alt}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        className={`h-full w-full object-cover ${
+                            index === current ? "kenburns" : ""
+                        }`}
+                    />
+                </div>
+            ))}
 
-            {/* Carousel */}
-            <div
-                className="flex transition-transform duration-1000 ease-in-out z-0"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-                {images.map((image, index) => (
-                    <div
+            {/* Gradient agar teks hero tetap terbaca */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/45" />
+
+            {/* Titik indikator */}
+            <div className="absolute bottom-14 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+                {SLIDES.map((slide, index) => (
+                    <button
                         key={index}
-                        className="w-full h-[550px] md:h-full lg:h-[790px] md:h-[790px] flex-shrink-0"
-                    >
-                        <img
-                            src={image}
-                            alt={`Slide ${index + 1}`}
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
+                        type="button"
+                        onClick={() => goTo(index)}
+                        aria-label={`Ke slide ${index + 1}`}
+                        aria-current={index === current}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                            index === current
+                                ? "w-7 bg-accent"
+                                : "w-2 bg-white/50 hover:bg-white/80"
+                        }`}
+                    />
                 ))}
             </div>
         </div>

@@ -1,114 +1,154 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "@inertiajs/react";
+import { truncateText } from "@/lib/text";
+
+const formatDate = (iso) =>
+    new Date(iso).toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
+
+const CategoryBadge = ({ category }) =>
+    category ? (
+        <span className="inline-flex shrink-0 items-center rounded-full bg-surface px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary ring-1 ring-primary/10">
+            {category}
+        </span>
+    ) : null;
+
+const PLACEHOLDER_IMAGE =
+    "https://drive.google.com/thumbnail?id=1iUFsaecxCYEbc60h9l6Sm2VOJuKy_tnE&sz=w2000";
+
+const FeaturedArticle = ({ article }) => (
+    <article className="grid overflow-hidden rounded-2xl bg-white shadow-xl shadow-gray-200/60 ring-1 ring-gray-100 lg:grid-cols-2">
+        <div className="relative h-48 sm:h-64 lg:h-full lg:min-h-[340px]">
+            <img
+                src={article.image || PLACEHOLDER_IMAGE}
+                alt={article.title}
+                className="absolute inset-0 h-full w-full object-cover"
+            />
+            <span className="absolute left-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-white shadow-lg sm:left-4 sm:top-4 sm:px-3 sm:text-xs">
+                Terbaru
+            </span>
+        </div>
+        <div className="flex flex-col justify-center p-5 sm:p-6 md:p-8 lg:p-10">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <CategoryBadge category={article.category} />
+                <time className="text-xs font-medium text-gray-400">
+                    {formatDate(article.created_at)}
+                </time>
+            </div>
+            <h3 className="mt-3 text-lg font-bold leading-snug text-gray-900 sm:text-xl md:text-2xl">
+                {article.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:mt-3 md:text-[15px]">
+                {truncateText(article.content, 220)}
+            </p>
+            <Link
+                href={`/Informasi/Berita/${article.id}`}
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary/90 sm:mt-6 sm:w-fit sm:py-2.5"
+            >
+                Baca Selengkapnya
+                <span aria-hidden="true">→</span>
+            </Link>
+        </div>
+    </article>
+);
+
+const ArticleCard = ({ article }) => (
+    <Link
+        href={`/Informasi/Berita/${article.id}`}
+        className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-gray-200/60 ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-300/50"
+    >
+        <div className="relative h-40 overflow-hidden sm:h-44">
+            <img
+                src={article.image || PLACEHOLDER_IMAGE}
+                alt={article.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+        </div>
+        <div className="flex flex-1 flex-col p-4 sm:p-5">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
+                <CategoryBadge category={article.category} />
+                <time className="text-[11px] font-medium text-gray-400">
+                    {formatDate(article.created_at)}
+                </time>
+            </div>
+            <h4 className="mt-2.5 text-base font-bold leading-snug text-gray-900 transition-colors group-hover:text-primary">
+                {article.title}
+            </h4>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                {truncateText(article.content, 110)}
+            </p>
+            <span className="mt-auto pt-4 text-sm font-semibold text-primary">
+                Baca selengkapnya →
+            </span>
+        </div>
+    </Link>
+);
 
 export default function Article() {
     const [articles, setArticles] = useState([]);
-    const [currentArticle, setCurrentArticle] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        
         const fetchArticles = async () => {
             try {
-                const response = await fetch(
-                    "/api/articles"
-                );
+                const response = await fetch("/api/articles");
                 const data = await response.json();
-                setArticles(data.data);
-
-                if (data.data.length > 0) {
-                    const randomIndex = Math.floor(
-                        Math.random() * data.data.length
-                    );
-                    setCurrentArticle(randomIndex);
-                }
+                const sorted = [...(data.data ?? [])].sort(
+                    (a, b) => new Date(b.created_at) - new Date(a.created_at)
+                );
+                setArticles(sorted);
             } catch (error) {
                 console.error("Failed to fetch articles:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchArticles();
     }, []);
 
-    const nextArticle = () => {
-        if (articles.length === 0) return;
-        setCurrentArticle((prev) => (prev + 1) % articles.length);
-    };
-
-    const prevArticle = () => {
-        if (articles.length === 0) return;
-        setCurrentArticle(
-            (prev) => (prev - 1 + articles.length) % articles.length
+    if (loading) {
+        return (
+            <p className="py-10 text-center text-gray-400">
+                Memuat berita terbaru…
+            </p>
         );
-    };
-
-    if (articles.length === 0 || currentArticle === null) {
-        return <div className="text-center">Memuat Berita...</div>; // Handle loading state
     }
 
-    const article = articles[currentArticle]; // Use the current article
-
-    // Properly substring the content without cutting off words
-    const maxLength = 200;
-    let content = article.content.substring(0, maxLength);
-
-    let lastSpace = content.lastIndexOf(" ");
-    if (lastSpace > 0) {
-        content = content.substring(0, lastSpace);
+    if (articles.length === 0) {
+        return (
+            <p className="py-10 text-center text-gray-400">
+                Belum ada berita.
+            </p>
+        );
     }
 
-    content += "...";
+    const [featured, ...rest] = articles;
 
     return (
-        <div className="w-full h-full bg-transparent flex items-center justify-center p-4 lg:p-0 py-8">
-            <div className="relative bg-white p-6 border border-gray-300 rounded-md shadow-md max-w-6xl w-full lg:w-[1090px] lg:h-[335px]">
-                <div className="absolute top-4 right-4 md:top-7 md:right-7 flex space-x-2">
-                    <button
-                        onClick={prevArticle}
-                        className="z-5 w-8 h-8 bg-green-600 hover:bg-green-800 shadow-4xl text-white rounded-full flex items-center justify-center"
-                    >
-                        &#8592;
-                    </button>
-                    <button
-                        onClick={nextArticle}
-                        className="z-1 w-8 h-8 bg-green-600 hover:bg-green-800 shadow-4xl text-white rounded-full flex items-center justify-center"
-                    >
-                        &#8594;
-                    </button>
+        <div className="w-full">
+            <FeaturedArticle article={featured} />
+
+            {rest.length > 0 && (
+                <div className="mt-4 grid gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+                    {rest.slice(0, 3).map((article) => (
+                        <ArticleCard key={article.id} article={article} />
+                    ))}
                 </div>
-                <div className="flex flex-col lg:flex-row">
-                    <div className="lg:w-1/2 lg:pr-4 mb-4 lg:mb-0">
-                        <div className="bg-transparent rounded-lg overflow-hidden">
-                            <div className="p-4">
-                                <h2 className="text-lg md:text-xl text-black font-bold mb-2">
-                                    {article.title}
-                                </h2>
-                                <p className="text-gray-200 mb-2">
-                                    {new Date(
-                                        article.created_at
-                                    ).toLocaleDateString()}
-                                </p>
-                                <div
-                                    className="text-black mb-4 text-md md:text-lg"
-                                    dangerouslySetInnerHTML={{
-                                        __html: content,
-                                    }}
-                                />
-                                <a
-                                    href={`/Informasi/Berita/${article.id}`}
-                                    className="text-blue-500 hover:underline"
-                                >
-                                    Read more
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/2">
-                        <img
-                            className="w-full md:max-h-72 rounded-md object-cover"
-                            src={article.image}
-                            alt="Article"
-                        />
-                    </div>
-                </div>
+            )}
+
+            <div className="mt-6 text-center sm:mt-8">
+                <Link
+                    href="/Informasi/Berita"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary px-7 py-3 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white sm:w-auto sm:py-2.5"
+                >
+                    Lihat Semua Berita
+                    <span aria-hidden="true">→</span>
+                </Link>
             </div>
         </div>
     );

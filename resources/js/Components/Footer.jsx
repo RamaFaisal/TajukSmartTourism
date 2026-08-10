@@ -12,7 +12,7 @@ import {
 const Footer = () => {
     return (
         <div className="w-full font-sans">
-            <footer className="flex text-white flex-wrap justify-between bg-hijauNew">
+            <footer className="flex text-white flex-wrap justify-between bg-primary">
                 <div className="flex flex-col items-start w-full md:w-1/3 p-5 lg:pl-20">
                     <div className="flex flex-col justify-center items-center lg:items-start lg:justify-start w-full mb-10 lg:mb-2">
                         <a href="/">
@@ -53,7 +53,7 @@ const Footer = () => {
                         >
                             <FontAwesomeIcon
                                 icon={faInstagram}
-                                className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
+                                className="text-white cursor-pointer hover:text-accent text-xl lg:text-2xl"
                             />
                         </a>
                         <a
@@ -62,7 +62,7 @@ const Footer = () => {
                         >
                             <FontAwesomeIcon
                                 icon={faTiktok}
-                                className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
+                                className="text-white cursor-pointer hover:text-accent text-xl lg:text-2xl"
                             />
                         </a>
                         <a
@@ -71,7 +71,7 @@ const Footer = () => {
                         >
                             <FontAwesomeIcon
                                 icon={faYoutube}
-                                className="text-white cursor-pointer hover:text-aqua text-xl lg:text-2xl"
+                                className="text-white cursor-pointer hover:text-accent text-xl lg:text-2xl"
                             />
                         </a>
                     </div>
@@ -80,28 +80,28 @@ const Footer = () => {
                 <div className="flex flex-col items-center lg:justify-start md:items-end lg:items-start mb-5 w-full md:w-1/3 lg:w-1/4 p-5 text-center md:text-right lg:text-left">
                     <div className="flex flex-row md:flex-col flex-wrap justify-center md:justify-start space-x-2 md:space-x-0 md:space-y-4">
                         <Link
-                            className="text-sm lg:text-lg mb-2 md:mb-0 hover:text-color1"
-                            href="TentangKami/ProfileDesa"
+                            className="text-sm lg:text-lg mb-2 md:mb-0 hover:text-accent"
+                            href="/TentangKami/ProfileDesa"
                         >
                             Tentang Kami
                         </Link>
                         <span className="block md:hidden"> /</span>
                         <Link
-                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
+                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-accent"
                             href="/Informasi/Berita"
                         >
                             Informasi
                         </Link>
                         <span className="block md:hidden"> /</span>
                         <a
-                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
+                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-accent"
                             href="/Paket"
                         >
                             Paket
                         </a>
                         <span className="block md:hidden"> /</span>
                         <a
-                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-color1"
+                            className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-accent"
                             href="/admin"
                             target="_blank"
                             rel="noopener noreferrer"

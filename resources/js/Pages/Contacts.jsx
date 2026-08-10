@@ -15,7 +15,7 @@ export default function Contacts(props) {
                 <div className="w-full lg:w-1/2 max-w-[1127px] text-center lg:mr-8">
                     <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold">
                         Butuh Bantuan? Jangan ragu untuk{" "}
-                        <span className="text-hijauNew">Menghubungi kami!</span>
+                        <span className="text-primary">Menghubungi kami!</span>
                     </h1>
                 </div>
             </div>
@@ -86,7 +86,7 @@ export default function Contacts(props) {
                         </div>
                         <button
                             type="submit"
-                            className="bg-hijauNew rounded-[10px] p-3 text-center cursor-pointer text-white text-xl w-full"
+                            className="bg-primary rounded-[10px] p-3 text-center cursor-pointer text-white text-xl w-full"
                         >
                             Kirim
                         </button>

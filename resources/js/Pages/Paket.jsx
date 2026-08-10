@@ -149,7 +149,7 @@ export default function Paket(props) {
                     <div className="w-full max-w-[1127px] border border-zinc-400"></div>
 
                     <div className="w-full md:w-[900px] lg:w-[1000px] h-full lg:mt-10">
-                        <Destinasi />
+                        <Destinasi destinations={props.destinations ?? []} />
                     </div>
                 </div>
 

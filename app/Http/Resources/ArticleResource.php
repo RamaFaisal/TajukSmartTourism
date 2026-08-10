@@ -19,7 +19,7 @@ class ArticleResource extends JsonResource
             'title' => $this->title,
             'content' => $this->content,
             'category' => $this->category,
-            'image' => $this->image ? url('storage/' . $this->image) : null,
+            'image' => $this->image_src,
             'is_published' => $this->is_published,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

@@ -21,28 +21,11 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-                serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
             },
             colors: {
-                color1: "#DEF9C4",
-                color2: "#50B498",
-                color3: "#219C90",
-                color4: "#009FBD",
-                colorBg: "#F1FADA",
-                // GPT Font
-                bgTajuk: "#e8ffcc",
-                tajuk: "#7fb53d",
-                hijau: "#4CAF50", //Hijau
-                putih: "#f2fde4", //Putih
-                biruMuda: "#81D4FA", //Biru Muda
-                coklat: "#8D6E63", //Coklat
-                hijauGelap: "#388E3C", //Hijau Gelap
-                biruTua: "#64B5F6",
-                // Warna Terbaru
-                hijauNew: "#115311",
-            },
-            backgroundImage: {
-                imgBg: "url('/imgBg1.jpg')",
+                primary: "#115311",
+                surface: "#F1FADA",
+                accent: "#DEF9C4",
             },
         },
     },

@@ -1,12 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use App\Http\Controllers\ArticleController;
-use App\Models\Article;
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\HamletController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Models\Article;
+use App\Models\Video;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+use Inertia\Inertia;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,47 +22,21 @@ use App\Http\Controllers\ContactMessageController;
 |
 */
 
-Route::get('/', function() {
-    return Inertia::render('Homepage', [
-        'title' => 'Tajuk Smart Tourism',
-        'description' => 'Selamat Datang di TST'
-    ]);
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Destinasi
-Route::get('/Destinasi/DungKluruk', function() {
-    return Inertia::render('Destinasi/DungKluruk', [
-        'title' => 'Wisata DungKluruk',
-        'description' => 'Selamat Datang di Wisata DungKluruk, Tajuk, Getasan'
-    ]);
-});
+Route::get('/destinasi/{destination:slug}', [DestinationController::class, 'show'])->name('destinations.show');
 
-Route::get('/Destinasi/Sokowolu', function() {
-    return Inertia::render('Destinasi/Sokowolu', [
-        'title' => 'Wisata Sokowolu',
-        'description' => 'Selamat Datang di Wisata Sokowolu, Tajuk, Getasan'
-    ]);
-});
-
-Route::get('/Destinasi/Ngaduman', function() {
-    return Inertia::render('Destinasi/Ngaduman', [
-        'title' => 'Wisata Edukasi Ngaduman',
-        'description' => 'Selamat Datang di Wisata Edukasi Ngaduman, Tajuk, Getasan'
-    ]);
-});
-
-Route::get('/Destinasi/GPass', function() {
-    return Inertia::render('Destinasi/GPass', [
-        'title' => 'Wisata Gedong Pass',
-        'description' => 'Selamat Datang di Wisata Gedong Pass, Tajuk, Getasan'
-    ]);
+Route::get('/Destinasi/{legacy}', function (string $legacy) {
+    return redirect()->route('destinations.show', Str::slug($legacy), 301);
 });
 
 // Paket
-Route::get('/Paket', function() {
+Route::get('/Paket', function () {
     return Inertia::render('Paket', [
         'title' => 'Paket Wisata',
-        'description' => 'Selamat Datang di Paket Wisata Desa Tajuk'
+        'description' => 'Selamat Datang di Paket Wisata Desa Tajuk',
+        'destinations' => DestinationController::destinationCards(),
     ]);
 });
 
@@ -66,191 +44,97 @@ Route::get('/Paket', function() {
 Route::get('/Paket/FormLiveIn1', function () {
     return Inertia::render('Paket/FormLiveIn1', [
         'title' => 'Form Live In 1',
-        'description' => 'Form Live In 1'
+        'description' => 'Form Live In 1',
     ]);
 });
 
 Route::get('/Paket/FormLiveIn2', function () {
     return Inertia::render('Paket/FormLiveIn2', [
         'title' => 'Form Live In 1',
-        'description' => 'Form Live In 1'
+        'description' => 'Form Live In 1',
     ]);
 });
 
 Route::get('/Paket/FormLiveIn3', function () {
     return Inertia::render('Paket/FormLiveIn3', [
         'title' => 'Form Live In 1',
-        'description' => 'Form Live In 1'
+        'description' => 'Form Live In 1',
     ]);
 });
 
 // Informasi
-Route::get('/Informasi/Berita', function() {
+Route::get('/Informasi/Berita', function () {
     return Inertia::render('Informasi/Berita', [
         'title' => 'Berita Desa',
-        'description' => 'Berita Desa Tajuk'
+        'description' => 'Berita Desa Tajuk',
     ]);
 });
 
-//AR
-Route::get('/AR', function () {
-    return view('ARv1/index');
-});
+Route::get('/Informasi/Berita/{id}', function ($id) {
+    $article = Article::published()->findOrFail($id);
 
-
-// Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
-
-// public function show($id)
-// {
-//     $article = Article::findOrFail($id);
-//     return Inertia::render('BeritaDetail', [
-//         'article' => $article
-//     ]);
-// }
-
-Route::get('/Informasi/Berita/{id}' ,function($id){
-    $article = Article::findOrFail($id);
     return Inertia::render('Informasi/BeritaDetail', [
         'article' => [
             'id' => $article->id,
             'title' => $article->title,
             'content' => $article->content,
             'category' => $article->category,
-            'image' => $article->image ? url('storage/' . $article->image) : null,
+            'image' => $article->image_src,
             'is_published' => $article->is_published,
             'created_at' => $article->created_at,
             'updated_at' => $article->updated_at,
-        ]
+        ],
     ]);
 });
 
-Route::get('/Informasi/Gallery', function() {
+Route::get('/Informasi/Gallery', function () {
     return Inertia::render('Informasi/Gallery', [
         'title' => 'Galeri Desa',
-        'description' => 'Galeri Desa Tajuk'
+        'description' => 'Galeri Desa Tajuk',
     ]);
 });
 
-Route::get('/Informasi/Produk', function() {
+Route::get('/Informasi/Produk', function () {
     return Inertia::render('Informasi/Produk', [
         'title' => 'Produk Desa',
-        'description' => 'Produk Desa'
+        'description' => 'Produk Desa',
     ]);
 });
 
 // Dusun
-Route::get('/Dusun/DusunPulihan', function() {
-    return Inertia::render('Dusun/DusunPulihan', [
-        'title' => 'Profile Dusun Pulihan',
-        'description' => 'Profile Dusun Pulihan Desa Tajuk'
-    ]);
-});
+Route::get('/dusun/{hamlet:slug}', [HamletController::class, 'show'])->name('hamlets.show');
 
-Route::get('/Dusun/DusunTajuk', function() {
-    return Inertia::render('Dusun/DusunTajuk', [
-        'title' => 'Profile Dusun Tajuk',
-        'description' => 'Profile Dusun Tajuk Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunPuyang', function() {
-    return Inertia::render('Dusun/DusunPuyang', [
-        'title' => 'Profile Dusun Puyang',
-        'description' => 'Profile Dusun Puyang Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunCingklok', function() {
-    return Inertia::render('Dusun/DusunCingklok', [
-        'title' => 'Profile Dusun Cingklok',
-        'description' => 'Profile Dusun Cingklok Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunNgaduman', function() {
-    return Inertia::render('Dusun/DusunNgaduman', [
-        'title' => 'Profile Dusun Ngaduman',
-        'description' => 'Profile Dusun Ngaduman Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunMacanan', function() {
-    return Inertia::render('Dusun/DusunMacanan', [
-        'title' => 'Profile Dusun Macanan',
-        'description' => 'Profile Dusun Macanan Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunNgroto', function() {
-    return Inertia::render('Dusun/DusunNgroto', [
-        'title' => 'Profile Dusun Ngroto',
-        'description' => 'Profile Dusun Ngroto Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunBanaran', function() {
-    return Inertia::render('Dusun/DusunBanaran', [
-        'title' => 'Profile Dusun Banaran',
-        'description' => 'Profile Dusun Banaran Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunSokowolu', function() {
-    return Inertia::render('Dusun/DusunSokowolu', [
-        'title' => 'Profile Dusun Sokowolu',
-        'description' => 'Profile Dusun Sokowolu Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunGedong', function() {
-    return Inertia::render('Dusun/DusunGedong', [
-        'title' => 'Profile Dusun Gedong',
-        'description' => 'Profile Dusun Gedong Desa Tajuk'
-    ]);
-});
-
-Route::get('/Dusun/DusunKaliajeng', function() {
-    return Inertia::render('Dusun/DusunKaliajeng', [
-        'title' => 'Profile Dusun Kaliajeng',
-        'description' => 'Profile Dusun Kaliajeng Desa Tajuk'
-    ]);
+Route::get('/Dusun/{legacy}', function (string $legacy) {
+    return redirect()->route('hamlets.show', Str::slug(Str::after($legacy, 'Dusun')), 301);
 });
 
 // Tentang Kami
-Route::get('/TentangKami/ProfileDesa', function() {
+Route::get('/TentangKami/ProfileDesa', function () {
     return Inertia::render('TentangKami/ProfileDesa', [
         'title' => 'Profile Desa Tajuk',
-        'description' => 'Profile Desa Wisata Tajuk'
+        'description' => 'Profile Desa Wisata Tajuk',
+        'videos' => Video::published()
+            ->orderBy('sort_order')
+            ->get()
+            ->map(fn (Video $video): array => [
+                'id' => $video->youtube_id,
+                'title' => $video->title,
+            ]),
     ]);
 });
 
-Route::get('/TentangKami/Geografi', function() {
+Route::get('/TentangKami/Geografi', function () {
     return Inertia::render('TentangKami/Geografi', [
         'title' => 'Profile Desa Tajuk',
-        'description' => 'Profile Desa Wisata Tajuk'
+        'description' => 'Profile Desa Wisata Tajuk',
     ]);
 });
 
 // Kontak
-Route::get('/Contacts', function() {
+Route::get('/Contacts', function () {
     return Inertia::render('Contacts', [
         'title' => 'Kontak Kami',
-        'description' => 'Hubungi Kami'
-    ]);
-});
-
-// <<<<<<< feature/article
-// Route::get('/', function() {
-//     return redirect('/Homepage');
-// });
- // >>>>>>> main
-
-Route::get('/welcome', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'description' => 'Hubungi Kami',
     ]);
 });
 
@@ -258,16 +142,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('articles', ArticleController::class)->middleware(['auth']);
-
 require __DIR__.'/auth.php';
 
 Route::post('/submit-message', [ContactMessageController::class, 'store'])->name('submit.message');
-

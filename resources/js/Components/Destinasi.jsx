@@ -1,233 +1,256 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "@inertiajs/react";
+import { useSwipeable } from "react-swipeable";
+import { MdChevronLeft, MdChevronRight, MdPlace } from "react-icons/md";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import markerShadowPng from "leaflet/dist/images/marker-shadow.png";
 
-const destinations = [
-    {
-        title: "DungKluruk",
-        lat: -7.396035596890162,
-        lng: 110.45180818000935,
-        image: "https://drive.google.com/thumbnail?id=1tkS1gi8WDwDTXSOlzDkJrI2cvFKT173J&sz=w2000",
-        description:
-            "Dung Kluruk menjadi destinasi wisata alam yang instragamable dan siap memanjakan mata kamu.",
-        link: "/Destinasi/DungKluruk",
-    },
-    {
-        title: "Sokowolu",
-        lat: -7.405295566315285,
-        lng: 110.45791989350344,
-        image: "https://drive.google.com/thumbnail?id=1uoahO7LaBHukk-zJtdjOmKK1yPnmWW5-&sz=w2000",
-        description:
-            "Hutan Pinus Tiamo menjadi pilihan favorit bagi mereka yang ingin melarikan diri sejenak dari hiruk-piruk perkotaan",
-        link: "/Destinasi/Sokowolu",
-    },
-    {
-        title: "Ngaduman",
-        lat: -7.417724367829767,
-        lng: 110.44035079535077,
-        image: "https://drive.google.com/thumbnail?id=1WutfgpyKpbV_y5AYGRNrRFQvAEzRzriW&sz=w2000",
-        description:
-            "Nikmati pengalaman tinggal di Dusun Ngaduman dan mengikuti keseharian warga melalui program Live in Dusun Ngaduman.",
-        link: "/Destinasi/Ngaduman",
-    },
-    {
-        title: "G-Pass",
-        lat: -7.415801910724171,
-        lng: 110.44408678000971,
-        image: "https://drive.google.com/thumbnail?id=1No5U00Ne0uaBYNwoV0QhuUo97Gp5XNHr&sz=w2000",
-        description:
-            "Wisata G-Pass memiliki beragam spot foto, camping, hingga layanan homestay.",
-        link: "/Destinasi/GPass",
-    },
-];
+const MAP_CENTER = [-7.405443964245397, 110.44818385903196];
 
-const truncateDescription = (description, maxLength) => {
-    if (description.length <= maxLength) return description;
-    return description.substring(0, maxLength) + "...";
-};
-
-const Destinasi = () => {
+const Destinasi = ({ destinations = [] }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
     const [mapInteractive, setMapInteractive] = useState(false);
-    const maxDescriptionLength = 151;
-    const intervalTime = 5000;
-
-    const updateScreenSize = () => {
-        setIsDesktop(window.innerWidth >= 1024);
-    };
-
-    useEffect(() => {
-        updateScreenSize();
-        window.addEventListener("resize", updateScreenSize);
-        return () => window.removeEventListener("resize", updateScreenSize);
-    }, []);
-
-    useEffect(() => {
-        const interval = setInterval(nextSlide, intervalTime);
-        return () => clearInterval(interval);
-    }, [currentSlide]);
-
-    const resetInterval = () => {
-        clearInterval(interval);
-        setInterval(nextSlide, intervalTime);
-    };
-
-    const itemsPerGroup = isDesktop ? 2 : 1;
-    const groupedDestinations = [];
-    for (let i = 0; i < destinations.length; i += itemsPerGroup) {
-        groupedDestinations.push(destinations.slice(i, i + itemsPerGroup));
-    }
+    const [paused, setPaused] = useState(false);
+    const intervalTime = 6000;
+    const total = destinations.length;
 
     const nextSlide = () => {
-        setCurrentSlide(
-            (prevSlide) => (prevSlide + 1) % groupedDestinations.length
-        );
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % total);
     };
 
     const prevSlide = () => {
-        setCurrentSlide(
-            (prevSlide) =>
-                (prevSlide - 1 + groupedDestinations.length) %
-                groupedDestinations.length
-        );
+        setCurrentSlide((prevSlide) => (prevSlide - 1 + total) % total);
     };
+
+    useEffect(() => {
+        if (paused || total === 0) {
+            return;
+        }
+
+        const interval = setInterval(nextSlide, intervalTime);
+        return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentSlide, paused, total]);
 
     const handleMapClick = () => {
         setMapInteractive(true);
     };
 
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: nextSlide,
+        onSwipedRight: prevSlide,
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
+    if (total === 0) {
+        return (
+            <p className="py-10 text-center text-gray-400">
+                Belum ada data destinasi.
+            </p>
+        );
+    }
+
     return (
-        <div className="w-full lg:w-full lg:h-auto rounded-xl mx-auto">
-            {/* Peta Utama */}
-            <div className="relative w-full h-96 my-10 overflow-hidden z-0 px-3 lg:px-2 flex">
+        <div className="w-full">
+            <div className="grid w-full grid-cols-1 items-stretch gap-6 sm:gap-8 lg:grid-cols-[1.1fr_1fr]">
+                {/* Peta */}
+                <div className="relative isolate z-0 h-56 min-w-0 overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 sm:h-80 md:h-96 lg:h-auto lg:min-h-[460px]">
+                    <MapContainer
+                        center={MAP_CENTER}
+                        zoom={14}
+                        style={{ height: "100%", width: "100%" }}
+                        className="relative overflow-hidden rounded-2xl"
+                        scrollWheelZoom={mapInteractive}
+                        dragging={mapInteractive}
+                        touchZoom={mapInteractive}
+                        doubleClickZoom={mapInteractive}
+                    >
+                        <TileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        />
+                        {destinations
+                            .filter(
+                                (destination) =>
+                                    typeof destination.lat === "number" &&
+                                    typeof destination.lng === "number"
+                            )
+                            .map((destination, index) => (
+                            <Marker
+                                key={index}
+                                position={[destination.lat, destination.lng]}
+                                icon={L.icon({
+                                    iconUrl: markerIconPng,
+                                    shadowUrl: markerShadowPng,
+                                    iconSize: [25, 41],
+                                    iconAnchor: [15, 41],
+                                })}
+                            >
+                                <Popup>
+                                    <div className="min-w-[150px] max-w-[220px] text-black">
+                                        <h3 className="text-base font-bold">
+                                            {destination.title}
+                                        </h3>
+                                        <p className="mt-1 text-sm">
+                                            {destination.description.length > 90
+                                                ? destination.description.substring(
+                                                      0,
+                                                      90
+                                                  ) + "…"
+                                                : destination.description}
+                                        </p>
+                                        <Link
+                                            href={destination.link}
+                                            className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
+                                        >
+                                            Lihat Detail
+                                        </Link>
+                                    </div>
+                                </Popup>
+                            </Marker>
+                        ))}
+                    </MapContainer>
+
+                    {/* Overlay kunci peta — harus di atas panes Leaflet */}
+                    <div
+                        className={`absolute inset-0 z-[1100] flex cursor-pointer items-center justify-center bg-black/40 transition-colors duration-300 ${
+                            mapInteractive
+                                ? "pointer-events-none opacity-0"
+                                : "opacity-100 hover:bg-black/30"
+                        }`}
+                        onClick={handleMapClick}
+                    >
+                        <span className="flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-xs font-semibold text-primary shadow-xl backdrop-blur sm:px-5 sm:py-2.5 sm:text-sm">
+                            <MdPlace size={18} />
+                            Ketuk untuk menjelajahi peta
+                        </span>
+                    </div>
+                </div>
+
+                {/* Slider kartu destinasi + kontrol di bawahnya */}
                 <div
-                    className={`absolute top-0 left-0 w-auto h-full bg-black transition-opacity duration-300 z-10 ${
-                        mapInteractive
-                            ? "opacity-0 pointer-events-none"
-                            : "opacity-50"
-                    }`}
-                    onClick={handleMapClick}
-                ></div>
-                <MapContainer
-                    center={[-7.405443964245397, 110.44818385903196]}
-                    zoom={14}
-                    style={{ height: "100%", width: "100%" }}
-                    className="rounded-lg relative overflow-hidden"
-                    scrollWheelZoom={mapInteractive}
-                    dragging={mapInteractive}
-                    touchZoom={mapInteractive}
-                    doubleClickZoom={mapInteractive}
+                    className="flex w-full min-w-0 flex-col"
+                    onMouseEnter={() => setPaused(true)}
+                    onMouseLeave={() => setPaused(false)}
                 >
-                    <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    />
-                    {destinations.map((destination, index) => (
-                        <Marker
-                            key={index}
-                            position={[destination.lat, destination.lng]}
-                            icon={L.icon({
-                                iconUrl: markerIconPng,
-                                shadowUrl: markerShadowPng,
-                                iconSize: [25, 41],
-                                iconAnchor: [15, 41],
-                            })}
-                        >
-                            <Popup>
-                                <div className="text-black">
-                                    <h3 className="text-lg">
-                                        {destination.title}
-                                    </h3>
-                                    <p>
-                                        {truncateDescription(
-                                            destination.description,
-                                            maxDescriptionLength
-                                        )}
-                                    </p>
-                                    <Link
-                                        href={destination.link}
-                                        className="text-blue-500 hover:text-blue-700 text-center"
-                                    >
-                                        Lihat Detail
-                                    </Link>
-                                </div>
-                            </Popup>
-                        </Marker>
-                    ))}
-                </MapContainer>
-            </div>
-            {/* Slide */}
-            <div className="relative overflow-hidden w-full">
-                <div
-                    className="flex transition-transform duration-500 ease-in-out"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                >
-                    {groupedDestinations.map((group, groupIndex) => (
+                    <div
+                        {...swipeHandlers}
+                        className="relative flex-1 touch-pan-y select-none overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5"
+                    >
                         <div
-                            key={groupIndex}
-                            className="flex w-full"
-                            style={{ minWidth: "100%" }}
+                            className="flex h-full transition-transform duration-500 ease-in-out"
+                            style={{
+                                transform: `translateX(-${currentSlide * 100}%)`,
+                            }}
                         >
-                            {group.map((destination, i) => (
+                            {destinations.map((destination, index) => (
                                 <div
-                                    key={i}
-                                    className={`w-full pr-5 pl-5 ${
-                                        isDesktop ? "sm:w-1/2" : ""
-                                    }`}
+                                    key={destination.title}
+                                    className="flex h-full w-full shrink-0 flex-col md:flex-row lg:flex-col"
                                 >
-                                    <div className="bg-white w-auto justify-center items-center rounded-lg shadow-lg overflow-hidden text-black">
+                                    <div className="relative h-40 shrink-0 sm:h-52 md:h-auto md:w-5/12 lg:h-52 lg:w-full">
                                         <img
                                             src={destination.image}
                                             alt={destination.title}
-                                            className="w-full h-48 object-cover"
+                                            loading="lazy"
+                                            draggable={false}
+                                            className="h-full w-full object-cover"
                                         />
-                                        <div className="p-4">
-                                            <h3 className="text-lg font-semibold mb-2 text-center">
-                                                {destination.title}
-                                            </h3>
-                                            <p className="text-sm text-justify">
-                                                {truncateDescription(
-                                                    destination.description,
-                                                    maxDescriptionLength
-                                                )}
-                                            </p>
-                                            <Link
-                                                href={destination.link}
-                                                className="text-blue-500 hover:text-blue-700 mt-2 block"
-                                            >
-                                                Lihat Detail
-                                            </Link>
-                                        </div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
+                                        <span className="absolute left-3 top-3 rounded-full bg-primary/90 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur sm:left-4 sm:top-4 sm:px-3 sm:text-xs">
+                                            Destinasi {index + 1}
+                                        </span>
+                                    </div>
+                                    <div className="flex min-w-0 flex-1 flex-col bg-white p-4 sm:p-6">
+                                        <h3 className="text-lg font-bold text-primary sm:text-xl md:text-2xl">
+                                            {destination.title}
+                                        </h3>
+                                        {typeof destination.lat === "number" &&
+                                            typeof destination.lng ===
+                                                "number" && (
+                                                <p className="mt-1 flex items-center gap-1 text-[11px] font-medium text-gray-400 sm:text-xs">
+                                                    <MdPlace size={14} />
+                                                    {destination.lat.toFixed(
+                                                        4
+                                                    )}
+                                                    ,{" "}
+                                                    {destination.lng.toFixed(
+                                                        4
+                                                    )}
+                                                </p>
+                                            )}
+                                        <p className="mb-4 mt-2 text-[13px] leading-relaxed text-gray-600 sm:mt-3 sm:text-sm">
+                                            {destination.description}
+                                        </p>
+                                        <Link
+                                            href={destination.link}
+                                            className="mt-auto inline-flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 md:w-fit lg:w-auto"
+                                        >
+                                            Lihat Detail →
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Kontrol: prev + thumbnail tiap destinasi + next — selebar kartu */}
+                    <div className="mt-4 flex w-full items-center justify-center gap-2 sm:mt-5 sm:gap-3">
+                        <button
+                            type="button"
+                            onClick={prevSlide}
+                            aria-label="Destinasi sebelumnya"
+                            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-md ring-1 ring-black/5 transition hover:bg-primary hover:text-white"
+                        >
+                            <MdChevronLeft size={24} />
+                        </button>
+
+                        <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
+                            {destinations.map((destination, index) => (
+                                <button
+                                    key={destination.title}
+                                    type="button"
+                                    onClick={() => setCurrentSlide(index)}
+                                    aria-label={`Ke destinasi ${destination.title}`}
+                                    aria-pressed={index === currentSlide}
+                                    className={`group relative flex min-w-0 flex-1 items-center justify-center overflow-hidden rounded-lg py-4 transition-all duration-300 sm:h-14 sm:py-0 sm:ring-2 ${
+                                        index === currentSlide
+                                            ? "sm:shadow-lg sm:shadow-primary/25 sm:ring-primary"
+                                            : "sm:opacity-70 sm:ring-transparent sm:hover:opacity-100"
+                                    }`}
+                                >
+                                    <span
+                                        className={`h-1.5 w-full rounded-full transition-colors sm:hidden ${
+                                            index === currentSlide
+                                                ? "bg-primary"
+                                                : "bg-primary/25"
+                                        }`}
+                                    />
+                                    <img
+                                        src={destination.image}
+                                        alt={destination.title}
+                                        loading="lazy"
+                                        className="hidden h-full w-full object-cover sm:block"
+                                    />
+                                    <span className="absolute inset-0 hidden bg-black/30 transition-colors group-hover:bg-black/15 sm:block" />
+                                </button>
+                            ))}
+                        </div>
+
+                        <button
+                            type="button"
+                            onClick={nextSlide}
+                            aria-label="Destinasi berikutnya"
+                            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-md ring-1 ring-black/5 transition hover:bg-primary hover:text-white"
+                        >
+                            <MdChevronRight size={24} />
+                        </button>
+                    </div>
                 </div>
-                {/* Tombol Navigasi */}
-                <button
-                    onClick={() => {
-                        prevSlide();
-                        resetInterval();
-                    }}
-                    className="w-10 h-10 text-center absolute top-1/2 transform -translate-y-1/2 left-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
-                >
-                    &lt;
-                </button>
-                <button
-                    onClick={() => {
-                        nextSlide();
-                        resetInterval();
-                    }}
-                    className="w-10 h-10 text-center absolute top-1/2 transform -translate-y-1/2 right-0 bg-white bg-opacity-100 text-black rounded-md shadow-xl border"
-                >
-                    &gt;
-                </button>
             </div>
         </div>
     );
