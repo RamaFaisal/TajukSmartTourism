@@ -33,7 +33,7 @@ export default function ProfileDesa(props) {
                 </div>
 
                 <div className="w-full md:w-[800px] lg:w-[1400px] rounded-lg z-10 relative px-5">
-                    <VideoCarousel />
+                    <VideoCarousel videos={props.videos ?? []} />
                 </div>
 
                 <div className="w-full lg:w-[1160px] h-auto text-justify text-base md:text-lg lg:text-xl lg:mt-2 px-5 z-10">
