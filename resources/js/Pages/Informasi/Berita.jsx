@@ -2,6 +2,7 @@ import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import Carousel from "@/Components/Carousel";
 import { Head, Link } from "@inertiajs/react";
+import { truncateText } from "@/lib/text";
 import React, { useState, useEffect } from "react";
 
 export default function Berita(props) {
@@ -29,20 +30,6 @@ export default function Berita(props) {
 
         fetchArticles();
     }, []);
-
-    const truncateContent = (content, maxLength = 200) => {
-        let truncatedContent = content.substring(0, maxLength);
-
-        // Cari posisi terakhir dari spasi dalam substring tersebut
-        let lastSpace = truncatedContent.lastIndexOf(" ");
-
-        // Jika ada spasi, potong teks sampai spasi tersebut
-        if (lastSpace > 0) {
-            truncatedContent = truncatedContent.substring(0, lastSpace);
-        }
-
-        return truncatedContent + "...";
-    };
 
     return (
         <>
@@ -74,37 +61,32 @@ export default function Berita(props) {
                                 key={article.id}
                                 className="bg-white shadow-md rounded-lg overflow-hidden"
                             >
-                                <a href={`/Informasi/Berita/${article.id}`}>
+                                <Link href={`/Informasi/Berita/${article.id}`}>
                                     <img
                                         src={article.image}
                                         alt={article.title}
                                         className="w-full h-48 object-cover"
                                     />
-                                </a>
+                                </Link>
                                 <div className="p-4">
-                                    <a href={`/Informasi/Berita/${article.id}`}>
+                                    <Link href={`/Informasi/Berita/${article.id}`}>
                                         <h2 className="text-base lg:text-2xl text-black font-bold mb-2">
                                             {article.title}
                                         </h2>
-                                    </a>
+                                    </Link>
                                     <p className="text-gray-600 mb-2">
                                         {new Date(
                                             article.created_at
                                         ).toLocaleDateString()}
                                     </p>
-                                    <div
-                                        className="text-black mb-4 text-sm lg:text-xl"
-                                        dangerouslySetInnerHTML={{
-                                            __html: truncateContent(
-                                                article.content
-                                            ),
-                                        }}
-                                    />
+                                    <p className="mb-4 text-sm leading-relaxed text-gray-600 lg:text-base">
+                                        {truncateText(article.content)}
+                                    </p>
                                     <Link
                                         href={`/Informasi/Berita/${article.id}`}
-                                        className="text-blue-500 hover:underline"
+                                        className="font-semibold text-primary hover:underline"
                                     >
-                                        Read more
+                                        Baca selengkapnya
                                     </Link>
                                 </div>
                             </div>
