@@ -1,0 +1,1 @@
+function u(n=""){if(typeof document>"u")return n.replace(/<[^>]*>/g,"");const t=document.createElement("div");return t.innerHTML=n,t.textContent||""}function i(n="",t=200){const e=u(n).trim();if(e.length<=t)return e;const r=e.substring(0,t),c=r.lastIndexOf(" ");return(c>0?r.substring(0,c):r)+"…"}export{i as t};
