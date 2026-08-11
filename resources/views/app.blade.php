@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="mZHvhJ8l2uc7lCrW4jxad5KXu0yrwsBdyIvoJICIRSQ" />
 
     @php
         $pageTitle = $page['props']['title'] ?? config('app.name');
