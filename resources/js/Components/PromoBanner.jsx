@@ -1,5 +1,3 @@
-import { Link } from "@inertiajs/react";
-
 const IMAGE_ID = "1XBEW_Q-5DtOiEYmfDFHe6-4oA2peGJt-";
 
 const imageUrl = (width) =>
@@ -7,7 +5,7 @@ const imageUrl = (width) =>
 
 export default function PromoBanner() {
     return (
-        <Link
+        <a
             href="/Paket"
             className="group relative flex min-h-[11rem] w-full items-center justify-center overflow-hidden rounded-2xl transition-shadow duration-300 hover:shadow-xl hover:shadow-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:min-h-[13rem] md:min-h-[15rem] lg:min-h-[16rem]"
         >
@@ -33,6 +31,6 @@ export default function PromoBanner() {
                     Lihat Paket
                 </span>
             </div>
-        </Link>
+        </a>
     );
 }

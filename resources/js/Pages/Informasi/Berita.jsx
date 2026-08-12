@@ -1,7 +1,7 @@
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import Carousel from "@/Components/Carousel";
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import { truncateText } from "@/lib/text";
 import React, { useState, useEffect } from "react";
 
@@ -61,19 +61,19 @@ export default function Berita(props) {
                                 key={article.id}
                                 className="bg-white shadow-md rounded-lg overflow-hidden"
                             >
-                                <Link href={`/Informasi/Berita/${article.id}`}>
+                                <a href={`/Informasi/Berita/${article.id}`}>
                                     <img
                                         src={article.image}
                                         alt={article.title}
                                         className="w-full h-48 object-cover"
                                     />
-                                </Link>
+                                </a>
                                 <div className="p-4">
-                                    <Link href={`/Informasi/Berita/${article.id}`}>
+                                    <a href={`/Informasi/Berita/${article.id}`}>
                                         <h2 className="text-base lg:text-2xl text-black font-bold mb-2">
                                             {article.title}
                                         </h2>
-                                    </Link>
+                                    </a>
                                     <p className="text-gray-600 mb-2">
                                         {new Date(
                                             article.created_at
@@ -82,12 +82,12 @@ export default function Berita(props) {
                                     <p className="mb-4 text-sm leading-relaxed text-gray-600 lg:text-base">
                                         {truncateText(article.content)}
                                     </p>
-                                    <Link
+                                    <a
                                         href={`/Informasi/Berita/${article.id}`}
                                         className="font-semibold text-primary hover:underline"
                                     >
                                         Baca selengkapnya
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         ))}

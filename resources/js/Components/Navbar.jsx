@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 
 const AR_URL = "https://feby-akliji23.github.io/AR-BETA_V01/";
 
@@ -120,7 +120,7 @@ const DesktopDropdown = ({ item, active, currentPath }) => (
                 <ul className="space-y-0.5">
                     {item.children.map((child) => (
                         <li key={child.href}>
-                            <Link
+                            <a
                                 href={child.href}
                                 className={`group/item flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-colors duration-150 ${
                                     currentPath.startsWith(child.href)
@@ -130,7 +130,7 @@ const DesktopDropdown = ({ item, active, currentPath }) => (
                             >
                                 <span>{child.label}</span>
                                 <ChevronRight className="h-4 w-4 -translate-x-1 text-current opacity-0 transition-all duration-150 group-hover/item:translate-x-0 group-hover/item:opacity-100" />
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>
@@ -238,7 +238,7 @@ export default function Navbar() {
                             </span>
                         </button>
 
-                        <Link
+                        <a
                             href="/"
                             className="ml-2 shrink-0 transition-transform duration-200 hover:scale-105"
                         >
@@ -247,7 +247,7 @@ export default function Navbar() {
                                 alt="Logo Tajuk"
                                 className="h-10 lg:h-12"
                             />
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="navbar-center hidden lg:flex">
@@ -261,7 +261,7 @@ export default function Navbar() {
                                         currentPath={currentPath}
                                     />
                                 ) : (
-                                    <Link
+                                    <a
                                         key={item.label}
                                         href={item.href}
                                         className={`flex h-9 items-center justify-center whitespace-nowrap rounded-full px-3 font-medium transition-colors duration-200 ${
@@ -271,7 +271,7 @@ export default function Navbar() {
                                         }`}
                                     >
                                         {item.label}
-                                    </Link>
+                                    </a>
                                 )
                             )}
                         </nav>
@@ -311,13 +311,8 @@ export default function Navbar() {
                                             <ul className="bg-black/15 pb-2">
                                                 {item.children.map((child) => (
                                                     <li key={child.href}>
-                                                        <Link
+                                                        <a
                                                             href={child.href}
-                                                            onClick={() =>
-                                                                setDropdownOpen(
-                                                                    false
-                                                                )
-                                                            }
                                                             className={`flex items-center px-8 py-3 text-[15px] transition-colors ${
                                                                 currentPath.startsWith(
                                                                     child.href
@@ -327,7 +322,7 @@ export default function Navbar() {
                                                             }`}
                                                         >
                                                             {child.label}
-                                                        </Link>
+                                                        </a>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -335,11 +330,8 @@ export default function Navbar() {
                                     </li>
                                 ) : (
                                     <li key={item.label}>
-                                        <Link
+                                        <a
                                             href={item.href}
-                                            onClick={() =>
-                                                setDropdownOpen(false)
-                                            }
                                             className={`flex items-center justify-between px-6 py-4 text-base transition-colors ${
                                                 isActive(item)
                                                     ? "bg-white/15 font-semibold text-accent"
@@ -347,7 +339,7 @@ export default function Navbar() {
                                             }`}
                                         >
                                             {item.label}
-                                        </Link>
+                                        </a>
                                     </li>
                                 )
                             )}

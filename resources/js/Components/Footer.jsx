@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "@inertiajs/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebookF,
@@ -79,19 +78,19 @@ const Footer = () => {
 
                 <div className="flex flex-col items-center lg:justify-start md:items-end lg:items-start mb-5 w-full md:w-1/3 lg:w-1/4 p-5 text-center md:text-right lg:text-left">
                     <div className="flex flex-row md:flex-col flex-wrap justify-center md:justify-start space-x-2 md:space-x-0 md:space-y-4">
-                        <Link
+                        <a
                             className="text-sm lg:text-lg mb-2 md:mb-0 hover:text-accent"
                             href="/TentangKami/ProfileDesa"
                         >
                             Tentang Kami
-                        </Link>
+                        </a>
                         <span className="block md:hidden"> /</span>
-                        <Link
+                        <a
                             className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-accent"
                             href="/Informasi/Berita"
                         >
                             Informasi
-                        </Link>
+                        </a>
                         <span className="block md:hidden"> /</span>
                         <a
                             className="text-sm lg:text-lg mb-2 lg:mb-5 md:mb-0 hover:text-accent"

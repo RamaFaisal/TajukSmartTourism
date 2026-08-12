@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "@inertiajs/react";
 import { useSwipeable } from "react-swipeable";
 import { MdChevronLeft, MdChevronRight, MdPlace } from "react-icons/md";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -103,12 +102,12 @@ const Destinasi = ({ destinations = [] }) => {
                                                   ) + "…"
                                                 : destination.description}
                                         </p>
-                                        <Link
+                                        <a
                                             href={destination.link}
                                             className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
                                         >
                                             Lihat Detail
-                                        </Link>
+                                        </a>
                                     </div>
                                 </Popup>
                             </Marker>
@@ -186,12 +185,12 @@ const Destinasi = ({ destinations = [] }) => {
                                         <p className="mb-4 mt-2 text-[13px] leading-relaxed text-gray-600 sm:mt-3 sm:text-sm">
                                             {destination.description}
                                         </p>
-                                        <Link
+                                        <a
                                             href={destination.link}
                                             className="mt-auto inline-flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 md:w-fit lg:w-auto"
                                         >
                                             Lihat Detail →
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             ))}

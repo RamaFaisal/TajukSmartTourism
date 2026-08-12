@@ -1,5 +1,5 @@
 import React from "react";
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
 import Carousel from "@/Components/Carousel";
 import Footer from "@/Components/Footer";
@@ -111,12 +111,12 @@ export default function Homepage(props) {
                         >
                             Jelajahi Dusun
                         </a>
-                        <Link
+                        <a
                             href="/Paket"
                             className="pointer-events-auto rounded-full border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition duration-200 hover:bg-white hover:text-primary md:text-base"
                         >
                             Lihat Paket Wisata
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <Carousel />

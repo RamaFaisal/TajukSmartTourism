@@ -70,17 +70,23 @@ const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-whit
     );
 };
 
-const DropdownLink = ({ className = '', children, ...props }) => {
+const DropdownLink = ({ className = '', children, method, ...props }) => {
+    const linkClassName =
+        'block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out ' +
+        className;
+
+    if (method) {
+        return (
+            <Link {...props} method={method} className={linkClassName}>
+                {children}
+            </Link>
+        );
+    }
+
     return (
-        <Link
-            {...props}
-            className={
-                'block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out ' +
-                className
-            }
-        >
+        <a {...props} className={linkClassName}>
             {children}
-        </Link>
+        </a>
     );
 };
 

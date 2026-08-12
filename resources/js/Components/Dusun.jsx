@@ -1,4 +1,3 @@
-import { Link } from "@inertiajs/react";
 import React, { useEffect, useRef } from "react";
 import { MdPlace } from "react-icons/md";
 
@@ -45,9 +44,9 @@ const Card = ({ imageUrl, title, link, tabIndex = 0 }) => {
         "group relative block w-56 shrink-0 overflow-hidden rounded-2xl shadow-md shadow-black/10 ring-1 ring-black/5 transition-transform duration-300 hover:z-10 hover:scale-105 hover:shadow-lg hover:shadow-black/25 sm:w-64 lg:w-72";
 
     return link ? (
-        <Link href={link} className={classes} tabIndex={tabIndex}>
+        <a href={link} className={classes} tabIndex={tabIndex}>
             {content}
-        </Link>
+        </a>
     ) : (
         <div className={classes} tabIndex={tabIndex}>
             {content}
