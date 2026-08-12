@@ -79,7 +79,7 @@ const PackageCard = ({ pkg, bookLink }) => (
             )}
 
             <div
-                className={`mt-4 flex items-end justify-between gap-3 border-t border-dashed border-gray-200 pt-4 ${
+                className={`mt-4 flex items-end gap-3 border-t border-dashed border-gray-200 pt-4 ${
                     pkg.perks?.length > 0 ? "" : "mb-6"
                 }`}
             >
