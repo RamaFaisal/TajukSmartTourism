@@ -6,6 +6,8 @@ use App\Http\Controllers\HamletController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Article;
+use App\Models\Setting;
+use App\Models\TourPackage;
 use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -33,9 +35,24 @@ Route::get('/Destinasi/{legacy}', function (string $legacy) {
 
 // Paket
 Route::get('/Paket', function () {
+    $packages = TourPackage::published()
+        ->orderBy('sort_order')
+        ->get()
+        ->map(fn (TourPackage $package): array => [
+            'id' => $package->id,
+            'title' => $package->name,
+            'price' => $package->price,
+            'duration' => $package->duration,
+            'description' => $package->description,
+            'perks' => $package->facilities ?? [],
+            'image' => $package->image_src,
+        ]);
+
     return Inertia::render('Paket', [
         'title' => 'Paket Wisata',
         'description' => 'Selamat Datang di Paket Wisata Desa Tajuk',
+        'packages' => $packages,
+        'whatsapp' => Setting::current()->whatsapp ?: '6283831597088',
         'destinations' => DestinationController::destinationCards(),
     ]);
 });
