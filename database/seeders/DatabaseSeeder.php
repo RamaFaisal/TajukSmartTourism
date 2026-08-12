@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             DestinationSeeder::class,
             TourPackageSeeder::class,
             VideoSeeder::class,
+            SettingSeeder::class,
             AdminSeeder::class,
         ]);
     }
