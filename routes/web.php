@@ -6,9 +6,12 @@ use App\Http\Controllers\HamletController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Article;
+use App\Models\Destination;
+use App\Models\Hamlet;
 use App\Models\Setting;
 use App\Models\TourPackage;
 use App\Models\Video;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
@@ -25,6 +28,38 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/sitemap.xml', function () {
+    $urls = Cache::remember('sitemap_urls', 600, function () {
+        return collect([
+            '/',
+            '/Paket',
+            '/Informasi/Berita',
+            '/Informasi/Gallery',
+            '/Informasi/Produk',
+            '/TentangKami/ProfileDesa',
+            '/TentangKami/Geografi',
+            '/Contacts',
+        ])
+            ->concat(Hamlet::published()->pluck('slug')->map(fn (string $slug): string => '/dusun/'.$slug))
+            ->concat(Destination::published()->pluck('slug')->map(fn (string $slug): string => '/destinasi/'.$slug))
+            ->concat(Article::published()->pluck('id')->map(fn (int $id): string => '/Informasi/Berita/'.$id))
+            ->map(fn (string $path): string => url($path))
+            ->unique()
+            ->values();
+    });
+
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+        .'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+
+    foreach ($urls as $url) {
+        $xml .= '  <url><loc>'.e($url).'</loc></url>'."\n";
+    }
+
+    $xml .= '</urlset>'."\n";
+
+    return response($xml)->header('Content-Type', 'application/xml');
+});
 
 // Destinasi
 Route::get('/destinasi/{destination:slug}', [DestinationController::class, 'show'])->name('destinations.show');

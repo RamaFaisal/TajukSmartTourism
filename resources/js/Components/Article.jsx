@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "@inertiajs/react";
 import { truncateText } from "@/lib/text";
 
 const formatDate = (iso) =>
@@ -44,19 +43,19 @@ const FeaturedArticle = ({ article }) => (
             <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:mt-3 md:text-[15px]">
                 {truncateText(article.content, 220)}
             </p>
-            <Link
+            <a
                 href={`/Informasi/Berita/${article.id}`}
                 className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary/90 sm:mt-6 sm:w-fit sm:py-2.5"
             >
                 Baca Selengkapnya
                 <span aria-hidden="true">→</span>
-            </Link>
+            </a>
         </div>
     </article>
 );
 
 const ArticleCard = ({ article }) => (
-    <Link
+    <a
         href={`/Informasi/Berita/${article.id}`}
         className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md shadow-gray-200/60 ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-300/50"
     >
@@ -85,7 +84,7 @@ const ArticleCard = ({ article }) => (
                 Baca selengkapnya →
             </span>
         </div>
-    </Link>
+    </a>
 );
 
 export default function Article() {
@@ -142,13 +141,13 @@ export default function Article() {
             )}
 
             <div className="mt-6 text-center sm:mt-8">
-                <Link
+                <a
                     href="/Informasi/Berita"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary px-7 py-3 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white sm:w-auto sm:py-2.5"
                 >
                     Lihat Semua Berita
                     <span aria-hidden="true">→</span>
-                </Link>
+                </a>
             </div>
         </div>
     );
