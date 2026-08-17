@@ -5,8 +5,11 @@ import { Head } from "@inertiajs/react";
 import { truncateText } from "@/lib/text";
 import React, { useState, useEffect } from "react";
 
+const PAGE_SIZE = 3;
+
 export default function Berita(props) {
     const [articles, setArticles] = useState([]);
+    const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
     useEffect(() => {
         // Function to fetch articles from the API
@@ -56,7 +59,7 @@ export default function Berita(props) {
                 </div>
                 <div className="container mx-auto p-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-4">
-                        {articles.map((article) => (
+                        {articles.slice(0, visibleCount).map((article) => (
                             <div
                                 key={article.id}
                                 className="bg-white shadow-md rounded-lg overflow-hidden"
@@ -92,6 +95,21 @@ export default function Berita(props) {
                             </div>
                         ))}
                     </div>
+                    {visibleCount < articles.length && (
+                        <div className="flex justify-center mt-10">
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    setVisibleCount(
+                                        (count) => count + PAGE_SIZE
+                                    )
+                                }
+                                className="px-6 py-2 rounded-full bg-primary text-white font-semibold hover:opacity-90 transition"
+                            >
+                                Muat lebih banyak
+                            </button>
+                        </div>
+                    )}
                 </div>
                 <Footer />
             </div>
