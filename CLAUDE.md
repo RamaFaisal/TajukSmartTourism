@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Tajuk Smart Tourism — situs desa wisata Tajuk (Getasan, Kabupaten Semarang). Laravel 10 + Inertia.js + React 18, panel admin Filament 3, auth Laravel Breeze. Konten dan komunikasi dengan pengguna berbahasa Indonesia.
+Tajuk Smart Tourism — situs desa wisata Tajuk (Getasan, Kabupaten Semarang). Laravel 10 + Inertia.js + React 18, panel admin Filament 3. Konten dan komunikasi dengan pengguna berbahasa Indonesia.
 
 A rebuild is planned and specified in [docs/superpowers/specs/2026-08-06-tajuk-smart-tourism-v2-prd.md](docs/superpowers/specs/2026-08-06-tajuk-smart-tourism-v2-prd.md). Read that PRD before making structural changes — several things that look like bugs are already accounted for there, and it records which ones are deliberately out of scope.
 
@@ -18,8 +18,8 @@ npm run dev
 npm run build                              # production assets
 
 php artisan test                           # all tests
-php artisan test --filter=AuthenticationTest   # one test class
-php artisan test tests/Feature/ProfileTest.php # one file
+php artisan test --filter=ContactMessageTest   # one test class
+php artisan test tests/Feature/ContactMessageTest.php # one file
 
 ./vendor/bin/pint                          # PHP formatter (Laravel Pint, no config file — defaults apply)
 
@@ -73,13 +73,13 @@ Tailwind with DaisyUI, plus the Filament Tailwind preset — `tailwind.config.js
 
 Phase 0 of the PRD is done — keep these invariants intact:
 
-- `/register`, `/forgot-password`, and `/reset-password` are removed; admin accounts are created via seeder or artisan command.
+- `/register`, `/forgot-password`, `/reset-password`, `/login`, `/dashboard`, and `/profile` are all removed; admin accounts are created via seeder or artisan command, and Filament (`/admin/login`) is the only way to authenticate.
 - `User::canAccessPanel()` requires `is_admin` — a plain registered user cannot open `/admin`.
 - Every public query filters `is_published` through the `published()` scope on each model (web pages and `/api/articles`).
 
 ## Dead code
 
-Most old dead code has been removed (route `/AR` + `resources/views/ARv1/`, `News`/`paketWisata` models and migration, `ArticleController` + Blade article views, `admin.blade copy.php`, merge-conflict remnants, the Blade dashboard). The AR feature actually in use is external — GitHub Pages, linked from `Components/Navbar.jsx`.
+Most old dead code has been removed (route `/AR` + `resources/views/ARv1/`, `News`/`paketWisata` models and migration, `ArticleController` + Blade article views, `admin.blade copy.php`, merge-conflict remnants, the Blade dashboard, and the entire unused Breeze auth/profile/dashboard system — controllers, JSX pages, layouts, and form components). The AR feature actually in use is external — GitHub Pages, linked from `Components/Navbar.jsx`.
 
 Still legacy, slated for removal in PRD Phase 3: the three `Paket/FormLiveIn*.jsx` forms, which post nowhere.
 
