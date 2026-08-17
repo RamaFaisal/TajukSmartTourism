@@ -5,7 +5,7 @@ import Carousel from "@/Components/Carousel";
 import Lightbox from "@/Components/Lightbox";
 import { Head } from "@inertiajs/react";
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = 7;
 
 // Repeats every 8 photos: index 0 is a big feature tile, index 3 is tall,
 // index 5 is wide, the rest are plain squares — gives the grid a bento look
