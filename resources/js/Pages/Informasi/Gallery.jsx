@@ -1,11 +1,42 @@
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Carousel from "@/Components/Carousel";
+import Lightbox from "@/Components/Lightbox";
 import { Head } from "@inertiajs/react";
+
+const PAGE_SIZE = 8;
+
+// Repeats every 8 photos: index 0 is a big feature tile, index 3 is tall,
+// index 5 is wide, the rest are plain squares — gives the grid a bento look
+// without needing a masonry library.
+const TILE_SPAN = [
+    "col-span-2 row-span-2",
+    "",
+    "",
+    "row-span-2",
+    "",
+    "col-span-2",
+    "",
+    "",
+];
 
 export default function Gallery(props) {
     const photos = props.photos ?? [];
+    const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+    const [openIndex, setOpenIndex] = useState(null);
+    const visiblePhotos = photos.slice(0, visibleCount);
+
+    const navigate = useCallback(
+        (direction) => {
+            setOpenIndex((current) =>
+                current === null
+                    ? current
+                    : (current + direction + photos.length) % photos.length
+            );
+        },
+        [photos.length]
+    );
 
     return (
         <>
@@ -34,43 +65,66 @@ export default function Gallery(props) {
                 {photos.length === 0 ? (
                     <p className="text-gray-400">Belum ada foto galeri.</p>
                 ) : (
-                    <div className="w-full max-w-[1141px] h-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-4 md:px-8">
-                        {photos.map((photo, index) => {
-                            const content = (
-                                <>
+                    <div className="w-full max-w-[1141px] px-4 md:px-8">
+                        <div className="grid grid-flow-dense grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 auto-rows-[110px] sm:auto-rows-[130px] md:auto-rows-[150px] gap-3">
+                            {visiblePhotos.map((photo, index) => (
+                                <button
+                                    key={index}
+                                    type="button"
+                                    onClick={() => setOpenIndex(index)}
+                                    className={`group relative overflow-hidden rounded-lg bg-zinc-300 ${TILE_SPAN[index % TILE_SPAN.length]}`}
+                                >
                                     <img
                                         src={photo.src}
                                         alt={photo.title || `Informasi ${index + 1}`}
-                                        className="rounded-lg object-cover w-full h-full"
+                                        loading="lazy"
+                                        className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                                     />
-                                    <img
-                                        src="/font&icon/instagram2.svg"
-                                        alt="Instagram"
-                                        className="absolute top-2 right-2 w-6 h-6 color-white"
-                                    />
-                                </>
-                            );
-                            const classes =
-                                "relative bg-zinc-300 rounded-lg overflow-hidden aspect-w-1 aspect-h-1";
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition duration-300 group-hover:bg-black/30">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            className="h-7 w-7 text-white opacity-0 transition duration-300 group-hover:opacity-100"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+                                            />
+                                        </svg>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
 
-                            return photo.link ? (
-                                <a
-                                    key={index}
-                                    href={photo.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={classes}
+                        {visibleCount < photos.length && (
+                            <div className="flex justify-center mt-8">
+                                <button
+                                    type="button"
+                                    onClick={() =>
+                                        setVisibleCount(
+                                            (count) => count + PAGE_SIZE
+                                        )
+                                    }
+                                    className="px-6 py-2 rounded-full bg-primary text-white font-semibold hover:opacity-90 transition"
                                 >
-                                    {content}
-                                </a>
-                            ) : (
-                                <div key={index} className={classes}>
-                                    {content}
-                                </div>
-                            );
-                        })}
+                                    Muat lebih banyak
+                                </button>
+                            </div>
+                        )}
                     </div>
                 )}
+
+                <Lightbox
+                    photos={photos}
+                    index={openIndex}
+                    onClose={() => setOpenIndex(null)}
+                    onNavigate={navigate}
+                />
+
                 <Footer />
             </div>
         </>
