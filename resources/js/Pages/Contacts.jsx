@@ -1,9 +1,24 @@
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import React from "react";
-import { Head, Link } from "@inertiajs/react";
+import { Head, useForm, usePage } from "@inertiajs/react";
 
 export default function Contacts(props) {
+    const { flash } = usePage().props;
+    const { data, setData, post, processing, errors, reset } = useForm({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+        post(route("submit.message"), {
+            preserveScroll: true,
+            onSuccess: () => reset(),
+        });
+    };
+
     return (
         <div className="w-full h-full bg-white flex flex-col justify-start items-center gap-14 sm:gap-18 md:gap-20 lg:gap-0">
             <Head title={props.title} />
@@ -35,11 +50,13 @@ export default function Contacts(props) {
                     <h2 className="text-black text-lg lg:text-xl font-bold">
                         Kami senang mendengar dari Anda
                     </h2>
-                    <form
-                        className="mt-4"
-                        action="{{ route('submit.message') }}"
-                        method="POST"
-                    >
+                    {flash?.success && (
+                        <div className="mt-4 rounded-[10px] bg-green-100 p-3 text-green-800">
+                            {flash.success}
+                        </div>
+                    )}
+
+                    <form className="mt-4" onSubmit={submit}>
                         <div className="bg-neutral-100 rounded-[10px] p-4 mb-4">
                             <label
                                 htmlFor="name"
@@ -50,10 +67,18 @@ export default function Contacts(props) {
                             <input
                                 type="text"
                                 id="name"
-                                name="name"
+                                value={data.name}
+                                onChange={(e) =>
+                                    setData("name", e.target.value)
+                                }
                                 className="w-full p-2 border border-gray-300 rounded-lg"
                                 required
                             />
+                            {errors.name && (
+                                <p className="text-red-600 text-sm mt-1">
+                                    {errors.name}
+                                </p>
+                            )}
                         </div>
                         <div className="bg-neutral-100 rounded-[10px] p-4 mb-4">
                             <label
@@ -65,10 +90,18 @@ export default function Contacts(props) {
                             <input
                                 type="email"
                                 id="email"
-                                name="email"
+                                value={data.email}
+                                onChange={(e) =>
+                                    setData("email", e.target.value)
+                                }
                                 className="w-full p-2 border border-gray-300 rounded-lg"
                                 required
                             />
+                            {errors.email && (
+                                <p className="text-red-600 text-sm mt-1">
+                                    {errors.email}
+                                </p>
+                            )}
                         </div>
                         <div className="bg-neutral-100 rounded-[10px] p-4 mb-4 h-[220px]">
                             <label
@@ -79,16 +112,25 @@ export default function Contacts(props) {
                             </label>
                             <textarea
                                 id="message"
-                                name="message"
+                                value={data.message}
+                                onChange={(e) =>
+                                    setData("message", e.target.value)
+                                }
                                 className="w-full border border-gray-300 rounded-lg h-40"
                                 required
                             ></textarea>
+                            {errors.message && (
+                                <p className="text-red-600 text-sm mt-1">
+                                    {errors.message}
+                                </p>
+                            )}
                         </div>
                         <button
                             type="submit"
-                            className="bg-primary rounded-[10px] p-3 text-center cursor-pointer text-white text-xl w-full"
+                            disabled={processing}
+                            className="bg-primary rounded-[10px] p-3 text-center cursor-pointer text-white text-xl w-full disabled:opacity-60"
                         >
-                            Kirim
+                            {processing ? "Mengirim..." : "Kirim"}
                         </button>
                     </form>
                 </div>
