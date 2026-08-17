@@ -44,10 +44,7 @@ class ProductResource extends Resource
                             ->maxLength(255),
                         Select::make('category')
                             ->label('Kategori')
-                            ->options([
-                                'olahan' => 'Produk Olahan',
-                                'kerajinan' => 'Produk Kerajinan',
-                            ])
+                            ->options(Product::categoryLabels())
                             ->default('olahan')
                             ->required(),
                         Textarea::make('description')
@@ -102,7 +99,7 @@ class ProductResource extends Resource
                 TextColumn::make('category')
                     ->label('Kategori')
                     ->badge()
-                    ->formatStateUsing(fn (string $state): string => $state === 'kerajinan' ? 'Kerajinan' : 'Olahan'),
+                    ->formatStateUsing(fn (string $state): string => Product::categoryLabels()[$state] ?? $state),
                 IconColumn::make('is_published')->label('Tampil')->boolean(),
             ])
             ->defaultSort('sort_order')

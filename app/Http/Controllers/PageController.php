@@ -101,6 +101,7 @@ class PageController extends Controller
         return Inertia::render('Informasi/Produk', [
             'title' => 'Produk Desa',
             'description' => 'Produk Desa',
+            'categories' => Product::categoryLabels(),
             'products' => Product::published()
                 ->orderBy('sort_order')
                 ->get()

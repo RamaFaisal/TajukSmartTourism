@@ -33,6 +33,14 @@ class Product extends Model
         return $query->where('is_published', true);
     }
 
+    public static function categoryLabels(): array
+    {
+        return [
+            'olahan' => 'Produk Olahan',
+            'kerajinan' => 'Produk Kerajinan',
+        ];
+    }
+
     protected function imageSrc(): Attribute
     {
         return Attribute::get(fn (): ?string => $this->resolveImage('image_path', 'image_url'));

@@ -4,23 +4,18 @@ import Carousel from "@/Components/Carousel";
 import React from "react";
 import { Head } from "@inertiajs/react";
 
-const CATEGORY_LABELS = {
-    olahan: "Produk Olahan",
-    kerajinan: "Produk Kerajinan",
-};
-
 const ProductCard = ({ product }) => {
     const content = (
         <>
-            <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
+            <div className="w-full h-44 md:h-56 overflow-hidden">
                 <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-44 md:h-56 object-cover"
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
                 />
             </div>
-            <div className="text-center">
-                <p className="text-lg">{product.name}</p>
+            <div className="p-4 text-center">
+                <p className="text-lg font-semibold">{product.name}</p>
                 {product.description && (
                     <p className="text-sm text-gray-600 mt-1 leading-relaxed">
                         {product.description}
@@ -30,22 +25,31 @@ const ProductCard = ({ product }) => {
         </>
     );
 
+    const classes =
+        "group block bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl hover:-translate-y-1";
+
     return product.link ? (
-        <a href={product.link} target="_blank" rel="noopener noreferrer" className="p-4 rounded block">
+        <a
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes}
+        >
             {content}
         </a>
     ) : (
-        <div className="p-4 rounded">{content}</div>
+        <div className={classes}>{content}</div>
     );
 };
 
 export default function Produk(props) {
     const products = props.products ?? [];
+    const categoryLabels = props.categories ?? {};
 
-    const categories = Object.keys(CATEGORY_LABELS)
+    const categories = Object.keys(categoryLabels)
         .map((category) => ({
             category,
-            label: CATEGORY_LABELS[category],
+            label: categoryLabels[category],
             items: products.filter((product) => product.category === category),
         }))
         .filter((group) => group.items.length > 0);
@@ -96,7 +100,7 @@ export default function Produk(props) {
                                     <h2 className="text-2xl font-bold text-center mb-8">
                                         {group.label}
                                     </h2>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                         {group.items.map((product, index) => (
                                             <ProductCard
                                                 key={`${product.name}-${index}`}
