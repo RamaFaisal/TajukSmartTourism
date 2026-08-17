@@ -4,7 +4,52 @@ import Carousel from "@/Components/Carousel";
 import React from "react";
 import { Head } from "@inertiajs/react";
 
+const CATEGORY_LABELS = {
+    olahan: "Produk Olahan",
+    kerajinan: "Produk Kerajinan",
+};
+
+const ProductCard = ({ product }) => {
+    const content = (
+        <>
+            <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
+                <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-44 md:h-56 object-cover"
+                />
+            </div>
+            <div className="text-center">
+                <p className="text-lg">{product.name}</p>
+                {product.description && (
+                    <p className="text-sm text-gray-600 mt-1 leading-relaxed">
+                        {product.description}
+                    </p>
+                )}
+            </div>
+        </>
+    );
+
+    return product.link ? (
+        <a href={product.link} target="_blank" rel="noopener noreferrer" className="p-4 rounded block">
+            {content}
+        </a>
+    ) : (
+        <div className="p-4 rounded">{content}</div>
+    );
+};
+
 export default function Produk(props) {
+    const products = props.products ?? [];
+
+    const categories = Object.keys(CATEGORY_LABELS)
+        .map((category) => ({
+            category,
+            label: CATEGORY_LABELS[category],
+            items: products.filter((product) => product.category === category),
+        }))
+        .filter((group) => group.items.length > 0);
+
     return (
         <>
             <Head title={props.title} />
@@ -30,9 +75,7 @@ export default function Produk(props) {
                 </div>
 
                 <div className="w-full max-w-7xl mx-auto px-4">
-                    {/* Main Content Produk Olahan */}
-                    <div className="p-8 rounded ">
-                        {/* Main Image and Description */}
+                    <div className="p-8 rounded">
                         <div className="mb-8">
                             <div className="flex w-full h-36 lg:h-64 rounded mb-4 overflow-hidden gap-5 justify-center">
                                 <img
@@ -43,175 +86,28 @@ export default function Produk(props) {
                             </div>
                         </div>
 
-                        {/* Bottom Images and Descriptions */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                            <div className="p-4 rounded">
-                                <a
-                                    href="https://www.instagram.com/damalung_kopi/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
-                                        <img
-                                            src="https://drive.google.com/thumbnail?id=1IQVcUtU6T7AgX-B56ZNtH6a1Sb4FGEyj&sz=w2000"
-                                            https:alt="Kopi Damalung"
-                                            className="w-full h-44 md:h-56 object-cover"
-                                        />
+                        {categories.length === 0 ? (
+                            <p className="text-center text-gray-400 py-10">
+                                Belum ada produk.
+                            </p>
+                        ) : (
+                            categories.map((group) => (
+                                <div key={group.category} className="mb-12">
+                                    <h2 className="text-2xl font-bold text-center mb-8">
+                                        {group.label}
+                                    </h2>
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                                        {group.items.map((product, index) => (
+                                            <ProductCard
+                                                key={`${product.name}-${index}`}
+                                                product={product}
+                                            />
+                                        ))}
                                     </div>
-                                    <div className="text-center text-lg">
-                                        <p>Kopi Damalung</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <a
-                                    href="https://shopee.co.id/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
-                                        <img
-                                            src="https://drive.google.com/thumbnail?id=1U5N5XTRC6TUo6PSK_5rN7zVNVFyyMxvi&sz=w2000"
-                                            https:alt="Teh dan Kripik"
-                                            className="w-full h-44 object-cover"
-                                        />
-                                    </div>
-                                    <div className="text-center">
-                                        <p>Teh dan Kripik</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <a
-                                    href="https://shopee.co.id/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
-                                        <img
-                                            src="https://drive.google.com/thumbnail?id=1wyLZ2boUq5HQZKbt_ySoR3mXNp0cJ0kc&sz=w2000"
-                                            https:alt="Ampyang Coklat"
-                                            className="w-full h-44 object-cover"
-                                        />
-                                    </div>
-                                    <div className="text-center">
-                                        <p>Ampyang Coklat</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <a
-                                    href="https://shopee.co.id/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div className="w-full h-32 md:h-44 rounded mb-4 overflow-hidden">
-                                        <img
-                                            src="https://drive.google.com/thumbnail?id=1wY4hrXrnjdRGvShJBCy7tYIegQJfvN-9&sz=w2000"
-                                            alt="Youghrt"
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <div className="text-center">
-                                        <p>Youghrt</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                                </div>
+                            ))
+                        )}
                     </div>
-
-                    {/* <div className="flex justify-center my-8">
-                        <div className="text-center">
-                            <h1 className="text-2xl lg:text-6xl font-bold">
-                                Produk Wisata
-                            </h1>
-                        </div>
-                    </div>
-                    <div className="bg-transparent p-8 rounded">
-                        <div className="mb-8">
-                            <div className="flex w-full h-36 lg:h-64 rounded mb-4 overflow-hidden gap-5 justify-center">
-                                <img
-                                    src="https://via.placeholder.com/600x400"
-                                    alt="Gambar Utama"
-                                    className="w-full h-36 lg:h-64 object-cover"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <p>
-                                    Deskripsi utama produk atau informasi
-                                    terkait.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 1"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 2"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 3"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="p-4 rounded">
-                                <div className="w-full h-40 bg-red-600 rounded mb-4 overflow-hidden">
-                                    <img
-                                        src="https://via.placeholder.com/300x200"
-                                        alt="Gambar Tambahan 4"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="text-center">
-                                    <p>
-                                        Deskripsi tambahan produk atau informasi
-                                        terkait.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
                 <Footer />
             </div>

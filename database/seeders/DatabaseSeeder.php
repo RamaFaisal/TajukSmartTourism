@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
             DestinationSeeder::class,
             TourPackageSeeder::class,
             VideoSeeder::class,
+            ArticleSeeder::class,
+            GalleryPhotoSeeder::class,
+            ProductSeeder::class,
             SettingSeeder::class,
             AdminSeeder::class,
         ]);
