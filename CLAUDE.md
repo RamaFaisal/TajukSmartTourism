@@ -27,7 +27,7 @@ php artisan migrate
 php artisan storage:link                   # required for uploaded images to resolve
 ```
 
-**Use PHP 8.3 — not the `php` on PATH.** Herd's default here is PHP 8.4, but `inertiajs/inertia-laravel` v0.6.11 and `openspout/openspout` (pulled in by Filament) both cap at PHP 8.3. Under 8.4 the test runner crashes inside Collision's error handler and `composer update` cannot resolve at all. Run every command with `php83` (`php83 artisan test`, `php83 artisan migrate`) or pin the site to 8.3 in Herd. Supporting PHP 8.4 would require upgrading Inertia to 1.x/2.x — a migration, not a config change.
+**Use PHP 8.3 — not the `php` on PATH.** `inertiajs/inertia-laravel` v0.6.11 and `openspout/openspout` (pulled in by Filament) both cap at PHP 8.3. Under 8.4 the test runner crashes inside Collision's error handler and `composer update` cannot resolve at all. Run every command with `php83` (`php83 artisan test`, `php83 artisan migrate`). On this dev machine the Laragon `php` on PATH is 8.3.10 but lacks `pdo_sqlite`, so tests must use Herd's PHP 8.3: `"$HOME/.config/herd/bin/php83/php.exe" artisan test`. Supporting PHP 8.4 would require upgrading Inertia to 1.x/2.x — a migration, not a config change.
 
 Tests run against an in-memory SQLite database configured in `phpunit.xml`. They never touch the database in `.env`. Requires the `pdo_sqlite` PHP extension.
 
@@ -49,42 +49,39 @@ This works because `import.meta.glob('./Pages/**/*.jsx')` in `app.jsx` puts ever
 
 SSR is not enabled, so `@inertiaHead` emits nothing on first paint and `<Head title>` only applies after JS runs. Anything that must be visible to non-JS crawlers (meta description, Open Graph tags) has to be rendered in `app.blade.php` from `$page['props']`.
 
-### Content lives in JSX, not the database
+### Content is DB-backed, rendered through Inertia
 
-The 11 hamlet pages (`Pages/Dusun/*.jsx`), 4 destination pages (`Pages/Destinasi/*.jsx`), tour packages (`Pages/Paket.jsx`), gallery, and products are hardcoded — copy-pasted files of 130–210 lines each, with card lists as literal arrays inside `Components/Dusun.jsx` and `Components/Destinasi.jsx`. Editing content means editing JSX and rebuilding.
+`articles`, `hamlets`, `destinations`, `tour_packages`, `videos`, `gallery_photos`, `products`, and `settings` are database-backed, each with a Filament CRUD resource (`app/Filament/Resources/*`) and a seeder (`database/seeders/*`). `Pages/Dusun/Show.jsx` and `Pages/Destinasi/Show.jsx` are single templates fed by props; `Components/Dusun.jsx` and `Components/Destinasi.jsx` are data-driven carousel/slider components; `Pages/Informasi/Gallery.jsx` and `Pages/Informasi/Produk.jsx` render `props.photos`/`props.products` from `PageController`.
 
-Only `articles` and `contact_messages` are database-backed. `News` and `paketWisata` models, `NewsController`, and the `paket_wisatas` migration are empty scaffolding — no columns, no logic.
+Still hardcoded in JSX: the three legacy Live In forms (`Pages/Paket/FormLiveIn*.jsx` — slated for replacement in PRD Phase 3), and general page copy. Editing those means editing JSX and rebuilding.
 
-Images are hotlinked from Google Drive as `https://drive.google.com/thumbnail?id=<ID>&sz=w2000` (~90 references). Nothing is served from `public/` except logos and icons.
+Images are mostly hotlinked from Google Drive as `https://drive.google.com/thumbnail?id=<ID>&sz=w2000` (~90 references). New uploads go through Filament to disk `public` and resolve via `Storage::url()`.
 
-### Two admin systems
+### Admin
 
-Article CRUD exists twice: `app/Filament/Resources/ArticleResource.php` and `ArticleController` + `resources/views/articles/*.blade.php`. They use **different storage disks** — Filament's `FileUpload` writes to the default disk (`local`) while `ArticleController` uses `store('images', 'public')`, and both are read back via `url('storage/'.$image)`. Images saved through Filament do not resolve.
-
-`/admin` (Filament) is the panel actually linked from the site footer.
+Filament (`/admin`) is the only admin panel — the legacy `ArticleController` + Blade views were removed. All uploads go through Filament to disk `public` and are read back via `Storage::url()`; the `HasDualImage` model concern resolves between an uploaded path and an external URL.
 
 ### Routing style
 
-`routes/web.php` is ~30 closures that only render a page with `title` and `description` props. They have no names, so `php artisan route:cache` cannot be used. The `description` prop is passed everywhere but never rendered.
+`routes/web.php` uses thin controllers — `HomeController`, `HamletController`, `DestinationController`, `PageController` (static pages), `SitemapController`. Nearly every route is named (so `php artisan route:cache` works for those); the exceptions are the `/Destinasi/{legacy}` and `/Dusun/{legacy}` 301-redirect routes, which don't need one. The `description` prop is passed everywhere and rendered server-side into the meta description by `app.blade.php`.
 
 ### Frontend conventions
 
-Tailwind with DaisyUI, plus the Filament Tailwind preset — `tailwind.config.js` scans `app/Filament/**` and `vendor/filament/**` as well as `resources/js/**/*.jsx`. Theme colors are Indonesian-named (`hijauNew`, `putih`, `colorBg`); `hijauNew` (`#115311`) is the current primary. Fonts are Poppins (sans) and Merriweather (serif).
+Tailwind with DaisyUI, plus the Filament Tailwind preset — `tailwind.config.js` scans `app/Filament/**` and `vendor/filament/**` as well as `resources/js/**/*.jsx`. Custom theme colors are `primary` (`#115311`), `surface` (`#F1FADA`), `accent` (`#DEF9C4`) — defined in `tailwind.config.js`. Fonts are Poppins (sans) and Merriweather (serif).
 
 ## Security notes
 
-Two issues are load-bearing for any auth-related change:
+Phase 0 of the PRD is done — keep these invariants intact:
 
-- `User::canAccessPanel()` returns `true` unconditionally, and `/register` is open — any visitor who registers gets full Filament admin access.
-- Public article queries (`routes/web.php` detail route and `Api\ArticleController`) do not filter `is_published`, so drafts are readable.
-
-Both are addressed in Phase 0 of the PRD. Don't add features that depend on the current behaviour.
+- `/register`, `/forgot-password`, and `/reset-password` are removed; admin accounts are created via seeder or artisan command.
+- `User::canAccessPanel()` requires `is_admin` — a plain registered user cannot open `/admin`.
+- Every public query filters `is_published` through the `published()` scope on each model (web pages and `/api/articles`).
 
 ## Dead code
 
-Route `/AR` renders `resources/views/ARv1/` (15 MB of assets) using relative paths that cannot resolve, since the directory is not web-served. The AR feature actually in use is external — GitHub Pages, linked from `Components/Navbar.jsx:388`. Also unused: `resources/views/layouts/admin.blade copy.php`, and merge-conflict remnants around `routes/web.php:242-246`.
+Most old dead code has been removed (route `/AR` + `resources/views/ARv1/`, `News`/`paketWisata` models and migration, `ArticleController` + Blade article views, `admin.blade copy.php`, merge-conflict remnants, the Blade dashboard). The AR feature actually in use is external — GitHub Pages, linked from `Components/Navbar.jsx`.
 
-`vite.config.js` sets `refresh: ["app/Livewire/**"]`, a directory that does not exist.
+Still legacy, slated for removal in PRD Phase 3: the three `Paket/FormLiveIn*.jsx` forms, which post nowhere.
 
 ## Git
 
