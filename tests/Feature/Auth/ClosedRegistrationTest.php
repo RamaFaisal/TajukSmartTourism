@@ -43,8 +43,13 @@ class ClosedRegistrationTest extends TestCase
         $this->actingAs($user)->post('/email/verification-notification')->assertNotFound();
     }
 
-    public function test_login_is_still_available(): void
+    public function test_login_route_is_removed(): void
     {
-        $this->get('/login')->assertOk();
+        $this->get('/login')->assertNotFound();
+    }
+
+    public function test_filament_login_is_the_only_way_in(): void
+    {
+        $this->get('/admin/login')->assertOk();
     }
 }

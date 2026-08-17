@@ -5,7 +5,6 @@ use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\HamletController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,17 +56,5 @@ Route::get('/TentangKami/Geografi', [PageController::class, 'geography'])->name(
 
 // Kontak
 Route::get('/Contacts', [PageController::class, 'contact'])->name('contact.index');
-
-Route::get('/dashboard', [PageController::class, 'dashboard'])
-    ->middleware(['auth'])
-    ->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
 
 Route::post('/submit-message', [ContactMessageController::class, 'store'])->name('submit.message');

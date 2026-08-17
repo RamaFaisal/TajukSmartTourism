@@ -15,11 +15,6 @@ use Inertia\Response;
 
 class PageController extends Controller
 {
-    public function dashboard(): Response
-    {
-        return Inertia::render('Dashboard');
-    }
-
     public function paket(): Response
     {
         $packages = TourPackage::published()
