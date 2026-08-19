@@ -1,23 +1,23 @@
 {
-  "_Carousel-CNZxeSNC.js": {
-    "file": "assets/Carousel-CNZxeSNC.js",
+  "_Carousel-6fPwnO5O.js": {
+    "file": "assets/Carousel-6fPwnO5O.js",
     "name": "Carousel",
     "imports": [
       "resources/js/app.jsx",
-      "_index-DSIIor3p.js"
+      "_index-Cq3Q-dm3.js"
     ]
   },
   "_Destinasi-!~{00j}~.js": {
     "file": "assets/Destinasi-BW39WIU0.css",
     "src": "_Destinasi-!~{00j}~.js"
   },
-  "_Destinasi-Dmvg4FFw.js": {
-    "file": "assets/Destinasi-Dmvg4FFw.js",
+  "_Destinasi-Cez2r5Rt.js": {
+    "file": "assets/Destinasi-Cez2r5Rt.js",
     "name": "Destinasi",
     "imports": [
       "resources/js/app.jsx",
-      "_index-DSIIor3p.js",
-      "_index-DUurkD5L.js"
+      "_index-Cq3Q-dm3.js",
+      "_index-ByARXIps.js"
     ],
     "css": [
       "assets/Destinasi-BW39WIU0.css"
@@ -29,45 +29,45 @@
       "assets/layers-2x-Bpkbi35X.png"
     ]
   },
-  "_Dusun-_AnMRl5e.js": {
-    "file": "assets/Dusun-_AnMRl5e.js",
+  "_Dusun-qIs6VhsZ.js": {
+    "file": "assets/Dusun-qIs6VhsZ.js",
     "name": "Dusun",
     "imports": [
       "resources/js/app.jsx",
-      "_index-DUurkD5L.js"
+      "_index-ByARXIps.js"
     ]
   },
-  "_Navbar-BvBCfRSn.js": {
-    "file": "assets/Navbar-BvBCfRSn.js",
+  "_Navbar-DqnjKESY.js": {
+    "file": "assets/Navbar-DqnjKESY.js",
     "name": "Navbar",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_PromoBanner-DrSAJCe9.js": {
-    "file": "assets/PromoBanner-DrSAJCe9.js",
+  "_PromoBanner-BVNgvMZ7.js": {
+    "file": "assets/PromoBanner-BVNgvMZ7.js",
     "name": "PromoBanner",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_VideoCarousel-BTs81vWR.js": {
-    "file": "assets/VideoCarousel-BTs81vWR.js",
+  "_VideoCarousel-DDyQlYXE.js": {
+    "file": "assets/VideoCarousel-DDyQlYXE.js",
     "name": "VideoCarousel",
     "imports": [
       "resources/js/app.jsx",
-      "_index-DUurkD5L.js"
+      "_index-ByARXIps.js"
     ]
   },
-  "_index-DSIIor3p.js": {
-    "file": "assets/index-DSIIor3p.js",
+  "_index-ByARXIps.js": {
+    "file": "assets/index-ByARXIps.js",
     "name": "index",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_index-DUurkD5L.js": {
-    "file": "assets/index-DUurkD5L.js",
+  "_index-Cq3Q-dm3.js": {
+    "file": "assets/index-Cq3Q-dm3.js",
     "name": "index",
     "imports": [
       "resources/js/app.jsx"
@@ -94,180 +94,180 @@
     "src": "node_modules/leaflet/dist/images/marker-shadow.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-D9lukB6g.css",
+    "file": "assets/app-CIBzywoq.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/Pages/Contacts.jsx": {
-    "file": "assets/Contacts-GNirxTxW.js",
+    "file": "assets/Contacts-Dyew0bYQ.js",
     "name": "Contacts",
     "src": "resources/js/Pages/Contacts.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js"
+      "_Navbar-DqnjKESY.js"
     ]
   },
   "resources/js/Pages/Destinasi/Show.jsx": {
-    "file": "assets/Show-Bmy7A4E_.js",
+    "file": "assets/Show-CAf-9GBe.js",
     "name": "Show",
     "src": "resources/js/Pages/Destinasi/Show.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_PromoBanner-DrSAJCe9.js",
-      "_Destinasi-Dmvg4FFw.js",
-      "_index-DSIIor3p.js",
-      "_index-DUurkD5L.js"
+      "_Navbar-DqnjKESY.js",
+      "_PromoBanner-BVNgvMZ7.js",
+      "_Destinasi-Cez2r5Rt.js",
+      "_index-Cq3Q-dm3.js",
+      "_index-ByARXIps.js"
     ]
   },
   "resources/js/Pages/Dusun/Show.jsx": {
-    "file": "assets/Show-PxDEUOnS.js",
+    "file": "assets/Show-Dq45WqqX.js",
     "name": "Show",
     "src": "resources/js/Pages/Dusun/Show.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_PromoBanner-DrSAJCe9.js",
-      "_Dusun-_AnMRl5e.js",
-      "_index-DUurkD5L.js"
+      "_Navbar-DqnjKESY.js",
+      "_PromoBanner-BVNgvMZ7.js",
+      "_Dusun-qIs6VhsZ.js",
+      "_index-ByARXIps.js"
     ]
   },
   "resources/js/Pages/Homepage.jsx": {
-    "file": "assets/Homepage-Bzq34_z7.js",
+    "file": "assets/Homepage-Cu8d0wkC.js",
     "name": "Homepage",
     "src": "resources/js/Pages/Homepage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_Carousel-CNZxeSNC.js",
-      "_Dusun-_AnMRl5e.js",
+      "_Navbar-DqnjKESY.js",
+      "_Carousel-6fPwnO5O.js",
+      "_Dusun-qIs6VhsZ.js",
       "_text-B2lfLNmr.js",
-      "_VideoCarousel-BTs81vWR.js",
-      "_Destinasi-Dmvg4FFw.js",
-      "_PromoBanner-DrSAJCe9.js",
-      "_index-DSIIor3p.js",
-      "_index-DUurkD5L.js"
+      "_VideoCarousel-DDyQlYXE.js",
+      "_Destinasi-Cez2r5Rt.js",
+      "_PromoBanner-BVNgvMZ7.js",
+      "_index-Cq3Q-dm3.js",
+      "_index-ByARXIps.js"
     ]
   },
   "resources/js/Pages/Informasi/Berita.jsx": {
-    "file": "assets/Berita-CieD_LDr.js",
+    "file": "assets/Berita-BL-aFP5v.js",
     "name": "Berita",
     "src": "resources/js/Pages/Informasi/Berita.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_Carousel-CNZxeSNC.js",
+      "_Navbar-DqnjKESY.js",
+      "_Carousel-6fPwnO5O.js",
       "_text-B2lfLNmr.js",
-      "_index-DSIIor3p.js"
+      "_index-Cq3Q-dm3.js"
     ]
   },
   "resources/js/Pages/Informasi/BeritaDetail.jsx": {
-    "file": "assets/BeritaDetail-DXefy6LL.js",
+    "file": "assets/BeritaDetail-BhUOuIyq.js",
     "name": "BeritaDetail",
     "src": "resources/js/Pages/Informasi/BeritaDetail.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js"
+      "_Navbar-DqnjKESY.js"
     ]
   },
   "resources/js/Pages/Informasi/Gallery.jsx": {
-    "file": "assets/Gallery-Cnks29Aj.js",
+    "file": "assets/Gallery-DmKICJzn.js",
     "name": "Gallery",
     "src": "resources/js/Pages/Informasi/Gallery.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_Carousel-CNZxeSNC.js",
-      "_index-DSIIor3p.js"
+      "_Navbar-DqnjKESY.js",
+      "_Carousel-6fPwnO5O.js",
+      "_index-Cq3Q-dm3.js"
     ]
   },
   "resources/js/Pages/Informasi/Produk.jsx": {
-    "file": "assets/Produk-Bpyb5Avb.js",
+    "file": "assets/Produk-SikWwgN5.js",
     "name": "Produk",
     "src": "resources/js/Pages/Informasi/Produk.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_Carousel-CNZxeSNC.js",
-      "_index-DSIIor3p.js"
+      "_Navbar-DqnjKESY.js",
+      "_Carousel-6fPwnO5O.js",
+      "_index-Cq3Q-dm3.js"
     ]
   },
   "resources/js/Pages/Paket.jsx": {
-    "file": "assets/Paket-Dvw6WeeK.js",
+    "file": "assets/Paket-RI-vE0NE.js",
     "name": "Paket",
     "src": "resources/js/Pages/Paket.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_Carousel-CNZxeSNC.js",
-      "_Destinasi-Dmvg4FFw.js",
-      "_index-DUurkD5L.js",
-      "_index-DSIIor3p.js"
+      "_Navbar-DqnjKESY.js",
+      "_Carousel-6fPwnO5O.js",
+      "_Destinasi-Cez2r5Rt.js",
+      "_index-ByARXIps.js",
+      "_index-Cq3Q-dm3.js"
     ]
   },
   "resources/js/Pages/Paket/FormLiveIn1.jsx": {
-    "file": "assets/FormLiveIn1-DYqaVcU8.js",
+    "file": "assets/FormLiveIn1-Cp6e2ZX9.js",
     "name": "FormLiveIn1",
     "src": "resources/js/Pages/Paket/FormLiveIn1.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js"
+      "_Navbar-DqnjKESY.js"
     ]
   },
   "resources/js/Pages/Paket/FormLiveIn2.jsx": {
-    "file": "assets/FormLiveIn2-DCeo2g0D.js",
+    "file": "assets/FormLiveIn2-B528uGAa.js",
     "name": "FormLiveIn2",
     "src": "resources/js/Pages/Paket/FormLiveIn2.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js"
+      "_Navbar-DqnjKESY.js"
     ]
   },
   "resources/js/Pages/Paket/FormLiveIn3.jsx": {
-    "file": "assets/FormLiveIn3-B3QgLmKi.js",
+    "file": "assets/FormLiveIn3-DhqSdI_7.js",
     "name": "FormLiveIn3",
     "src": "resources/js/Pages/Paket/FormLiveIn3.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js"
+      "_Navbar-DqnjKESY.js"
     ]
   },
   "resources/js/Pages/TentangKami/Geografi.jsx": {
-    "file": "assets/Geografi-CqR-JEYH.js",
+    "file": "assets/Geografi-CG9D-32E.js",
     "name": "Geografi",
     "src": "resources/js/Pages/TentangKami/Geografi.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js"
+      "_Navbar-DqnjKESY.js"
     ]
   },
   "resources/js/Pages/TentangKami/ProfileDesa.jsx": {
-    "file": "assets/ProfileDesa-3vHk_W5K.js",
+    "file": "assets/ProfileDesa-BrV3sUF8.js",
     "name": "ProfileDesa",
     "src": "resources/js/Pages/TentangKami/ProfileDesa.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Navbar-BvBCfRSn.js",
-      "_VideoCarousel-BTs81vWR.js",
-      "_index-DUurkD5L.js"
+      "_Navbar-DqnjKESY.js",
+      "_VideoCarousel-DDyQlYXE.js",
+      "_index-ByARXIps.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-7EQH1N7i.js",
+    "file": "assets/app-O8SDcWu1.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -288,7 +288,7 @@
       "resources/js/Pages/TentangKami/ProfileDesa.jsx"
     ],
     "css": [
-      "assets/app-D9lukB6g.css"
+      "assets/app-CIBzywoq.css"
     ]
   }
 }
