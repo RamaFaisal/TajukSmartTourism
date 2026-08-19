@@ -19,7 +19,7 @@ export default function ProfileDesa(props) {
             </div>
 
             <div className="relative w-full bg-white text-lg lg:text-xl flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover text-black rounded-t-[20px] lg:rounded-t-[50px]">
-                <div className="container mx-auto mt-10 pt-10 lg:w-[1280px] px-5 md:px-8 lg:px-16 pt-10 text-center z-10">
+                <div className="container max-w-6xl mx-auto mt-10 pt-10 px-5 md:px-8 lg:px-16 pt-10 text-center z-10">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                         Profile Desa Tajuk
                     </h1>
@@ -32,11 +32,11 @@ export default function ProfileDesa(props) {
                     </p>
                 </div>
 
-                <div className="w-full md:w-[800px] lg:w-[1400px] rounded-lg z-10 relative px-5">
+                <div className="w-full max-w-6xl rounded-lg z-10 relative px-5">
                     <VideoCarousel videos={props.videos ?? []} />
                 </div>
 
-                <div className="w-full lg:w-[1160px] h-auto text-justify text-base md:text-lg lg:text-xl lg:mt-2 px-5 z-10">
+                <div className="w-full max-w-6xl h-auto text-justify text-base md:text-lg lg:text-xl lg:mt-2 px-5 z-10">
                     <p>
                         Desa Tajuk adalah sebuah destinasi wisata yang
                         menggabungkan keindahan alam dengan kekayaan budaya yang
@@ -54,7 +54,7 @@ export default function ProfileDesa(props) {
                     </p>
                 </div>
 
-                <div className="lg:w-[1120px] w-[380px] h-auto relative mt-2 p-3 bg-white bg-opacity-50 border border-black z-10 rounded-lg">
+                <div className="w-full max-w-6xl h-auto relative mt-2 p-3 bg-white bg-opacity-50 border border-black z-10 rounded-lg">
                     <div className="text-justify px-2">
                         <h2 className="text-black text-xl md:text-2xl lg:text-3xl ">
                             Visi:
@@ -96,13 +96,15 @@ export default function ProfileDesa(props) {
                     </div>
                 </div>
 
-                <img
-                    className="w-[370px] h-56 lg:w-[1127px] lg:h-[500px] z-10"
-                    src="https://drive.google.com/thumbnail?id=1ULlvhv57GV9uHrJeKTEL06R6zahCKmQ5&sz=w2000"
-                    alt="Gambar Profile Desa"
-                />
+                <div className="w-full max-w-6xl px-5 z-10">
+                    <img
+                        className="h-56 w-full object-cover lg:h-[500px]"
+                        src="https://drive.google.com/thumbnail?id=1ULlvhv57GV9uHrJeKTEL06R6zahCKmQ5&sz=w2000"
+                        alt="Gambar Profile Desa"
+                    />
+                </div>
 
-                <div className="w-full lg:w-[1160px] h-auto text-justify text-base md:text-lg lg:text-xl mt-2 px-5 z-10">
+                <div className="w-full max-w-6xl h-auto text-justify text-base md:text-lg lg:text-xl mt-2 px-5 z-10">
                     <h1 className="text-4xl font-bold text-center pb-10">
                         Potensi Desa
                     </h1>

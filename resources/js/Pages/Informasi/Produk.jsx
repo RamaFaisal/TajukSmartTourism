@@ -78,8 +78,8 @@ export default function Produk(props) {
                     </p>
                 </div>
 
-                <div className="w-full max-w-7xl mx-auto px-4">
-                    <div className="p-8 rounded">
+                <div className="w-full max-w-6xl mx-auto px-4">
+                    <div className="py-8 rounded">
                         <div className="mb-8">
                             <div className="flex w-full h-36 lg:h-64 rounded mb-4 overflow-hidden gap-5 justify-center">
                                 <img

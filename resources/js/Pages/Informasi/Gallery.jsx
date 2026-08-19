@@ -55,7 +55,7 @@ export default function Gallery(props) {
             </div>
 
             <div className="relative w-full bg-white text-xs lg:text-base flex flex-col justify-start items-center gap-16 sm:gap-24 md:gap-24 lg:gap-28 object-cover rounded-t-[20px] lg:rounded-t-[50px]">
-                <div className="w-full max-w-[1127px] text-center px-4 md:px-8">
+                <div className="w-full max-w-6xl text-center px-4 md:px-8">
                     <p className="text-black font-sans text-xl md:text-4xl pt-10 lg:pt-32">
                         Selamat datang di Menu Galeri kami. Di sini, Anda dapat
                         menemukan berbagai foto keragaman yang berkaitan dengan

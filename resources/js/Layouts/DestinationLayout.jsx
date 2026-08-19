@@ -49,7 +49,7 @@ export default function DestinationLayout({
 
             <div className="relative isolate w-full rounded-t-[20px] bg-white lg:rounded-t-[50px]">
                 <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-14 px-4 pb-14 pt-10 text-sm sm:gap-20 sm:px-6 sm:pb-20 sm:pt-14 lg:gap-24 lg:px-8 lg:pb-24 lg:pt-16 lg:text-base">
-                    <div className="w-full max-w-3xl">
+                    <div className="w-full max-w-6xl text-justify">
                         {(hours || price) && (
                             <div className="mb-8 grid w-full gap-3 sm:mb-10 sm:grid-cols-2">
                                 {hours && (
