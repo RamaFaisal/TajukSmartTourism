@@ -9,7 +9,7 @@ export default defineConfig({
                 "resources/js/app.jsx",
                 "resources/css/app.css",
             ],
-            refresh: true,
+            // refresh: true,
         }),
         react(),
     ],
