@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\ClearsPageCache;
+
 use App\Models\Concerns\HasDualImage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -10,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use ClearsPageCache;
     use HasDualImage, HasFactory;
 
     protected $fillable = [
