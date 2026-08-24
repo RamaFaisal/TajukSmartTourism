@@ -37,10 +37,10 @@ const FeaturedArticle = ({ article }) => (
                     {formatDate(article.created_at)}
                 </time>
             </div>
-            <h3 className="mt-3 text-lg font-bold leading-snug text-gray-900 sm:text-xl md:text-2xl">
+            <h3 className="mt-3 text-lg font-bold leading-snug text-primary sm:text-xl md:text-2xl">
                 {article.title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:mt-3 md:text-[15px]">
+            <p className="mt-2 text-sm leading-relaxed text-gray-900 sm:mt-3 md:text-[15px]">
                 {truncateText(article.content, 220)}
             </p>
             <a
@@ -74,10 +74,10 @@ const ArticleCard = ({ article }) => (
                     {formatDate(article.created_at)}
                 </time>
             </div>
-            <h4 className="mt-2.5 text-base font-bold leading-snug text-gray-900 transition-colors group-hover:text-primary">
+            <h4 className="mt-2.5 text-base font-bold leading-snug transition-colors group-hover:text-primary">
                 {article.title}
             </h4>
-            <p className="mt-2 text-sm leading-relaxed text-gray-600">
+            <p className="mt-2 text-sm leading-relaxed text-gray-900">
                 {truncateText(article.content, 110)}
             </p>
             <span className="mt-auto pt-4 text-sm font-semibold text-primary">
